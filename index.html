@@ -409,8 +409,9 @@ tw-passage[tags~="l56"],
 tw-passage[tags~="l57"] {
     top: calc(35vh + 1cm) !important;              /* подняли на 1 см */
     padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
-}/* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (ОБНОВЛЕНО) */
+}
+    /* ============================================================ */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (КАРТОЧКА ПРИБИТА К НИЗУ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -424,56 +425,57 @@ tw-passage[tags~="l57"] {
     overflow: visible !important;
     box-sizing: border-box !important;
     min-height: 100vh !important;
-    padding: 8px 8px 28px 8px !important;
+    padding: 8px !important;
     background-size: cover !important;
     background-position: center top !important;
     background-attachment: scroll !important;
   }
 
   tw-story tw-sidebar {
-    position: static !important;
-    left: auto !important;
+    position: fixed !important;
+    top: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
     width: auto !important;
+    z-index: 99 !important;
     flex-direction: row !important;
     justify-content: space-between !important;
-    margin: 0 0 6px 0 !important;
   }
 
-  /* КАРТОЧКИ */
-  tw-story tw-passage[tags] {
-    position: static !important;
+  /* ПРИБИВАЕМ ВСЕ КАРТОЧКИ К НИЗУ ЭКРАНА */
+  tw-story tw-passage[tags]:not([tags~="l1"]) {
+    position: fixed !important;
+    bottom: 5mm !important; /* Отступ от нижнего края ровно 5 мм */
     top: auto !important;
-    bottom: auto !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    z-index: auto !important;
+    left: 10px !important;
+    right: 10px !important;
+    
     width: auto !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
+    max-width: calc(100% - 20px) !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 10 !important;
     
-    /* ЖЕСТКО ОПУСКАЕМ ВНИЗ НА 35% ЭКРАНА */
-    margin-top: 35vh !important; 
-    margin-bottom: 12px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    /* Если текст длинный, карточка не закроет весь экран, а внутри нее появится прокрутка */
+    max-height: 80vh !important;
+    overflow-y: auto !important;
     
-    padding: 14px 15px !important;
+    padding: 15px !important;
     font-size: clamp(15px, 4.3vw, 20px) !important;
     line-height: 1.45 !important;
     background-color: rgba(255,255,255,.95) !important;
     border-radius: 12px !important;
-    box-shadow: 0 3px 10px rgba(0,0,0,.25) !important;
+    box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
     text-shadow: none !important;
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
     white-space: normal !important;
   }
 
-  /* Стартовый экран (оставляем как было) */
+  /* Стартовый экран (l1) оставляем поверх картинки, но центрируем */
   tw-story tw-passage[tags~="l1"] {
-    margin-top: 42vh !important;
+    position: static !important;
+    margin-top: 50vh !important;
     padding: 0 10px !important;
     text-align: center !important;
     background-color: transparent !important;
@@ -482,14 +484,10 @@ tw-passage[tags~="l57"] {
     text-shadow: -1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF !important;
   }
 
-  tw-story tw-passage[tags~="l66"] {
-    font-size: 15px !important;
-    padding: 10px 14px !important;
-  }
-
   tw-story tw-link {
     display: inline-block;
-    margin: 3px 0;
+    margin: 5px 0;
+    font-size: 18px;
   }
 }
 }
