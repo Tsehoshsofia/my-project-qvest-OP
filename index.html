@@ -420,20 +420,19 @@ tw-passage[tags~="l57"] {
     overflow-y: auto !important;
   }
 
-   tw-story {
+    tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
     min-height: 100vh !important;
-    padding: 8px !important;
+    padding: 0 !important; /* Убираем отступы, чтобы картинка была от края до края */
     
-    /* ВОЗВРАЩАЕМ ОТОБРАЖЕНИЕ КАРТИНКИ ЦЕЛИКОМ */
-    background-size: contain !important; 
-    background-repeat: no-repeat !important; 
+    /* РАСТЯГИВАЕМ ПО ШИРИНЕ ЭКРАНА, ВЫСОТА АВТО */
+    background-size: 100% auto !important; 
+    background-repeat: no-repeat !important;
     background-position: center top !important;
-    background-color: #ffffff !important; /* Белый фон вокруг картинки */
+    background-color: #ffffff !important; /* Белый фон снизу */
   }
-
   tw-story tw-sidebar {
     position: fixed !important;
     top: 10px !important;
