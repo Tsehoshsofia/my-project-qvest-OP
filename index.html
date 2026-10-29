@@ -420,15 +420,18 @@ tw-passage[tags~="l57"] {
     overflow-y: auto !important;
   }
 
-  tw-story {
+   tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
     min-height: 100vh !important;
     padding: 8px !important;
-    background-size: cover !important;
+    
+    /* ВОЗВРАЩАЕМ ОТОБРАЖЕНИЕ КАРТИНКИ ЦЕЛИКОМ */
+    background-size: contain !important; 
+    background-repeat: no-repeat !important; 
     background-position: center top !important;
-    background-attachment: scroll !important;
+    background-color: #ffffff !important; /* Белый фон вокруг картинки */
   }
 
   tw-story tw-sidebar {
