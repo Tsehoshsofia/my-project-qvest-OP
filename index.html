@@ -411,7 +411,7 @@ tw-passage[tags~="l57"] {
     padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
 }
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (ПРОПОРЦИОНАЛЬНОЕ ФОТО, КАРТОЧКА СНИЗУ) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОН НА ВЕСЬ ЭКРАН, БЕЗ БЕЛЫХ ПОЛОС) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -427,11 +427,12 @@ tw-passage[tags~="l57"] {
     min-height: 100vh !important;
     padding: 0 !important;
     
-    /* ФОТО ЦЕЛИКОМ И БЕЗ ИСКАЖЕНИЙ: */
-    background-size: contain !important; 
+    /* ЗАПОЛНЯЕМ ВЕСЬ ЭКРАН, ЧТОБЫ НЕ БЫЛО БЕЛЫХ ПОЛОС */
+    background-size: cover !important; 
     background-repeat: no-repeat !important;
-    background-position: center bottom !important; /* Прижимаем фото к низу экрана */
-    background-color: #ffffff !important; 
+    /* Сдвигаем фото вверх, чтобы лицо было видно */
+    background-position: center top !important; 
+    background-color: #000000 !important; /* Черный фон вместо белого, если фото не загрузится */
   }
 
   tw-story tw-sidebar {
@@ -469,7 +470,6 @@ tw-passage[tags~="l57"] {
     background-color: rgba(255,255,255,.95) !important;
     border-radius: 12px !important;
     box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
-    /* УБРАНА СТРОКА text-shadow: none !important; */
     overflow-wrap: break-word !important;
     word-wrap: break-word !important;
     white-space: normal !important;
@@ -495,7 +495,6 @@ tw-passage[tags~="l57"] {
     border-radius: 12px !important;
     box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
     color: #722F37 !important;
-    /* УБРАНА СТРОКА text-shadow: none !important; */
   }
 
   tw-story tw-link {
