@@ -410,8 +410,8 @@ tw-passage[tags~="l57"] {
     top: calc(35vh + 1cm) !important;              /* подняли на 1 см */
     padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
 }
- /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (ИСПРАВЛЕН ПЕРВЫЙ БЛОК) */
+/* ============================================================ */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (КАРТИНКА СВЕРХУ, ТЕКСТ СНИЗУ 3 ММ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -420,19 +420,21 @@ tw-passage[tags~="l57"] {
     overflow-y: auto !important;
   }
 
-    tw-story {
-    display: block !important;
+  tw-story {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
     overflow: visible !important;
     box-sizing: border-box !important;
     min-height: 100vh !important;
-    padding: 0 !important; /* Убираем отступы, чтобы картинка была от края до края */
+    padding: 0 !important;
     
-    /* РАСТЯГИВАЕМ ПО ШИРИНЕ ЭКРАНА, ВЫСОТА АВТО */
+    /* Картинка растягивается по ширине экрана */
     background-size: 100% auto !important; 
     background-repeat: no-repeat !important;
     background-position: center top !important;
-    background-color: #ffffff !important; /* Белый фон снизу */
   }
+
   tw-story tw-sidebar {
     position: fixed !important;
     top: 10px !important;
@@ -444,24 +446,26 @@ tw-passage[tags~="l57"] {
     justify-content: space-between !important;
   }
 
-  /* КАРТОЧКИ СНИЗУ (остаются как были) */
+  /* КАРТОЧКИ С ТЕКСТОМ */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
-    position: fixed !important;
-    bottom: 5mm !important; 
+    position: relative !important; /* Текст идет в обычном потоке */
     top: auto !important;
-    left: 10px !important;
-    right: 10px !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
     
     width: auto !important;
     max-width: calc(100% - 20px) !important;
-    transform: none !important;
-    margin: 0 !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    
+    /* ВОТ ЗДЕСЬ МАГИЯ: 
+       Отталкиваем текст вниз на высоту картинки + 3 мм */
+    margin-top: calc(100vw * 1.33 + 3mm) !important; 
+    margin-bottom: 20px !important;
+    
     z-index: 10 !important;
-    
-    max-height: 45vh !important; 
-    overflow-y: auto !important; 
-    
-    padding: 10px 14px !important; 
+    padding: 14px 15px !important; 
     font-size: 15px !important; 
     line-height: 1.3 !important; 
     
@@ -474,17 +478,20 @@ tw-passage[tags~="l57"] {
     white-space: normal !important;
   }
 
-  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) - возвращаем на его место (65vh) */
+  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) */
   tw-story tw-passage[tags~="l1"] {
-    position: static !important;
+    position: relative !important;
     width: auto !important;
     max-width: 90vw !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    margin-top: 65vh !important; /* Возвращаем оригинальную высоту */
+    
+    /* То же самое: опускаем под картинку на 3 мм */
+    margin-top: calc(100vw * 1.33 + 3mm) !important; 
+    margin-bottom: 20px !important;
     padding: 0 10px !important;
     
-    font-size: 20px !important; /* Чуть уменьшаем шрифт, чтобы влезал по ширине */
+    font-size: 20px !important; 
     text-align: center !important;
     
     background-color: transparent !important;
