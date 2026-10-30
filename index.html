@@ -23,7 +23,7 @@ tw-story {
 }
 
 /* ========================================= */
-/* ФОНЫ ДЛЯ ВСЕХ БЛОКОВ (ПК И МОБИЛЬНЫЕ) */
+/* ФОНЫ ДЛЯ ВСЕХ БЛОКОВ (ПК) */
 /* ========================================= */
 tw-story[tags~="l1"] { background-image: url("1.jpeg"); }
 
@@ -58,7 +58,7 @@ tw-story[tags~="l61"], tw-story[tags~="l65"], tw-story[tags~="l67"],
 tw-story[tags~="l68"] { background-image: url("4.jpeg") !important; }
 
 /* ========================================= */
-/* ВОПРОСЫ НА ПК (ПРОСТО ТЕКСТ, БЕЗ КАРТОЧКИ) */
+/* БЕЛЫЕ ПОДЛОЖКИ НА ПК (ВОПРОСЫ ПО ЦЕНТРУ) */
 /* ========================================= */
 tw-passage[tags~="l8"], tw-passage[tags~="l16"], tw-passage[tags~="l22"],
 tw-passage[tags~="l28"], tw-passage[tags~="l36"], tw-passage[tags~="l40"],
@@ -71,19 +71,18 @@ tw-passage[tags~="l47"], tw-passage[tags~="l58"], tw-passage[tags~="l63"] {
     margin-left: 102px !important; 
     margin-bottom: 1cm !important;
     
-    /* ПРИНУДИТЕЛЬНО УБИРАЕМ КАРТОЧКУ */
-    background-color: transparent !important; 
-    box-shadow: none !important;   
-    padding: 0 !important;         
-    border-radius: 0 !important;
-    border: none !important;
+    background-color: #FFFFFF !important; 
+    padding: 20px !important;         
+    padding-bottom: 1cm !important;
+    border-radius: 15px !important;   
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
     
     text-align: center !important;
     color: #000000 !important;
 }
 
 /* ========================================= */
-/* ОСТАЛЬНЫЕ БЛОКИ НА ПК (БЕЛЫЕ КАРТОЧКИ) */
+/* БЕЛЫЕ ПОДЛОЖКИ НА ПК (ОСТАЛЬНЫЕ ПО ШИРИНЕ) */
 /* ========================================= */
 tw-passage[tags~="l2"], tw-passage[tags~="l4"], tw-passage[tags~="l5"], 
 tw-passage[tags~="l6"], tw-passage[tags~="l7"], tw-passage[tags~="l9"],
@@ -265,7 +264,7 @@ tw-passage[tags~="l71"] tw-link {
 }
 
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (КАРТОЧКИ СНИЗУ, БЕЛЫЙ ФОН) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЛЫЙ ФОН, КАРТОЧКА СНИЗУ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -280,10 +279,10 @@ tw-passage[tags~="l71"] tw-link {
     box-sizing: border-box !important;
     min-height: 100vh !important;
     padding: 0 !important;
-    background-size: cover !important; 
-    background-repeat: no-repeat !important;
-    background-position: center top !important; 
-    background-color: #FFFFFF !important;
+    
+    /* УБИРАЕМ КАРТИНКИ НА ТЕЛЕФОНЕ */
+    background-image: none !important;
+    background-color: #FFFFFF !important; 
   }
 
   tw-story tw-sidebar {
