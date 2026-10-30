@@ -569,7 +569,7 @@ tw-passage[tags~="l63"] {
 }
 
 /* ============================================================ */
-/* 4. МОБИЛЬНАЯ АДАПТАЦИЯ (БЕЛЫЙ ФОН, КАРТОЧКА СНИЗУ) */
+/* 4. МОБИЛЬНАЯ АДАПТАЦИЯ (КАРТИНКИ НА МЕСТЕ, ФОН БЕЛЫЙ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
     html, body {
@@ -585,8 +585,12 @@ tw-passage[tags~="l63"] {
         min-height: 100vh !important;
         padding: 0 !important;
         
-        /* УБИРАЕМ ВСЕ КАРТИНКИ И ДЕЛАЕМ БЕЛЫЙ ФОН */
-        background-image: none !important;
+        /* ВОЗВРАЩАЕМ КАРТИНКИ НА ТЕЛЕФОНЕ */
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
+        
+        /* БЕЛЫЙ ФОН, ЕСЛИ КАРТИНКА НЕ ЗАГРУЗИТСЯ */
         background-color: #FFFFFF !important; 
     }
 
@@ -622,7 +626,7 @@ tw-passage[tags~="l63"] {
         font-size: 16px !important; 
         line-height: 1.4 !important; 
         
-        background-color: #FFFFFF !important; /* Строго белый фон */
+        background-color: #FFFFFF !important; /* Строго белый фон карточки */
         border-radius: 12px !important;
         box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
         
