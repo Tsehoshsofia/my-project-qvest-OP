@@ -333,7 +333,6 @@ tw-passage[tags~="l63"] { color: #000000; }
 
 /* l10 удален из зелёных, так как теперь он красный */
 tw-passage[tags~="l12"] { color: #000000; }
-
 /* ========================================= */
 /* СТИЛИ ДЛЯ ССЫЛОК */
 /* ========================================= */
@@ -539,7 +538,7 @@ tw-passage[tags~="l71"] {
 }
 
 /* ========================================= */
-/* 3. БЕЛАЯ ПОДЛОЖКА ДЛЯ ВОПРОСОВ (ПК ВЕРСИЯ) */
+/* 3. ВОПРОСЫ НА ПК (БЕЗ БЕЛОЙ ПОДЛОЖКИ, ПРОСТО ТЕКСТ) */
 /* ========================================= */
 tw-passage[tags~="l8"],
 tw-passage[tags~="l16"],
@@ -558,13 +557,8 @@ tw-passage[tags~="l63"] {
     margin-left: 102px !important; 
     margin-bottom: 1cm !important;
     
-    background-color: #FFFFFF !important; 
-    padding: 20px !important;         
-    padding-bottom: 1cm !important;
-    border-radius: 15px !important;   
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
+    /* Убрали фон, тень и отступы карточки */
     text-align: center !important;
-    
     color: #000000 !important;
 }
 
