@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <title>Основы программирования</title> 
@@ -10,59 +10,208 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Основы программирования.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ========================================= */
+/* ОБЩИЙ ФОН И НАСТРОЙКИ ИСТОРИИ */
 /* ========================================= */
-/* ОБЩИЙ ФОН И НАСТРОЙКИ */
+
 /* ========================================= */
-body, tw-story {
+/* ОБЩИЙ ФОН И НАСТРОЙКИ ИСТОРИИ */
+/* ========================================= */
+
+body {
     background-color: #FFFFFF !important;
 }
+
 tw-story {
-    background-size: cover !important;
+    background-color: #FFFFFF !important;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 /* ========================================= */
-/* ФОНЫ ДЛЯ ВСЕХ БЛОКОВ (ПК) */
+/* ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ ВСЕХ БЛОКОВ */
 /* ========================================= */
+
 tw-story[tags~="l1"] { background-image: url("1.jpeg"); }
+tw-story[tags~="l2"] { background-image: url("15.jpeg"); }
 
-tw-story[tags~="l3"], tw-story[tags~="l13"], tw-story[tags~="l20"],
-tw-story[tags~="l23"], tw-story[tags~="l29"], tw-story[tags~="l37"],
-tw-story[tags~="l43"], tw-story[tags~="l54"], tw-story[tags~="l60"],
-tw-story[tags~="l66"] { background-image: url("1.jpeg"); }
+/* L3 И БЛОКИ КАК L3 */
+tw-story[tags~="l3"],
+tw-story[tags~="l13"],
+tw-story[tags~="l20"],
+tw-story[tags~="l23"],
+tw-story[tags~="l29"],
+tw-story[tags~="l37"],
+tw-story[tags~="l43"],
+tw-story[tags~="l54"],
+tw-story[tags~="l60"],
+tw-story[tags~="l66"] { 
+    background-image: url("1.jpeg"); 
+}
 
-tw-story[tags~="l72"] { background-image: url("25.jpeg") !important; }
+/* L72 — НОВОЕ ИЗОБРАЖЕНИЕ */
+tw-story[tags~="l72"] { 
+    background-image: url("25.jpeg") !important; 
+}
 
-tw-story[tags~="l2"], tw-story[tags~="l6"], tw-story[tags~="l7"],
-tw-story[tags~="l8"], tw-story[tags~="l11"], tw-story[tags~="l15"],
-tw-story[tags~="l16"], tw-story[tags~="l19"], tw-story[tags~="l21"],
-tw-story[tags~="l22"], tw-story[tags~="l26"], tw-story[tags~="l27"],
-tw-story[tags~="l28"], tw-story[tags~="l33"], tw-story[tags~="l34"],
-tw-story[tags~="l35"], tw-story[tags~="l36"], tw-story[tags~="l40"],
-tw-story[tags~="l41"], tw-story[tags~="l42"], tw-story[tags~="l47"],
-tw-story[tags~="l48"], tw-story[tags~="l49"], tw-story[tags~="l50"],
-tw-story[tags~="l55"], tw-story[tags~="l56"], tw-story[tags~="l57"],
-tw-story[tags~="l58"], tw-story[tags~="l62"], tw-story[tags~="l63"],
-tw-story[tags~="l64"], tw-story[tags~="l69"], tw-story[tags~="l70"],
-tw-story[tags~="l71"] { background-image: url("15.jpeg") !important; }
+tw-story[tags~="l6"] { background-image: url("15.jpeg"); }
+tw-story[tags~="l7"] { background-image: url("15.jpeg"); }
 
-tw-story[tags~="l4"], tw-story[tags~="l5"], tw-story[tags~="l9"],
-tw-story[tags~="l10"], tw-story[tags~="l14"], tw-story[tags~="l17"],
-tw-story[tags~="l18"], tw-story[tags~="l24"], tw-story[tags~="l25"],
-tw-story[tags~="l30"], tw-story[tags~="l31"], tw-story[tags~="l32"],
-tw-story[tags~="l38"], tw-story[tags~="l39"], tw-story[tags~="l44"],
-tw-story[tags~="l45"], tw-story[tags~="l46"], tw-story[tags~="l51"],
-tw-story[tags~="l52"], tw-story[tags~="l53"], tw-story[tags~="l59"],
-tw-story[tags~="l61"], tw-story[tags~="l65"], tw-story[tags~="l67"],
-tw-story[tags~="l68"] { background-image: url("4.jpeg") !important; }
+/* ФОН КАК У L11 */
+tw-story[tags~="l4"], 
+tw-story[tags~="l5"], 
+tw-story[tags~="l9"],
+tw-story[tags~="l2"],
+tw-story[tags~="l6"],
+tw-story[tags~="l7"],
+tw-story[tags~="l11"],
+tw-story[tags~="l15"],
+tw-story[tags~="l19"],
+tw-story[tags~="l21"],
+tw-story[tags~="l26"],
+tw-story[tags~="l27"],
+tw-story[tags~="l33"],
+tw-story[tags~="l34"],
+tw-story[tags~="l35"],
+tw-story[tags~="l41"],
+tw-story[tags~="l42"],
+tw-story[tags~="l48"],
+tw-story[tags~="l49"],
+tw-story[tags~="l50"],
+tw-story[tags~="l55"],
+tw-story[tags~="l56"],
+tw-story[tags~="l57"],
+tw-story[tags~="l62"],
+tw-story[tags~="l64"],
+tw-story[tags~="l69"],
+tw-story[tags~="l70"],
+tw-story[tags~="l71"] { 
+    background-image: url("15.jpeg") !important; 
+}
 
 /* ========================================= */
-/* ВОПРОСЫ НА ПК (БЕЛАЯ КАРТОЧКА, ТЕКСТ ПО ЦЕНТРУ) */
+/* ФОН 4.jpeg ДЛЯ НЕПРАВИЛЬНЫХ ОТВЕТОВ */
 /* ========================================= */
-tw-passage[tags~="l8"], tw-passage[tags~="l16"], tw-passage[tags~="l22"],
-tw-passage[tags~="l28"], tw-passage[tags~="l36"], tw-passage[tags~="l40"],
-tw-passage[tags~="l47"], tw-passage[tags~="l58"], tw-passage[tags~="l63"] {
+
+/* ========================================= */
+/* ФОН 4.jpeg ДЛЯ НЕПРАВИЛЬНЫХ ОТВЕТОВ */
+/* ========================================= */
+
+tw-story[tags~="l4"],
+tw-story[tags~="l5"],
+tw-story[tags~="l9"],
+tw-story[tags~="l10"],
+tw-story[tags~="l14"],
+tw-story[tags~="l17"],
+tw-story[tags~="l18"],
+tw-story[tags~="l24"],
+tw-story[tags~="l25"],
+tw-story[tags~="l30"],
+tw-story[tags~="l31"],
+tw-story[tags~="l32"],
+tw-story[tags~="l38"],
+tw-story[tags~="l39"],
+tw-story[tags~="l44"],
+tw-story[tags~="l45"],
+tw-story[tags~="l46"],
+tw-story[tags~="l51"],
+tw-story[tags~="l52"],
+tw-story[tags~="l53"],
+tw-story[tags~="l59"],
+tw-story[tags~="l61"],
+tw-story[tags~="l65"],
+tw-story[tags~="l67"],
+tw-story[tags~="l68"] {
+    background-image: url("4.jpeg") !important;
+}
+
+
+/* ========================================= */
+/* ЕДИНОЕ РАСПОЛОЖЕНИЕ И РАЗМЕР ШРИФТА */
+/* ========================================= */
+
+tw-passage[tags~="l3"], 
+tw-passage[tags~="l8"], 
+tw-passage[tags~="l12"], 
+tw-passage[tags~="l13"],
+tw-passage[tags~="l14"],
+tw-passage[tags~="l16"],
+tw-passage[tags~="l20"],
+tw-passage[tags~="l22"],
+tw-passage[tags~="l23"],
+tw-passage[tags~="l28"],
+tw-passage[tags~="l29"],
+tw-passage[tags~="l36"],
+tw-passage[tags~="l37"],
+tw-passage[tags~="l40"],
+tw-passage[tags~="l43"],
+tw-passage[tags~="l47"],
+tw-passage[tags~="l54"],
+tw-passage[tags~="l58"],
+tw-passage[tags~="l60"],
+tw-passage[tags~="l63"],
+tw-passage[tags~="l66"]
+{
+    width: 700px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 140px;
+    margin-top: -5vh;
+    text-shadow: #FFFFFF 1px 0 10px;
+}
+
+/* ========================================= */
+/* БЕЛАЯ ПОДЛОЖКА: ТЕКСТ ПО ЦЕНТРУ, СНИЗУ 1 СМ */
+/* ========================================= */
+tw-passage[tags~="l2"],
+tw-passage[tags~="l4"], 
+tw-passage[tags~="l5"], 
+tw-passage[tags~="l6"],
+tw-passage[tags~="l7"],
+tw-passage[tags~="l9"],
+tw-passage[tags~="l10"],
+tw-passage[tags~="l11"],
+tw-passage[tags~="l15"],
+tw-passage[tags~="l17"],
+tw-passage[tags~="l18"],
+tw-passage[tags~="l19"],
+tw-passage[tags~="l21"],
+tw-passage[tags~="l24"],
+tw-passage[tags~="l25"],
+tw-passage[tags~="l26"],
+tw-passage[tags~="l27"],
+tw-passage[tags~="l30"],
+tw-passage[tags~="l31"],
+tw-passage[tags~="l32"],
+tw-passage[tags~="l33"],
+tw-passage[tags~="l34"],
+tw-passage[tags~="l35"],
+tw-passage[tags~="l38"],
+tw-passage[tags~="l39"],
+tw-passage[tags~="l41"],
+tw-passage[tags~="l42"],
+tw-passage[tags~="l44"],
+tw-passage[tags~="l45"],
+tw-passage[tags~="l46"],
+tw-passage[tags~="l48"],
+tw-passage[tags~="l49"],
+tw-passage[tags~="l50"],
+tw-passage[tags~="l51"],
+tw-passage[tags~="l52"],
+tw-passage[tags~="l53"],
+tw-passage[tags~="l55"],
+tw-passage[tags~="l56"],
+tw-passage[tags~="l57"],
+tw-passage[tags~="l59"],
+tw-passage[tags~="l61"],
+tw-passage[tags~="l62"],
+tw-passage[tags~="l64"],
+tw-passage[tags~="l65"],
+tw-passage[tags~="l67"],
+tw-passage[tags~="l68"],
+tw-passage[tags~="l69"],
+tw-passage[tags~="l70"],
+tw-passage[tags~="l71"] { 
     position: relative !important;
     top: calc(35vh + 2cm) !important; 
     width: 700px !important;
@@ -70,81 +219,81 @@ tw-passage[tags~="l47"], tw-passage[tags~="l58"], tw-passage[tags~="l63"] {
     font-weight: bold !important;     
     margin-left: 102px !important; 
     margin-bottom: 1cm !important;
-    
     background-color: #FFFFFF !important; 
     padding: 20px !important;         
     padding-bottom: 1cm !important;
     border-radius: 15px !important;   
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
-    
     text-align: center !important;
-    color: #000000 !important;
 }
 
 /* ========================================= */
-/* ОСТАЛЬНЫЕ БЛОКИ НА ПК (БЕЛАЯ КАРТОЧКА, ТЕКСТ ПО ШИРИНЕ) */
+/* СПЕЦИАЛЬНОЕ ПРАВИЛО ДЛЯ L2 (ПРИПОДНЯТЬ НА 1 СМ) */
 /* ========================================= */
-tw-passage[tags~="l2"], tw-passage[tags~="l4"], tw-passage[tags~="l5"], 
-tw-passage[tags~="l6"], tw-passage[tags~="l7"], tw-passage[tags~="l9"],
-tw-passage[tags~="l10"], tw-passage[tags~="l11"], tw-passage[tags~="l14"],
-tw-passage[tags~="l15"], tw-passage[tags~="l17"], tw-passage[tags~="l18"],
-tw-passage[tags~="l19"], tw-passage[tags~="l21"], tw-passage[tags~="l24"],
-tw-passage[tags~="l25"], tw-passage[tags~="l26"], tw-passage[tags~="l27"],
-tw-passage[tags~="l30"], tw-passage[tags~="l31"], tw-passage[tags~="l32"],
-tw-passage[tags~="l33"], tw-passage[tags~="l34"], tw-passage[tags~="l35"],
-tw-passage[tags~="l38"], tw-passage[tags~="l39"], tw-passage[tags~="l41"],
-tw-passage[tags~="l42"], tw-passage[tags~="l44"], tw-passage[tags~="l45"],
-tw-passage[tags~="l46"], tw-passage[tags~="l48"], tw-passage[tags~="l49"],
-tw-passage[tags~="l50"], tw-passage[tags~="l51"], tw-passage[tags~="l52"],
-tw-passage[tags~="l53"], tw-passage[tags~="l55"], tw-passage[tags~="l56"],
-tw-passage[tags~="l57"], tw-passage[tags~="l59"], tw-passage[tags~="l61"],
-tw-passage[tags~="l62"], tw-passage[tags~="l64"], tw-passage[tags~="l65"],
-tw-passage[tags~="l67"], tw-passage[tags~="l68"], tw-passage[tags~="l69"],
-tw-passage[tags~="l70"], tw-passage[tags~="l71"] { 
-    position: relative !important;
-    top: calc(35vh + 2cm) !important; 
-    width: 700px !important;
-    font-size: 25px !important;       
-    font-weight: bold !important;     
-    margin-left: 102px !important; 
-    margin-bottom: 1cm !important;
-    
-    background-color: #FFFFFF !important; 
-    padding: 20px !important;         
-    padding-bottom: 1cm !important;
-    border-radius: 15px !important;   
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
-    
-    text-align: justify !important; 
+
+tw-passage[tags~="l2"] {
+    top: calc(35vh + 1cm) !important; 
 }
 
 /* ========================================= */
-/* ЦВЕТА ТЕКСТА */
+/* ИНДИВИДУАЛЬНЫЕ ЦВЕТА И СТИЛИ ТЕКСТА */
 /* ========================================= */
+
+/* Цвета для карточек */
 tw-passage[tags~="l2"] { color: #000000 !important; }  
 
-tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l9"],
-tw-passage[tags~="l10"], tw-passage[tags~="l14"], tw-passage[tags~="l15"],  
-tw-passage[tags~="l17"], tw-passage[tags~="l18"], tw-passage[tags~="l24"],
-tw-passage[tags~="l25"], tw-passage[tags~="l30"], tw-passage[tags~="l31"],
-tw-passage[tags~="l32"], tw-passage[tags~="l38"], tw-passage[tags~="l39"],
-tw-passage[tags~="l44"], tw-passage[tags~="l45"], tw-passage[tags~="l46"],
-tw-passage[tags~="l51"], tw-passage[tags~="l52"], tw-passage[tags~="l53"],
-tw-passage[tags~="l59"], tw-passage[tags~="l61"], tw-passage[tags~="l65"],
-tw-passage[tags~="l67"], tw-passage[tags~="l68"] { color: #CC0000 !important; } 
+tw-passage[tags~="l4"], 
+tw-passage[tags~="l5"], 
+tw-passage[tags~="l9"],
+tw-passage[tags~="l10"],
+tw-passage[tags~="l17"],
+tw-passage[tags~="l18"],
+tw-passage[tags~="l24"],
+tw-passage[tags~="l25"],
+tw-passage[tags~="l30"],
+tw-passage[tags~="l31"],
+tw-passage[tags~="l32"],
+tw-passage[tags~="l38"],
+tw-passage[tags~="l39"],
+tw-passage[tags~="l44"],
+tw-passage[tags~="l45"],
+tw-passage[tags~="l46"],
+tw-passage[tags~="l51"],
+tw-passage[tags~="l52"],
+tw-passage[tags~="l53"],
+tw-passage[tags~="l59"],
+tw-passage[tags~="l61"],
+tw-passage[tags~="l65"],
+tw-passage[tags~="l67"],
+tw-passage[tags~="l68"] { color: #CC0000 !important; } 
 
-tw-passage[tags~="l6"], tw-passage[tags~="l7"], tw-passage[tags~="l8"], 
-tw-passage[tags~="l16"], tw-passage[tags~="l22"], tw-passage[tags~="l28"], 
-tw-passage[tags~="l36"], tw-passage[tags~="l40"], tw-passage[tags~="l47"], 
-tw-passage[tags~="l58"], tw-passage[tags~="l63"], tw-passage[tags~="l11"], 
-tw-passage[tags~="l19"], tw-passage[tags~="l21"], tw-passage[tags~="l26"], 
-tw-passage[tags~="l27"], tw-passage[tags~="l33"], tw-passage[tags~="l34"], 
-tw-passage[tags~="l35"], tw-passage[tags~="l41"], tw-passage[tags~="l42"], 
-tw-passage[tags~="l48"], tw-passage[tags~="l49"], tw-passage[tags~="l50"], 
-tw-passage[tags~="l55"], tw-passage[tags~="l56"], tw-passage[tags~="l57"], 
-tw-passage[tags~="l62"], tw-passage[tags~="l64"], tw-passage[tags~="l69"], 
-tw-passage[tags~="l70"], tw-passage[tags~="l71"] { color: #000000 !important; } 
+tw-passage[tags~="l6"] { color: #000000 !important; } 
+tw-passage[tags~="l7"] { color: #000000 !important; } 
 
+/* L11 И БЛОКИ КАК L11 — ЧЁРНЫЙ ТЕКСТ */
+tw-passage[tags~="l11"],
+tw-passage[tags~="l19"],
+tw-passage[tags~="l21"],
+tw-passage[tags~="l26"],
+tw-passage[tags~="l27"],
+tw-passage[tags~="l33"],
+tw-passage[tags~="l34"],
+tw-passage[tags~="l35"],
+tw-passage[tags~="l41"],
+tw-passage[tags~="l42"],
+tw-passage[tags~="l48"],
+tw-passage[tags~="l49"],
+tw-passage[tags~="l50"],
+tw-passage[tags~="l55"],
+tw-passage[tags~="l56"],
+tw-passage[tags~="l57"],
+tw-passage[tags~="l62"],
+tw-passage[tags~="l64"],
+tw-passage[tags~="l69"],
+tw-passage[tags~="l70"],
+tw-passage[tags~="l71"] { color: #000000 !important; } 
+
+/* ОРИГИНАЛЬНЫЙ L1 */
 tw-passage[tags~="l1"] {
     text-align: center;
     width: 700px;
@@ -156,17 +305,83 @@ tw-passage[tags~="l1"] {
     margin-top: 65vh;
 }
 
-tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"],
-tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"],
-tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"],
+/* L3 И БЛОКИ КАК L3 — ЗЕЛЁНЫЙ ТЕКСТ */
+tw-passage[tags~="l3"], 
+tw-passage[tags~="l13"],
+tw-passage[tags~="l20"],
+tw-passage[tags~="l23"],
+tw-passage[tags~="l29"],
+tw-passage[tags~="l37"],
+tw-passage[tags~="l43"],
+tw-passage[tags~="l54"],
+tw-passage[tags~="l60"],
 tw-passage[tags~="l66"] { color: #00FF00; }
 
+/* L8, L16, L22, L28, L36, L40, L47, L58, L63 — ЧЁРНЫЙ ТЕКСТ КАК У L8 */
+tw-passage[tags~="l8"],
+tw-passage[tags~="l16"],
+tw-passage[tags~="l22"],
+tw-passage[tags~="l28"],
+tw-passage[tags~="l36"],
+tw-passage[tags~="l40"],
+tw-passage[tags~="l47"],
+tw-passage[tags~="l58"],
+tw-passage[tags~="l63"] { color: #000000; }
+
+/* l10 удален из зелёных, так как теперь он красный */
+tw-passage[tags~="l12"] { color: #000000; }
+
+/* L14 — БЕЛЫЙ ТЕКСТ С КОНТУРОМ */
+tw-passage[tags~="l14"] { 
+    color: #FFFFFF; 
+    text-shadow: -2px -2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, 2px 2px 0 #000000, -2px 0 0 #000000, 2px 0 0 #000000, 0 -2px 0 #000000, 0 2px 0 #000000;
+}
 /* ========================================= */
-/* ПРАВИЛЬНЫЕ ОТВЕТЫ (СНИЗУ) */
+/* СТИЛИ ДЛЯ ССЫЛОК */
 /* ========================================= */
-tw-passage[tags~="l13"], tw-passage[tags~="l20"], tw-passage[tags~="l23"],
-tw-passage[tags~="l29"], tw-passage[tags~="l37"], tw-passage[tags~="l43"],
-tw-passage[tags~="l54"], tw-passage[tags~="l60"], tw-passage[tags~="l66"] {
+
+tw-link { color: blue; font-weight: bold; }
+tw-link[tags~="l2"] { color: red; font-weight: bold; }
+
+/* Голубые ссылки как у L11 */
+tw-passage[tags~="l11"] tw-link,
+tw-passage[tags~="l19"] tw-link,
+tw-passage[tags~="l21"] tw-link,
+tw-passage[tags~="l26"] tw-link,
+tw-passage[tags~="l27"] tw-link,
+tw-passage[tags~="l33"] tw-link,
+tw-passage[tags~="l34"] tw-link,
+tw-passage[tags~="l35"] tw-link,
+tw-passage[tags~="l41"] tw-link,
+tw-passage[tags~="l42"] tw-link,
+tw-passage[tags~="l48"] tw-link,
+tw-passage[tags~="l49"] tw-link,
+tw-passage[tags~="l50"] tw-link,
+tw-passage[tags~="l55"] tw-link,
+tw-passage[tags~="l56"] tw-link,
+tw-passage[tags~="l57"] tw-link,
+tw-passage[tags~="l62"] tw-link,
+tw-passage[tags~="l64"] tw-link,
+tw-passage[tags~="l69"] tw-link,
+tw-passage[tags~="l70"] tw-link,
+tw-passage[tags~="l71"] tw-link {
+  color: #00BFFF;
+}
+
+/* ========================================= */
+/* L13, L20, L23, L29, L37, L43, L54, L60, L66 */
+/* Белая подложка, текст по ширине, снизу 1 см от края */
+/* ========================================= */
+
+tw-passage[tags~="l13"],
+tw-passage[tags~="l20"],
+tw-passage[tags~="l23"],
+tw-passage[tags~="l29"],
+tw-passage[tags~="l37"],
+tw-passage[tags~="l43"],
+tw-passage[tags~="l54"],
+tw-passage[tags~="l60"],
+tw-passage[tags~="l66"] {
     position: fixed !important;
     bottom: 1cm !important;
     top: auto !important;
@@ -188,6 +403,10 @@ tw-passage[tags~="l54"], tw-passage[tags~="l60"], tw-passage[tags~="l66"] {
     text-shadow: #FFFFFF 1px 0 10px !important;
     z-index: 10 !important;
 }
+
+/* ========================================= */
+/* L72 — БЕЛАЯ ПОДЛОЖКА СНИЗУ, ОТСТУП 0,5 СМ */
+/* ========================================= */
 
 tw-passage[tags~="l72"] {
     position: fixed !important;
@@ -211,9 +430,20 @@ tw-passage[tags~="l72"] {
     z-index: 10 !important;
 }
 
-tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"],
-tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"],
-tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"],
+/* ========================================= */
+/* L3, L13, L20, L23, L29, L37, L43, L54, L60, L66 */
+/* САЛАТОВЫЙ ТЕКСТ НА БЕЛОМ С ТЁМНО-ЗЕЛЁНЫМ САПФИРОВЫМ КОНТУРОМ */
+/* ========================================= */
+
+tw-passage[tags~="l3"],
+tw-passage[tags~="l13"],
+tw-passage[tags~="l20"],
+tw-passage[tags~="l23"],
+tw-passage[tags~="l29"],
+tw-passage[tags~="l37"],
+tw-passage[tags~="l43"],
+tw-passage[tags~="l54"],
+tw-passage[tags~="l60"],
 tw-passage[tags~="l66"] {
     background-color: #FFFFFF !important;
     color: #00FF00 !important;
@@ -221,9 +451,19 @@ tw-passage[tags~="l66"] {
     border-radius: 15px !important;
     text-align: justify !important;
     text-shadow: 
-        -2px -2px 0 #0B4F4F, 2px -2px 0 #0B4F4F, -2px 2px 0 #0B4F4F, 2px 2px 0 #0B4F4F,
-        -2px 0 0 #0B4F4F, 2px 0 0 #0B4F4F, 0 -2px 0 #0B4F4F, 0 2px 0 #0B4F4F !important;
+        -2px -2px 0 #0B4F4F,
+         2px -2px 0 #0B4F4F,
+        -2px  2px 0 #0B4F4F,
+         2px  2px 0 #0B4F4F,
+        -2px  0   0 #0B4F4F,
+         2px  0   0 #0B4F4F,
+         0   -2px 0 #0B4F4F,
+         0    2px 0 #0B4F4F !important;
 }
+
+/* ========================================= */
+/* L66 — ШРИФТ МЕНЬШЕ, ПОДЛОЖКА СЖАТА СВЕРХУ */
+/* ========================================= */
 
 tw-passage[tags~="l66"] {
     font-size: 19px !important;
@@ -232,39 +472,29 @@ tw-passage[tags~="l66"] {
     line-height: 1.2 !important;
 }
 
+/* ========================================= */
+/* L27 — ПОДНЯТЬ НА 1 СМ, ТЕКСТ ПО ШИРИНЕ, СНИЗУ 0,5 СМ */
+/* ========================================= */
+
 tw-passage[tags~="l27"] {
-    top: calc(35vh + 1cm) !important;   
-    text-align: justify !important;      
-    padding-bottom: 0.5cm !important;    
-}
-
-tw-passage[tags~="l55"], tw-passage[tags~="l56"], tw-passage[tags~="l57"] {
-    top: calc(35vh + 1cm) !important;              
-    padding-top: calc(20px + 2pt) !important;      
+    top: calc(35vh + 1cm) !important;   /* подняли на 1 см */
+    text-align: justify !important;      /* текст по ширине */
+    padding-bottom: 0.5cm !important;    /* 0,5 см от текста до низа подложки */
 }
 
 /* ========================================= */
-/* ССЫЛКИ */
+/* L55, L56, L57 — ПОДНЯТЬ НА 1 СМ, ТЕКСТ НИЖЕ НА 2 ПУНКТА */
 /* ========================================= */
-tw-link { color: blue; font-weight: bold; }
-tw-link[tags~="l2"] { color: red; font-weight: bold; }
 
-tw-passage[tags~="l11"] tw-link, tw-passage[tags~="l19"] tw-link,
-tw-passage[tags~="l21"] tw-link, tw-passage[tags~="l26"] tw-link,
-tw-passage[tags~="l27"] tw-link, tw-passage[tags~="l33"] tw-link,
-tw-passage[tags~="l34"] tw-link, tw-passage[tags~="l35"] tw-link,
-tw-passage[tags~="l41"] tw-link, tw-passage[tags~="l42"] tw-link,
-tw-passage[tags~="l48"] tw-link, tw-passage[tags~="l49"] tw-link,
-tw-passage[tags~="l50"] tw-link, tw-passage[tags~="l55"] tw-link,
-tw-passage[tags~="l56"] tw-link, tw-passage[tags~="l57"] tw-link,
-tw-passage[tags~="l62"] tw-link, tw-passage[tags~="l64"] tw-link,
-tw-passage[tags~="l69"] tw-link, tw-passage[tags~="l70"] tw-link,
-tw-passage[tags~="l71"] tw-link {
-  color: #00BFFF;
+tw-passage[tags~="l55"],
+tw-passage[tags~="l56"],
+tw-passage[tags~="l57"] {
+    top: calc(35vh + 1cm) !important;              /* подняли на 1 см */
+    padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
 }
 
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (УБИРАЕМ КАРТИНКИ, БЕЛЫЙ ФОН, КАРТОЧКА СНИЗУ) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОН НА ВЕСЬ ЭКРАН, БЕЗ БЕЛЫХ ПОЛОС) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -280,8 +510,12 @@ tw-passage[tags~="l71"] tw-link {
     min-height: 100vh !important;
     padding: 0 !important;
     
-    background-image: none !important;
-    background-color: #FFFFFF !important; 
+    /* ЗАПОЛНЯЕМ ВЕСЬ ЭКРАН, ЧТОБЫ НЕ БЫЛО БЕЛЫХ ПОЛОС */
+    background-size: cover !important; 
+    background-repeat: no-repeat !important;
+    /* Сдвигаем фото вверх, чтобы лицо было видно */
+    background-position: center top !important; 
+    background-color: #000000 !important; /* Черный фон вместо белого, если фото не загрузится */
   }
 
   tw-story tw-sidebar {
@@ -295,9 +529,10 @@ tw-passage[tags~="l71"] tw-link {
     justify-content: space-between !important;
   }
 
+  /* КАРТОЧКИ С ТЕКСТОМ */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
     position: fixed !important;
-    bottom: 4mm !important; 
+    bottom: 4mm !important;   /* Отступ 4 мм от низа */
     top: auto !important;
     left: 5px !important;
     right: 5px !important;
@@ -311,31 +546,35 @@ tw-passage[tags~="l71"] tw-link {
     max-height: 45vh !important; 
     overflow-y: auto !important; 
     
-    padding: 15px !important; 
-    font-size: 16px !important; 
-    line-height: 1.4 !important; 
+    padding: 10px 14px !important; 
+    font-size: 15px !important; 
+    line-height: 1.3 !important; 
     
-    background-color: #FFFFFF !important; 
+    background-color: rgba(255,255,255,.95) !important;
     border-radius: 12px !important;
     box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
-    
-    text-align: justify !important;
-    color: #000000 !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
   }
 
+  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) */
   tw-story tw-passage[tags~="l1"] {
     position: fixed !important;
     bottom: 4mm !important;   
     top: auto !important;
     left: 5px !important;
     right: 5px !important;
+    
     width: auto !important;
     max-width: calc(100% - 10px) !important;
     margin: 0 !important;
-    padding: 15px !important;
+    
+    padding: 14px 15px !important;
     font-size: 18px !important; 
     text-align: center !important;
-    background-color: #FFFFFF !important;
+    
+    background-color: rgba(255,255,255,.95) !important;
     border-radius: 12px !important;
     box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
     color: #722F37 !important;
@@ -343,9 +582,11 @@ tw-passage[tags~="l71"] tw-link {
 
   tw-story tw-link {
     display: inline-block;
-    margin: 6px 0;
+    margin: 4px 0;
     font-size: 16px;
   }
+}
+ </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">
 }
  </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100">Здравствуйте. Вашему вниманию представляется проект по дисциплине «Основы программирования» на тему «Введение в типы данных в Python». Проект выполнен в формате обучающего квеста
 
