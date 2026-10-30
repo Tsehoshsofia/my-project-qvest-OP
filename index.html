@@ -411,7 +411,7 @@ tw-passage[tags~="l57"] {
     padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
 }
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (КАРТОЧКА ПОВЕРХ КАРТИНКИ, СНИЗУ 1 ММ) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (ОТДАЛЕННЫЙ ФОН И ПОДЛОЖКА НА 4 ММ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -427,10 +427,11 @@ tw-passage[tags~="l57"] {
     min-height: 100vh !important;
     padding: 0 !important;
     
-    /* Картинка на весь экран */
-    background-size: cover !important; 
+    /* ОТДАЛЯЕМ КАРТИНКУ: она вписывается по ширине экрана */
+    background-size: 100% auto !important; 
     background-repeat: no-repeat !important;
     background-position: center top !important;
+    background-color: #FFFFFF !important; /* Белый фон, если картинка не закроет низ */
   }
 
   tw-story tw-sidebar {
@@ -444,10 +445,10 @@ tw-passage[tags~="l57"] {
     justify-content: space-between !important;
   }
 
-  /* КАРТОЧКИ С ТЕКСТОМ (прибиты к низу экрана) */
+  /* КАРТОЧКИ С ТЕКСТОМ */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
     position: fixed !important;
-    bottom: 1mm !important;   /* Отступ 1 мм от нижнего края экрана */
+    bottom: 4mm !important;   /* Подняли на 3 мм (1 мм + 3 мм) */
     top: auto !important;
     left: 5px !important;
     right: 5px !important;
@@ -458,7 +459,6 @@ tw-passage[tags~="l57"] {
     margin: 0 !important;
     z-index: 10 !important;
     
-    /* Чтобы длинный текст помещался и не закрывал всё фото */
     max-height: 45vh !important; 
     overflow-y: auto !important; 
     
@@ -475,10 +475,10 @@ tw-passage[tags~="l57"] {
     white-space: normal !important;
   }
 
-  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) — тоже прибит к низу */
+  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) */
   tw-story tw-passage[tags~="l1"] {
     position: fixed !important;
-    bottom: 1mm !important;   
+    bottom: 4mm !important;   /* Тоже подняли на 4 мм */
     top: auto !important;
     left: 5px !important;
     right: 5px !important;
