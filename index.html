@@ -679,9 +679,7 @@ tw-passage[tags~="l63"] {
 tw-passage[tags~="l16"] {
     top: 15vh !important; /* Было 35vh, уменьшили, чтобы поднять выше */
 
-@media screen and (max-width: 820px) {
-    tw-story tw-passage[tags~="l16"] {
-        top: calc(5vh - 1.5cm) !important;
+@media screen and (max-width: 820px) { /* <--- ЗДЕСЬ НЕТ ЗАКРЫВАЮЩЕЙ СКОБКИ } */
     
     }
 }
