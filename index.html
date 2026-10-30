@@ -411,7 +411,7 @@ tw-passage[tags~="l57"] {
     padding-top: calc(20px + 2pt) !important;      /* текст ниже на 2 пункта */
 }
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОТО ЦЕЛИКОМ, КАРТОЧКА СВЕРХУ) */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ (ПРОПОРЦИОНАЛЬНОЕ ФОТО, КАРТОЧКА СНИЗУ) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body {
@@ -427,10 +427,11 @@ tw-passage[tags~="l57"] {
     min-height: 100vh !important;
     padding: 0 !important;
     
-    /* ФОТО ЦЕЛИКОМ: растягиваем ровно на весь экран телефона */
-    background-size: 100% 100% !important; 
+    /* ФОТО ЦЕЛИКОМ И БЕЗ ИСКАЖЕНИЙ: */
+    background-size: contain !important; 
     background-repeat: no-repeat !important;
-    background-position: center center !important;
+    background-position: center bottom !important; /* Прижимаем фото к низу экрана */
+    background-color: #ffffff !important; 
   }
 
   tw-story tw-sidebar {
@@ -444,10 +445,10 @@ tw-passage[tags~="l57"] {
     justify-content: space-between !important;
   }
 
-  /* КАРТОЧКИ С ТЕКСТОМ (поверх фото) */
+  /* КАРТОЧКИ С ТЕКСТОМ */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
     position: fixed !important;
-    bottom: 4mm !important;   /* Отступ от нижнего края 4 мм */
+    bottom: 4mm !important;   /* Отступ 4 мм от низа */
     top: auto !important;
     left: 5px !important;
     right: 5px !important;
