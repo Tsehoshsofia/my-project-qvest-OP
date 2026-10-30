@@ -528,7 +528,7 @@ tw-passage[tags~="l57"] {
     justify-content: space-between !important;
   }
 
-  /* КАРТОЧКИ С ТЕКСТОМ */
+  /* КАРТОЧКИ С ТЕКСТОМ (ОБЩЕЕ ПРАВИЛО) */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
     position: fixed !important;
     bottom: 4mm !important;   /* Отступ 4 мм от низа */
@@ -584,8 +584,36 @@ tw-passage[tags~="l57"] {
     margin: 4px 0;
     font-size: 16px;
   }
+
+  /* ========================================= */
+  /* ИСПРАВЛЕНИЕ ДЛЯ БЛОКОВ ВОПРОСОВ НА ТЕЛЕФОНЕ */
+  /* ========================================= */
+  tw-story tw-passage[tags~="l8"],
+  tw-story tw-passage[tags~="l16"],
+  tw-story tw-passage[tags~="l22"],
+  tw-story tw-passage[tags~="l28"],
+  tw-story tw-passage[tags~="l36"],
+  tw-story tw-passage[tags~="l40"],
+  tw-story tw-passage[tags~="l47"],
+  tw-story tw-passage[tags~="l58"],
+  tw-story tw-passage[tags~="l63"] {
+      position: relative !important;
+      bottom: auto !important;
+      top: 5vh !important; /* Сдвигаем чуть ниже верха экрана */
+      left: 0 !important;
+      right: 0 !important;
+      
+      width: calc(100% - 20px) !important;
+      max-width: calc(100% - 20px) !important;
+      margin: 0 auto !important; /* Центрируем по горизонтали */
+      
+      background-color: #FFFFFF !important; /* Делаем фон чисто белым */
+      text-align: justify !important; /* Текст по ширине */
+      padding: 15px !important;
+  }
 }
-    /* ========================================= */
+
+/* ========================================= */
 /*  ТЕКСТ ПО ШИРИНЕ НА БЕЛОЙ ПОДЛОЖКЕ */
 /* ========================================= */
 
@@ -615,8 +643,9 @@ tw-passage[tags~="l70"],
 tw-passage[tags~="l71"] {
     text-align: justify !important;
 }
-    /* ========================================= */
-/* БЕЛАЯ ПОДЛОЖКА ДЛЯ ВОПРОСОВ */
+
+/* ========================================= */
+/* БЕЛАЯ ПОДЛОЖКА ДЛЯ ВОПРОСОВ (ПК ВЕРСИЯ) */
 /* ========================================= */
 
 tw-passage[tags~="l8"],
