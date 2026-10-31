@@ -522,10 +522,10 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-    /* Растягиваем фон */
-    background-size: cover !important; 
+       /* Растягиваем фон */
+    background-size: contain !important;      /* <--- ИЗМЕНИЛИ COVER НА CONTAIN */
     background-repeat: no-repeat !important;
-    background-position: center center !important; 
+    background-position: center top !important; /* <--- ЛУЧШЕ CENTER TOP (чтобы лицо не уезжало вниз) */
     background-attachment: scroll !important; 
     background-color: #000000 !important;
   }
