@@ -510,7 +510,7 @@ tw-passage[tags~="l57"] {
     overflow-x: hidden !important;
     overflow-y: auto !important;
   }
-  tw-story {
+   tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
@@ -522,10 +522,11 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-       /* Растягиваем фон */
-    background-size: contain !important;      /* <--- ИЗМЕНИЛИ COVER НА CONTAIN */
+    /* ЗАПОЛНЯЕМ ВЕСЬ ЭКРАН (возвращаем cover) */
+    background-size: cover !important;      
     background-repeat: no-repeat !important;
-    background-position: center top !important; /* <--- ЛУЧШЕ CENTER TOP (чтобы лицо не уезжало вниз) */
+    /* СДВИГАЕМ ФОКУС ВПРАВО (на 80%), чтобы София была в кадре */
+    background-position: 80% center !important; 
     background-attachment: scroll !important; 
     background-color: #000000 !important;
   }
