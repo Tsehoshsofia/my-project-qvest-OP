@@ -504,17 +504,13 @@ tw-passage[tags~="l57"] {
 /* ============================================================ */
 /* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОН НА ВЕСЬ ЭКРАН, БЕЗ БЕЛЫХ ПОЛОС) */
 /* ============================================================ */
+/* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media screen and (max-width: 820px) {
-  /* Черный цвет оставляем только на фоне браузера */
-  html {
-    background-color: #000000 !important;
+  html, body {
     height: auto !important;
     overflow-x: hidden !important;
-  }
-  
-  body {
-    background-color: transparent !important; /* Делаем прозрачным */
     overflow-y: auto !important;
+    background-color: #000000 !important; /* Черный фон */
   }
 
   tw-story {
@@ -527,29 +523,16 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-    /* Основное фото видно целиком */
-    background-size: contain !important;      
+    /* Заполняем весь экран */
+    background-size: cover !important;      
     background-repeat: no-repeat !important;
-    background-position: center top !important; 
+    /* Сдвигаем фокус на 60% вправо, чтобы София была в кадре */
+    background-position: 60% center !important; 
     background-attachment: scroll !important; 
-    background-color: transparent !important; /* Прозрачный фон, чтобы видеть размытие */
-    
-    position: relative !important;
+    background-color: #000000 !important;
   }
 
-  /* Создаем размытую подложку */
-  tw-story::before {
-    content: "";
-    position: fixed;
-    /* Делаем подложку чуть больше экрана, чтобы не было белых краев от размытия */
-    top: -30px; left: -30px; right: -30px; bottom: -30px; 
-    background-image: inherit; 
-    background-size: cover;
-    background-position: center;
-    filter: blur(20px) brightness(0.3); /* Размытие и сильное затемнение */
-    z-index: -1; /* Отправляем на задний план */
-    pointer-events: none;
-  }
+  /* Убрали tw-story::before (размытие больше не нужно) */
 
   tw-story tw-sidebar {
     position: fixed !important;
