@@ -509,28 +509,37 @@ tw-passage[tags~="l57"] {
     height: auto !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
-  }
-   tw-story {
+  }  tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
-    
-    /* Гарантируем заполнение всего экрана */
     width: 100vw !important; 
     min-height: 100vh !important;
     min-height: 100dvh !important;
     padding: 0 !important;
     margin: 0 !important;
     
-    /* ЗАПОЛНЯЕМ ВЕСЬ ЭКРАН (возвращаем cover) */
-    background-size: cover !important;      
+    /* Картинка целиком по центру */
+    background-size: contain !important;      
     background-repeat: no-repeat !important;
-    /* СДВИГАЕМ ФОКУС ВПРАВО (на 80%), чтобы София была в кадре */
-    background-position: 80% center !important; 
+    background-position: center center !important; 
     background-attachment: scroll !important; 
     background-color: #000000 !important;
+    
+    position: relative !important;
   }
 
+  /* Создаем размытую подложку на фоне */
+  tw-story::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: inherit; /* Берет ту же картинку */
+    background-size: cover;
+    background-position: center center;
+    filter: blur(15px) brightness(0.4); /* Размытие и затемнение */
+    z-index: -1;
+  }
   tw-story tw-sidebar {
     position: fixed !important;
     top: 10px !important;
