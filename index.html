@@ -519,27 +519,17 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-    /* Картинка целиком по центру */
-    background-size: contain !important;      
+    /* Заполняем весь экран */
+    background-size: cover !important;      
     background-repeat: no-repeat !important;
-    background-position: center center !important; 
+    /* Сдвигаем на 60% вправо */
+    background-position: 60% center !important; 
     background-attachment: scroll !important; 
     background-color: #000000 !important;
-    
-    position: relative !important;
+  }
   }
 
-  /* Создаем размытую подложку на фоне */
-  tw-story::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: inherit; /* Берет ту же картинку */
-    background-size: cover;
-    background-position: center center;
-    filter: blur(15px) brightness(0.4); /* Размытие и затемнение */
-    z-index: -1;
-  }
+    
   tw-story tw-sidebar {
     position: fixed !important;
     top: 10px !important;
