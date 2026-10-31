@@ -515,11 +515,14 @@ tw-passage[tags~="l57"] {
     overflow: visible !important;
     box-sizing: border-box !important;
     
-    /* Исправление для iPhone Safari */
+    /* Гарантируем заполнение всего экрана */
+    width: 100vw !important; 
     min-height: 100vh !important;
     min-height: 100dvh !important;
     padding: 0 !important;
+    margin: 0 !important;
     
+    /* Растягиваем фон */
     background-size: cover !important; 
     background-repeat: no-repeat !important;
     background-position: center center !important; 
