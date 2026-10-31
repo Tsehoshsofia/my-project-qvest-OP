@@ -509,7 +509,7 @@ tw-passage[tags~="l57"] {
     height: auto !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
-  }  tw-story {
+  }   tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
@@ -519,14 +519,26 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-    /* Заполняем весь экран */
-    background-size: cover !important;      
+    /* Фото видно целиком */
+    background-size: contain !important;      
     background-repeat: no-repeat !important;
-    /* Сдвигаем на 60% вправо */
-    background-position: 60% center !important; 
+    background-position: center top !important; 
     background-attachment: scroll !important; 
     background-color: #000000 !important;
+    
+    position: relative !important;
   }
+
+  /* Делаем размытую подложку на фоне */
+  tw-story::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: inherit; 
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px) brightness(0.4); /* Размытие */
+    z-index: -1;
   }
 
     
