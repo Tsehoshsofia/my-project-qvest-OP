@@ -505,11 +505,19 @@ tw-passage[tags~="l57"] {
 /* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОН НА ВЕСЬ ЭКРАН, БЕЗ БЕЛЫХ ПОЛОС) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
-  html, body {
+  /* Черный цвет оставляем только на фоне браузера */
+  html {
+    background-color: #000000 !important;
     height: auto !important;
     overflow-x: hidden !important;
+  }
+  
+  body {
+    background-color: transparent !important; /* Делаем прозрачным */
     overflow-y: auto !important;
-  }   tw-story {
+  }
+
+  tw-story {
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
@@ -519,29 +527,30 @@ tw-passage[tags~="l57"] {
     padding: 0 !important;
     margin: 0 !important;
     
-    /* Фото видно целиком */
+    /* Основное фото видно целиком */
     background-size: contain !important;      
     background-repeat: no-repeat !important;
     background-position: center top !important; 
     background-attachment: scroll !important; 
-    background-color: #000000 !important;
+    background-color: transparent !important; /* Прозрачный фон, чтобы видеть размытие */
     
     position: relative !important;
   }
 
-  /* Делаем размытую подложку на фоне */
+  /* Создаем размытую подложку */
   tw-story::before {
     content: "";
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    /* Делаем подложку чуть больше экрана, чтобы не было белых краев от размытия */
+    top: -30px; left: -30px; right: -30px; bottom: -30px; 
     background-image: inherit; 
     background-size: cover;
     background-position: center;
-    filter: blur(15px) brightness(0.4); /* Размытие */
-    z-index: -1;
+    filter: blur(20px) brightness(0.3); /* Размытие и сильное затемнение */
+    z-index: -1; /* Отправляем на задний план */
+    pointer-events: none;
   }
 
-    
   tw-story tw-sidebar {
     position: fixed !important;
     top: 10px !important;
@@ -552,6 +561,8 @@ tw-passage[tags~="l57"] {
     flex-direction: row !important;
     justify-content: space-between !important;
   }
+
+  /* ... ОСТАЛЬНОЙ ВАШ КОД ДЛЯ КАРТОЧЕК (tw-passage) ОСТАВЛЯЕТЕ БЕЗ ИЗМЕНЕНИЙ ... */
 
   /* КАРТОЧКИ С ТЕКСТОМ (ОБЩЕЕ ПРАВИЛО) */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
