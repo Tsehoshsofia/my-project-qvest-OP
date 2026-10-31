@@ -46,7 +46,6 @@ tw-story[tags~="l54"],
 tw-story[tags~="l60"],
 tw-story[tags~="l66"] { 
     background-image: url("9.jpeg") !important;  
-    
 }
 
 /* L72 — НОВОЕ ИЗОБРАЖЕНИЕ */
@@ -505,37 +504,31 @@ tw-passage[tags~="l57"] {
 /* ============================================================ */
 /* МОБИЛЬНАЯ АДАПТАЦИЯ (ФОН НА ВЕСЬ ЭКРАН, БЕЗ БЕЛЫХ ПОЛОС) */
 /* ============================================================ */
-/* МОБИЛЬНАЯ АДАПТАЦИЯ */
 @media screen and (max-width: 820px) {
   html, body {
     height: auto !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
-    background-color: #000000 !important; /* Черный фон */
   }
-
   tw-story {
-
     display: block !important;
     overflow: visible !important;
     box-sizing: border-box !important;
+    
+    /* Гарантируем заполнение всего экрана */
     width: 100vw !important; 
     min-height: 100vh !important;
     min-height: 100dvh !important;
     padding: 0 !important;
     margin: 0 !important;
     
-    /* ОТДАЛЯЕМ КАРТИНКУ */
-    background-size: 130% auto !important; /* 130% — это ширина. Если надо еще дальше, ставьте 110%, если ближе — 150% */
+       /* Растягиваем фон */
+    background-size: contain !important;      /* <--- ИЗМЕНИЛИ COVER НА CONTAIN */
     background-repeat: no-repeat !important;
-    /* Центрируем по горизонтали и прижимаем чуть вверх, чтобы лицо было видно */
-    background-position: 60% 20% !important; 
+    background-position: center top !important; /* <--- ЛУЧШЕ CENTER TOP (чтобы лицо не уезжало вниз) */
     background-attachment: scroll !important; 
     background-color: #000000 !important;
-
   }
-
-  /* Убрали tw-story::before (размытие больше не нужно) */
 
   tw-story tw-sidebar {
     position: fixed !important;
@@ -547,8 +540,6 @@ tw-passage[tags~="l57"] {
     flex-direction: row !important;
     justify-content: space-between !important;
   }
-
-  /* ... ОСТАЛЬНОЙ ВАШ КОД ДЛЯ КАРТОЧЕК (tw-passage) ОСТАВЛЯЕТЕ БЕЗ ИЗМЕНЕНИЙ ... */
 
   /* КАРТОЧКИ С ТЕКСТОМ (ОБЩЕЕ ПРАВИЛО) */
   tw-story tw-passage[tags]:not([tags~="l1"]) {
