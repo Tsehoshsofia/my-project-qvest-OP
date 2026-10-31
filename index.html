@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <html>
-<head>
+<head> 
 <meta charset="utf-8"> 
 <meta content="width=device-width, initial-scale=1" name="viewport">
 <title>Основы программирования</title>  
@@ -599,30 +599,55 @@ tw-passage[tags~="l57"] {
   }
 
   /* ========================================= */
+   /* ========================================= */
   /* ИСПРАВЛЕНИЕ ДЛЯ БЛОКОВ ВОПРОСОВ НА ТЕЛЕФОНЕ */
+  /* По центру экрана, без белой подложки       */
   /* ========================================= */
-  tw-story tw-passage[tags~="l8"],
-  tw-story tw-passage[tags~="l16"],
-  tw-story tw-passage[tags~="l22"],
-  tw-story tw-passage[tags~="l28"],
-  tw-story tw-passage[tags~="l36"],
-  tw-story tw-passage[tags~="l40"],
-  tw-story tw-passage[tags~="l47"],
-  tw-story tw-passage[tags~="l58"],
-  tw-story tw-passage[tags~="l63"] {
-      position: relative !important;
+  tw-story tw-passage[tags][tags~="l8"],
+  tw-story tw-passage[tags][tags~="l16"],
+  tw-story tw-passage[tags][tags~="l22"],
+  tw-story tw-passage[tags][tags~="l28"],
+  tw-story tw-passage[tags][tags~="l36"],
+  tw-story tw-passage[tags][tags~="l40"],
+  tw-story tw-passage[tags][tags~="l47"],
+  tw-story tw-passage[tags][tags~="l58"],
+  tw-story tw-passage[tags][tags~="l63"] {
+      position: fixed !important;
+
+      /* Ставим верх блока в середину экрана и поднимаем на половину его высоты */
+      top: 50% !important;
       bottom: auto !important;
-      top: 5vh !important; /* Сдвигаем чуть ниже верха экрана */
-      left: 0 !important;
-      right: 0 !important;
-      
-      width: calc(100% - 20px) !important;
-      max-width: calc(100% - 20px) !important;
-      margin: 0 auto !important; /* Центрируем по горизонтали */
-      
-      background-color: #FFFFFF !important; /* Делаем фон чисто белым */
-      text-align: justify !important; /* Текст по ширине */
+      transform: translateY(-50%) !important;
+
+      left: 5px !important;
+      right: 5px !important;
+
+      width: auto !important;
+      max-width: calc(100% - 10px) !important;
+      margin: 0 !important;
+
+      /* Ограничение по высоте, чтобы длинный вопрос не вылез за экран */
+      max-height: 80vh !important;
+      overflow-y: auto !important;
+
       padding: 15px !important;
+      font-size: 16px !important;
+      line-height: 1.35 !important;
+
+      /* Убираем белую подложку — оставляем только текст */
+      background-color: transparent !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      text-align: center !important;
+      color: #000 !important;
+
+      /* Лёгкая белая обводка, чтобы текст читался на фоне */
+      text-shadow: 0 0 8px #FFF, 0 0 8px #FFF, 0 0 8px #FFF, 0 0 8px #FFF !important;
+
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+      white-space: normal !important;
   }
 }
 
