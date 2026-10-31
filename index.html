@@ -554,7 +554,7 @@ tw-passage[tags~="l57"] {
     white-space: normal !important;
   }
 
-  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) */
+  /* САМЫЙ ПЕРВЫЙ БЛОК (l1) — БЕЗ БЕЛОЙ ПОДЛОЖКИ НА ТЕЛЕФОНЕ */
   tw-story tw-passage[tags~="l1"] {
     position: fixed !important;
     bottom: 4mm !important;   
@@ -570,9 +570,9 @@ tw-passage[tags~="l57"] {
     font-size: 18px !important; 
     text-align: center !important;
     
-    background-color: rgba(255,255,255,.95) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 3px 15px rgba(0,0,0,.3) !important;
+    background-color: transparent !important; /* Убрали белый фон */
+    border-radius: 0 !important;              /* Убрали скругление */
+    box-shadow: none !important;              /* Убрали тень */
     color: #722F37 !important;
   }
 
