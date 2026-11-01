@@ -673,6 +673,7 @@ tw-passage[tags~="l57"] {
 /* ТЕКСТ ПО ШИРИНЕ (только ПК) */
 /* ========================================= */
 @media screen and (min-width: 821px) {
+       /* 1. Выравнивание по ширине для длинных блоков */
     tw-passage[tags~="l4"],
     tw-passage[tags~="l6"],
     tw-passage[tags~="l7"],
@@ -701,7 +702,7 @@ tw-passage[tags~="l57"] {
         text-align: justify !important;
     }
 
-    /* НОВОЕ: Поднимаем длинные блоки (только ПК) */
+    /* 2. Поднимаем длинные блоки на ПК, чтобы они не уходили за нижний край */
     tw-passage[tags~="l27"],
     tw-passage[tags~="l48"],
     tw-passage[tags~="l55"],
@@ -714,7 +715,20 @@ tw-passage[tags~="l57"] {
         top: 10vh !important;
     }
 
-    /* l16 — приподнять карточку, чтобы все варианты ответов были видны */
+    /* 3. Возвращаем вопросы на ПК в центр (по скриншоту они уехали влево) */
+    tw-passage[tags~="l8"],
+    tw-passage[tags~="l16"],
+    tw-passage[tags~="l22"],
+    tw-passage[tags~="l28"],
+    tw-passage[tags~="l36"],
+    tw-passage[tags~="l40"],
+    tw-passage[tags~="l47"],
+    tw-passage[tags~="l58"],
+    tw-passage[tags~="l63"] {
+        text-align: center !important;
+    }
+
+    /* 4. l16 — приподнять карточку, чтобы все варианты ответов были видны */
     tw-passage[tags~="l16"] {
         top: 15vh !important;
     }
@@ -954,7 +968,7 @@ input() - это встроенная функция Python для получе�
 
 Программа не получит имя, потому что print() не умеет читать данные с клавиатуры. Для ввода нужна функция input().
 
-<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Данной функции в Python не существует. `get_name()` - это выдуманное имя, его нет среди встроенных функций. Если попробовать выполнить этот код, Python выдаст ошибку NameError: name '`get_name`' is not defined. Для получения ввода с клавиатуры в Python есть только одна стандартная функция - input().
+<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Данной функции в Python не существует. (print: "get_name()") - это выдуманное имя, его нет среди встроенных функций. Если попробовать выполнить этот код, Python выдаст ошибку NameError: name (print: "'get_name'") is not defined. Для получения ввода с клавиатуры в Python есть только одна стандартная функция - input().
 </tw-passagedata>
 <tw-passagedata pid="65" name="Сколько угодно" tags="l65" position="437.5,2975" size="100,100">Не верно
 [[Пояснение не верного ответа 11_1]]
