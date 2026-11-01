@@ -382,35 +382,6 @@ tw-passage[tags~="l70"] tw-link,
 tw-passage[tags~="l71"] tw-link {
   color: #00BFFF;
 }
-
-/* ========================================= */
-/* L13, L20, L23, L29, L37, L43, L54, L60, L66 */
-/* Белая подложка, текст по ширине, снизу 1 см от края */
-/* ========================================= */
-
- {
-    position: fixed !important;
-    bottom: 1cm !important;
-    top: auto !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    margin-left: 0 !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-    width: 700px !important;
-    background-color: #FFFFFF !important;
-    padding: 20px !important;
-    padding-bottom: calc(20px - 2pt) !important;
-    border-radius: 15px !important;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important;
-    text-align: justify !important;
-    color: #00FF00 !important;
-    font-size: 25px !important;
-    font-weight: bold !important;
-    text-shadow: #FFFFFF 1px 0 10px !important;
-    z-index: 10 !important;
-}
-
 /* ========================================= */
 /* L72 — БЕЛАЯ ПОДЛОЖКА СНИЗУ, ОТСТУП 0,5 СМ */
 /* ========================================= */
@@ -439,7 +410,7 @@ tw-passage[tags~="l72"] {
 
 /* ========================================= */
 /* L3, L13, L20, L23, L29, L37, L43, L54, L60, L66 */
-/* ЧЁРНЫЙ ТЕКСТ БЕЗ ОБВОДКИ */
+/* Белая подложка снизу (отступ 0,5 см), чёрный текст без обводки */
 /* ========================================= */
 
 tw-passage[tags~="l3"],
@@ -452,12 +423,28 @@ tw-passage[tags~="l43"],
 tw-passage[tags~="l54"],
 tw-passage[tags~="l60"],
 tw-passage[tags~="l66"] {
+    position: fixed !important;
+    bottom: 0.5cm !important; /* Изменено на 0,5 см */
+    top: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    width: 700px !important;
+    max-width: calc(100% - 40px) !important;
+    
     background-color: #FFFFFF !important;
     color: #000000 !important; /* Основной текст теперь чёрный */
     padding: 20px !important;
+    padding-bottom: calc(20px - 2pt) !important;
     border-radius: 15px !important;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important;
     text-align: justify !important;
+    font-size: 25px !important;
+    font-weight: bold !important;
     text-shadow: none !important; /* Полностью убрали обводку */
+    z-index: 10 !important;
 }
 
 /* ========================================= */
