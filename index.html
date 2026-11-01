@@ -659,6 +659,9 @@ tw-passage[tags~="l57"] {
 /* ========================================= */
 /* ТЕКСТ ПО ШИРИНЕ (только ПК) */
 /* ========================================= */
+/* ========================================= */
+/* ТЕКСТ ПО ШИРИНЕ (только ПК) */
+/* ========================================= */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l4"],
     tw-passage[tags~="l6"],
@@ -687,11 +690,25 @@ tw-passage[tags~="l57"] {
     tw-passage[tags~="l71"] {
         text-align: justify !important;
     }
-}
+
+    /* НОВОЕ: Поднимаем длинные блоки (только ПК) */
+    tw-passage[tags~="l27"],
+    tw-passage[tags~="l48"],
+    tw-passage[tags~="l55"],
+    tw-passage[tags~="l56"],
+    tw-passage[tags~="l57"],
+    tw-passage[tags~="l62"],
+    tw-passage[tags~="l64"],
+    tw-passage[tags~="l69"],
+    tw-passage[tags~="l70"] {
+        top: 10vh !important;
+    }
+
     /* l16 — приподнять карточку, чтобы все варианты ответов были видны */
     tw-passage[tags~="l16"] {
         top: 15vh !important;
     }
+}
 
     /* Стиль для слова "Верно" */
     .success-word {
