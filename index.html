@@ -657,29 +657,37 @@ tw-passage[tags~="l57"] {
   }
 }
 /* ========================================= */
-/* БЕЛАЯ ПОДЛОЖКА ДЛЯ ВОПРОСОВ (ПК ВЕРСИЯ) */
+/* ТЕКСТ ПО ШИРИНЕ (только ПК) */
 /* ========================================= */
- {
-    position: relative !important;
-    top: calc(35vh + 2cm) !important; 
-    width: 700px !important;
-    max-width: calc(100% - 40px) !important;
-    font-size: 25px !important;       
-    font-weight: bold !important;     
-    margin-left: auto !important; 
-    margin-right: auto !important;
-    margin-bottom: 1cm !important;
-    
-    /* Вот эти свойства делают подложку: */
-    background-color: #FFFFFF !important; 
-    padding: 20px !important;         
-    padding-bottom: 1cm !important;
-    border-radius: 15px !important;   
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
-       text-align: center !important;
-    color: #000000 !important;
+@media screen and (min-width: 821px) {
+    tw-passage[tags~="l4"],
+    tw-passage[tags~="l6"],
+    tw-passage[tags~="l7"],
+    tw-passage[tags~="l11"],
+    tw-passage[tags~="l15"],
+    tw-passage[tags~="l19"],
+    tw-passage[tags~="l21"],
+    tw-passage[tags~="l26"],
+    tw-passage[tags~="l27"],
+    tw-passage[tags~="l33"],
+    tw-passage[tags~="l34"],
+    tw-passage[tags~="l35"],
+    tw-passage[tags~="l41"],
+    tw-passage[tags~="l42"],
+    tw-passage[tags~="l48"],
+    tw-passage[tags~="l49"],
+    tw-passage[tags~="l50"],
+    tw-passage[tags~="l55"],
+    tw-passage[tags~="l56"],
+    tw-passage[tags~="l57"],
+    tw-passage[tags~="l62"],
+    tw-passage[tags~="l64"],
+    tw-passage[tags~="l69"],
+    tw-passage[tags~="l70"],
+    tw-passage[tags~="l71"] {
+        text-align: justify !important;
+    }
 }
-
     /* l16 — приподнять карточку, чтобы все варианты ответов были видны */
     tw-passage[tags~="l16"] {
         top: 15vh !important;
