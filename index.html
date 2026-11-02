@@ -355,14 +355,15 @@ tw-sidebar tw-icon:hover {
 }
 
 /* ============================================================ */
+/* ============================================================ */
 /* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА ПОД НОУТБУКОМ */
 /* ============================================================ */
 @media screen and (min-width: 821px) {
-    /* 1. Сама плашка в виде мыслей (правее и ниже) */
+    /* 1. Сама плашка в виде мыслей (оставляем как есть) */
     tw-passage[tags~="l1"] {
         position: fixed !important;
-        top: 15vh !important;  /* Опускаем облако ниже */
-        right: 3% !important;  /* Сдвигаем облако правее */
+        top: 15vh !important; 
+        right: 3% !important; 
         left: auto !important;
         transform: none !important; 
         width: 400px !important; 
@@ -372,13 +373,12 @@ tw-sidebar tw-icon:hover {
         backdrop-filter: blur(10px) !important; 
         border: none !important;
         
-        /* Форма облака/мыслей */
-        border-radius: 50px !important; /* Более аккуратная форма пузыря */
+        border-radius: 50px !important;
         
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
         color: #2c3e50 !important; 
         text-shadow: none !important;
-        font-size: 17px !important; /* Чуть уменьшил шрифт для аккуратности */
+        font-size: 17px !important; 
         font-weight: bold !important;
         line-height: 1.4 !important;
         text-align: center !important; 
@@ -395,15 +395,13 @@ tw-sidebar tw-icon:hover {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
     }
 
-    /* Средний кружок */
     tw-passage[tags~="l1"]::before {
         bottom: -20px !important;
-        left: 30px !important; /* Сдвинули хвостик влево, чтобы указывал на Софию */
+        left: 30px !important;
         width: 25px !important;
         height: 25px !important;
     }
 
-    /* Маленький кружок */
     tw-passage[tags~="l1"]::after {
         bottom: -40px !important;
         left: 10px !important;
@@ -414,9 +412,9 @@ tw-sidebar tw-icon:hover {
     /* 3. Кнопка "Начать обучение" ПОД НОУТБУКОМ */
     tw-passage[tags~="l1"] tw-link {
         position: fixed !important;
-        /* Координаты под ноутбуком */
-        top: 83% !important;  
-        left: 75% !important; 
+        /* Новые координаты: спускаем ниже (88%) и сдвигаем чуть левее (70%) */
+        top: 88% !important;  
+        left: 70% !important; 
         
         display: inline-block !important;
         padding: 15px 30px !important;
@@ -428,7 +426,7 @@ tw-sidebar tw-icon:hover {
         font-size: 18px !important;
         font-weight: bold !important;
         white-space: nowrap !important; 
-        transform: translate(-50%, -50%) !important; /* Убрал наклон для ровной кнопки */
+        transform: translate(-50%, -50%) !important; 
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
         transition: all 0.3s ease !important;
         z-index: 20 !important; 
@@ -440,7 +438,6 @@ tw-sidebar tw-icon:hover {
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
     }
 }
-
 /* ============================================================ */
 /* 9. МОБИЛЬНАЯ АДАПТАЦИЯ */
 /* ============================================================ */
