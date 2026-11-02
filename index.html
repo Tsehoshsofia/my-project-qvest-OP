@@ -311,17 +311,44 @@ tw-passage[tags~="l70"],
 tw-passage[tags~="l71"] { color: #000000 !important; } 
 
 /* ОРИГИНАЛЬНЫЙ L1 */
+
 tw-passage[tags~="l1"] {
-    text-align: center;
-    width: 700px;
-    max-width: calc(100% - 40px); /* Чтобы не вылезал за экран */
-    color: #722F37;
-    text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF;
-    font-size: 25px;
-    font-weight: bold;
-    margin-left: auto;  /* ЦЕНТРИРУЕМ */
-    margin-right: auto; /* ЦЕНТРИРУЕМ */
-    margin-top: 65vh;
+    position: fixed !important;
+    bottom: 5vh !important; 
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 85% !important;
+    max-width: 650px !important;
+    margin: 0 !important;
+    padding: 25px 30px !important;
+    
+    background-color: rgba(255, 255, 255, 0.85) !important; /* Полупрозрачный белый */
+    backdrop-filter: blur(8px) !important; /* Размытие заднего фона (эффект стекла) */
+    border-radius: 15px !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2) !important;
+    
+    color: #333333 !important; /* Темно-серый текст */
+    text-shadow: none !important; /* Убираем обводку */
+    font-size: 22px !important;
+    font-weight: bold !important;
+    text-align: center !important;
+}
+
+/* Оформляем ссылку как кнопку */
+tw-passage[tags~="l1"] tw-link {
+    display: inline-block !important;
+    margin-top: 15px !important;
+    padding: 10px 30px !important;
+    background-color: #4169e1 !important; /* Королевский синий */
+    color: #FFFFFF !important;
+    border-radius: 25px !important;
+    text-decoration: none !important;
+    font-size: 20px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+tw-passage[tags~="l1"] tw-link:hover {
+    background-color: #2b4c9d !important;
 }
 
 /* L3 И БЛОКИ КАК L3 — ЧЁРНЫЙ ТЕКСТ */
