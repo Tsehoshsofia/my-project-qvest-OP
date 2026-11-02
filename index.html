@@ -358,12 +358,12 @@ tw-sidebar tw-icon:hover {
 /* ============================================================ */
 tw-passage[tags~="l1"] {
     position: fixed !important;
-    top: 8vh !important;       /* Отступ сверху */
-    right: 5vw !important;     /* Отступ справа */
+    top: 8vh !important;       
+    right: 5vw !important;     
     left: auto !important;
     transform: none !important; 
-    width: 85vw !important;    /* Занимает 85% ширины экрана */
-    max-width: 400px !important; /* Но не больше 400px на ПК */
+    width: 85vw !important;    
+    max-width: 400px !important; 
     margin: 0 !important;
     padding: 25px 30px !important;
     background-color: rgba(255, 255, 255, 0.95) !important; 
@@ -402,19 +402,20 @@ tw-passage[tags~="l1"]::after {
     height: 12px !important;
 }
 
-/* Кнопка "Начать обучение" (Всегда на столе) */
+/* Кнопка "Начать обучение" (Внизу на столе) */
 tw-passage[tags~="l1"] tw-link,
 tw-passage[tags~="l1"] tw-link.visited {
     position: fixed !important;
     
-    /* Координаты для стола: снизу и справа */
-    bottom: 20vh !important;  
-    right: 10vw !important;    
+    /* ИСПОЛЬЗУЕМ TOP, ЧТОБЫ ОПУСТИТЬ ВНИЗ */
+    top: 75% !important;   
+    right: 15vw !important; 
     
-    top: auto !important;
+    bottom: auto !important; /* Отключаем bottom, чтобы не было конфликта */
     left: auto !important;
+    
     margin: 0 !important;
-    transform: none !important; 
+    transform: translateY(-50%) !important; /* Выравниваем по центру этой линии */
     
     display: block !important;
     width: max-content !important;
@@ -434,7 +435,7 @@ tw-passage[tags~="l1"] tw-link.visited {
 }
 
 tw-passage[tags~="l1"] tw-link:hover {
-    transform: scale(1.05) !important; 
+    transform: translateY(-50%) scale(1.05) !important; 
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
