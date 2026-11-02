@@ -355,37 +355,37 @@ tw-sidebar tw-icon:hover {
 }
 
 /* ============================================================ */
-/* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА В НОУТБУКЕ */
+/* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА ПОД НОУТБУКОМ */
 /* ============================================================ */
 @media screen and (min-width: 821px) {
-    /* 1. Сама плашка в виде мыслей */
+    /* 1. Сама плашка в виде мыслей (правее и ниже) */
     tw-passage[tags~="l1"] {
         position: fixed !important;
-        top: 8vh !important; 
-        right: 10% !important; 
+        top: 15vh !important;  /* Опускаем облако ниже */
+        right: 3% !important;  /* Сдвигаем облако правее */
         left: auto !important;
         transform: none !important; 
-        width: 450px !important; 
+        width: 400px !important; 
         margin: 0 !important;
-        padding: 40px 45px !important;
+        padding: 35px 40px !important;
         background-color: rgba(255, 255, 255, 0.95) !important; 
         backdrop-filter: blur(10px) !important; 
         border: none !important;
         
         /* Форма облака/мыслей */
-        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40% !important;
+        border-radius: 50px !important; /* Более аккуратная форма пузыря */
         
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
         color: #2c3e50 !important; 
         text-shadow: none !important;
-        font-size: 18px !important; 
+        font-size: 17px !important; /* Чуть уменьшил шрифт для аккуратности */
         font-weight: bold !important;
-        line-height: 1.5 !important;
+        line-height: 1.4 !important;
         text-align: center !important; 
         z-index: 10 !important;
     }
 
-    /* 2. Кружочки (хвостик мыслей), ведущие к голове Софии */
+    /* 2. Кружочки (хвостик мыслей) */
     tw-passage[tags~="l1"]::before,
     tw-passage[tags~="l1"]::after {
         content: "" !important;
@@ -397,47 +397,47 @@ tw-sidebar tw-icon:hover {
 
     /* Средний кружок */
     tw-passage[tags~="l1"]::before {
-        bottom: -25px !important;
-        left: 50px !important;
+        bottom: -20px !important;
+        left: 30px !important; /* Сдвинули хвостик влево, чтобы указывал на Софию */
         width: 25px !important;
         height: 25px !important;
     }
 
     /* Маленький кружок */
     tw-passage[tags~="l1"]::after {
-        bottom: -45px !important;
-        left: 30px !important;
-        width: 15px !important;
-        height: 15px !important;
+        bottom: -40px !important;
+        left: 10px !important;
+        width: 12px !important;
+        height: 12px !important;
     }
 
-    /* 3. Кнопка "Начать обучение" внутри экрана ноутбука */
+    /* 3. Кнопка "Начать обучение" ПОД НОУТБУКОМ */
     tw-passage[tags~="l1"] tw-link {
         position: fixed !important;
-        /* Координаты на экране ноутбука */
-        top: 68% !important; 
-        left: 62% !important; 
+        /* Координаты под ноутбуком */
+        top: 83% !important;  
+        left: 75% !important; 
         
         display: inline-block !important;
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
         color: #FFFFFF !important;
-        border-radius: 12px !important;
-        border: 2px solid rgba(255, 255, 255, 0.5) !important;
+        border-radius: 8px !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
         text-decoration: none !important;
         font-size: 18px !important;
         font-weight: bold !important;
         white-space: nowrap !important; 
-        transform: translate(-50%, -50%) rotate(-5deg) !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
+        transform: translate(-50%, -50%) !important; /* Убрал наклон для ровной кнопки */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
         transition: all 0.3s ease !important;
         z-index: 20 !important; 
     }
 
     tw-passage[tags~="l1"] tw-link:hover {
-        transform: translate(-50%, -50%) rotate(-5deg) scale(1.05) !important; 
+        transform: translate(-50%, -50%) scale(1.05) !important; 
         background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
     }
 }
 
