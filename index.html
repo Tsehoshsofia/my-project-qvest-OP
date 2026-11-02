@@ -442,21 +442,26 @@ tw-passage[tags~="l1"] tw-link:hover {
 }
 /* ============================================================ */
 /* ============================================================ */
-/* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (только для остальных экранов) */
+/* ============================================================ */
+/* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (Карточки поверх изображения) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
-  /* ВАЖНО: Убираем искажение фона, чтобы он вписывался целиком, как на ПК */
-  html, body { height: 100% !important; overflow: hidden !important; background-color: #000000 !important; }
+  html, body { 
+      height: 100% !important; 
+      overflow: hidden !important; /* Убираем прокрутку всей страницы */
+      background-color: #000000 !important; 
+  }
+  
   tw-story { 
       display: block !important; 
       overflow: hidden !important; 
       box-sizing: border-box !important; 
       width: 100vw !important; 
       height: 100vh !important; 
-      height: 100dvh !important; 
+      height: 100dvh !important; /* На весь экран телефона */
       padding: 0 !important; 
       margin: 0 !important; 
-      background-size: contain !important; /* Вписываем картинку целиком */
+      background-size: cover !important; /* Картинка заполняет весь фон */
       background-position: center !important; 
       background-repeat: no-repeat !important; 
       background-color: #000000 !important; 
@@ -465,31 +470,35 @@ tw-passage[tags~="l1"] tw-link:hover {
   tw-story tw-sidebar { position: fixed !important; top: 10px !important; left: 10px !important; right: 10px !important; width: auto !important; z-index: 99 !important; flex-direction: row !important; justify-content: space-between !important; pointer-events: none !important; }
   tw-story tw-sidebar tw-icon { pointer-events: auto !important; }
 
-  /* Общие карточки для ВСЕХ экранов, КРОМЕ ПЕРВОГО (L1) */
+  /* Карточки с вопросами и пояснениями НАКЛАДЫВАЮТСЯ на картинку */
   tw-story tw-passage[tags]:not([tags~="l1"]) { 
-      position: fixed !important; 
-      bottom: 10px !important; 
-      top: auto !important; 
-      left: 5px !important; 
-      right: 5px !important; 
-      transform: none !important; 
-      margin: 0 auto !important; 
-      width: auto !important;
-      max-height: 70vh !important; 
+      position: absolute !important; /* Позволяет накладывать поверх картинки */
+      bottom: 5vh !important;        /* Отступ от нижнего края */
+      left: 5vw !important; 
+      right: 5vw !important; 
+      width: 90vw !important;
+      max-height: 65vh !important;   /* Если текста много, будет прокрутка внутри карточки */
       overflow-y: auto !important;
-      padding: 15px !important; 
+      padding: 20px !important; 
       font-size: 16px !important; 
       line-height: 1.35 !important; 
-      background-color: rgba(255,255,255,.95) !important; 
-      border-radius: 12px !important; 
-      box-shadow: 0 3px 15px rgba(0,0,0,.3) !important; 
-      overflow-wrap: break-word !important; 
-      word-wrap: break-word !important; 
-      white-space: normal !important; 
+      background-color: rgba(255, 255, 255, 0.95) !important; /* Полупрозрачный белый фон */
+      border-radius: 15px !important; 
+      box-shadow: 0 5px 20px rgba(0,0,0,0.5) !important; 
       text-align: center !important;
+      z-index: 10 !important;
   }
 
-  /* Вопросы и Блоки "Верно" на телефоне (УБИРАЕМ ПРОКРУТКУ) */
+  /* Кнопки внутри вопросов на телефоне */
+  tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link, tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
+        width: 100% !important; 
+        font-size: 16px !important; 
+        padding: 12px 10px !important; 
+        margin: 8px auto !important; 
+        display: block !important;
+  }
+
+  /* Убираем лишнюю прокрутку для карточек с коротким текстом */
   tw-passage[tags~="l2"], tw-passage[tags~="l8"], tw-passage[tags~="l16"], 
   tw-passage[tags~="l22"], tw-passage[tags~="l28"], tw-passage[tags~="l36"], 
   tw-passage[tags~="l40"], tw-passage[tags~="l47"], tw-passage[tags~="l58"], 
@@ -497,13 +506,7 @@ tw-passage[tags~="l1"] tw-link:hover {
   tw-passage[tags~="l20"], tw-passage[tags~="l23"], tw-passage[tags~="l29"], 
   tw-passage[tags~="l37"], tw-passage[tags~="l43"], tw-passage[tags~="l54"], 
   tw-passage[tags~="l60"], tw-passage[tags~="l66"], tw-passage[tags~="l72"] {
-      max-height: none !important;
-      overflow-y: visible !important;
-  }
-
-  /* Кнопки внутри вопросов на телефоне */
-  tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link, tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
-        width: 95% !important; font-size: 16px !important; padding: 10px 10px !important; margin: 8px auto !important; text-shadow: none !important; 
+      max-height: 70vh !important;
   }
 }
  </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100"> Здравствуйте. Меня зовут София, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.
