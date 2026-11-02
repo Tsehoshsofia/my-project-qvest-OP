@@ -407,14 +407,14 @@ tw-passage[tags~="l1"] tw-link,
 tw-passage[tags~="l1"] tw-link.visited {
     position: fixed !important;
     
-    /* ЖЕСТКО ОПУСКАЕМ ВНИЗ ЧЕРЕЗ TOP (80% высоты экрана) */
-    top: 80vh !important;       
+    /* Поднимаем вверх (было 80vh, стало 77vh) */
+    top: 77vh !important;       
     
-    /* ИДЕАЛЬНОЕ ЦЕНТРИРОВАНИЕ ПО ГОРИЗОНТАЛИ */
-    left: 50% !important;
+    /* Сдвигаем левее (было 50%, стало 48%) */
+    left: 48% !important;
     transform: translateX(-50%) !important; 
     
-    /* ОТКЛЮЧАЕМ ВСЕ ОСТАЛЬНЫЕ ПРИВЯЗКИ, ЧТОБЫ НЕ БЫЛО КОНФЛИКТА */
+    /* Отключаем остальные привязки */
     bottom: auto !important;
     right: auto !important;
     
@@ -438,7 +438,6 @@ tw-passage[tags~="l1"] tw-link.visited {
 }
 
 tw-passage[tags~="l1"] tw-link:hover {
-    /* Обязательно сохраняем translateX(-50%), чтобы кнопка не прыгала при наведении */
     transform: translateX(-50%) scale(1.05) !important; 
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
