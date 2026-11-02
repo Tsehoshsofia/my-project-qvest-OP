@@ -408,20 +408,20 @@ tw-sidebar tw-icon:hover {
         height: 12px !important;
     }
 
-    /* 3. Кнопка "Начать обучение" (Возвращаем и ставим на стол) */
+    /* 3. Кнопка "Начать обучение" (На столе под ноутбуком) */
     tw-passage[tags~="l1"] tw-link {
         position: fixed !important;
         
-        /* Четкие координаты, чтобы она не улетала за экран */
-        top: 85% !important;  
-        left: 60% !important; 
+        /* Опускаем вниз на 90% и сдвигаем влево на 65% */
+        top: 90% !important;  
+        left: 65% !important; 
         
-        /* Гарантируем, что кнопка не сожмется и не исчезнет */
-        display: block !important;
-        width: max-content !important;
+        /* Жестко фиксируем позиционирование */
         bottom: auto !important;
         right: auto !important;
         margin: 0 !important;
+        display: block !important;
+        width: max-content !important;
         
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
@@ -436,7 +436,7 @@ tw-sidebar tw-icon:hover {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
         transition: all 0.3s ease !important;
         z-index: 9999 !important; 
-        pointer-events: auto !important; /* Чтобы на нее можно было нажать */
+        pointer-events: auto !important;
     }
 
     tw-passage[tags~="l1"] tw-link:hover {
