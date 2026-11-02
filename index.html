@@ -408,15 +408,15 @@ tw-passage[tags~="l1"] tw-link,
 tw-passage[tags~="l1"] tw-link.visited {
     position: fixed !important;
     
-    /* ИСПОЛЬЗУЕМ TOP, ЧТОБЫ ОПУСТИТЬ ВНИЗ */
-    top: 75% !important;   
-    right: 15vw !important; 
+    /* ЖЕСТКАЯ ПРИВЯЗКА К НИЗУ ЭКРАНА (СТОЛУ) */
+    bottom: 10vh !important;    /* Опускаем на 10% от нижнего края */
+    right: 15vw !important;     /* Сдвигаем вправо, под ноутбук */
     
-    bottom: auto !important; /* Отключаем bottom, чтобы не было конфликта */
+    top: auto !important;       /* Отключаем верхнюю привязку, чтобы не улетала */
     left: auto !important;
     
     margin: 0 !important;
-    transform: translateY(-50%) !important; /* Выравниваем по центру этой линии */
+    transform: none !important; /* Убираем смещения */
     
     display: block !important;
     width: max-content !important;
@@ -436,11 +436,10 @@ tw-passage[tags~="l1"] tw-link.visited {
 }
 
 tw-passage[tags~="l1"] tw-link:hover {
-    transform: translateY(-50%) scale(1.05) !important; 
+    transform: scale(1.05) !important; 
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
-
 /* ============================================================ */
 /* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (только для остальных экранов) */
 /* ============================================================ */
