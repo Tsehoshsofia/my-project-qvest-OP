@@ -468,22 +468,25 @@ tw-passage[tags~="l1"] tw-link:hover {
   tw-story tw-sidebar { position: fixed !important; top: 10px !important; left: 10px !important; right: 10px !important; width: auto !important; z-index: 99 !important; flex-direction: row !important; justify-content: space-between !important; pointer-events: none !important; }
   tw-story tw-sidebar tw-icon { pointer-events: auto !important; }
 
-  /* Карточки с вопросами и пояснениями НАКЛАДЫВАЮТСЯ на картинку */
+  /* Общие карточки на телефоне (ИСКЛЮЧАЯ ПЕРВЫЙ ЭКРАН L1) */
   tw-story tw-passage[tags]:not([tags~="l1"]) { 
-      position: absolute !important; /* Позволяет накладывать поверх картинки */
-      bottom: 5vh !important;        /* Отступ от нижнего края */
+      position: absolute !important; 
+      bottom: 5vh !important;        
       left: 5vw !important; 
       right: 5vw !important; 
       width: 90vw !important;
-      max-height: 65vh !important;   /* Если текста много, будет прокрутка внутри карточки */
+      max-height: 65vh !important;   
       overflow-y: auto !important;
       padding: 20px !important; 
       font-size: 16px !important; 
       line-height: 1.35 !important; 
-      background-color: rgba(255, 255, 255, 0.95) !important; /* Полупрозрачный белый фон */
+      background-color: rgba(255, 255, 255, 0.95) !important; 
       border-radius: 15px !important; 
       box-shadow: 0 5px 20px rgba(0,0,0,0.5) !important; 
-      text-align: center !important;
+      
+      /* ВОТ ЭТА СТРОКА ОТВЕЧАЕТ ЗА ТЕКСТ ПО ШИРИНЕ */
+      text-align: justify !important; 
+      
       z-index: 10 !important;
   }
 
