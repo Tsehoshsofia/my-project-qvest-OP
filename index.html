@@ -409,14 +409,14 @@ tw-passage[tags~="l1"] tw-link.visited {
     position: fixed !important;
     
     /* ЖЕСТКАЯ ПРИВЯЗКА К НИЗУ ЭКРАНА (СТОЛУ) */
-    bottom: 10vh !important;    /* Опускаем на 10% от нижнего края */
-    right: 15vw !important;     /* Сдвигаем вправо, под ноутбук */
+    bottom: 15vh !important;    /* Опускаем на 15% от нижнего края (на стол) */
+    right: 20vw !important;     /* Сдвигаем вправо, под ноутбук */
     
-    top: auto !important;       /* Отключаем верхнюю привязку, чтобы не улетала */
+    top: auto !important;       /* Отключаем верхнюю привязку */
     left: auto !important;
     
     margin: 0 !important;
-    transform: none !important; /* Убираем смещения */
+    transform: none !important; 
     
     display: block !important;
     width: max-content !important;
@@ -440,8 +440,6 @@ tw-passage[tags~="l1"] tw-link:hover {
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
-/* ============================================================ */
-/* ============================================================ */
 /* ============================================================ */
 /* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (Карточки поверх изображения) */
 /* ============================================================ */
