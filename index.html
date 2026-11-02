@@ -324,7 +324,7 @@ tw-sidebar tw-icon:hover {
     }
 }
 
-/* --- Телефон: Позиционируем в правом верхнем углу карточки (только для указанных блоков) --- */
+/* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -338,14 +338,15 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
-        position: absolute !important;
-        top: 10px !important;
-        right: 15px !important;
-        left: auto !important;
+        position: fixed !important; /* Привязка к экрану телефона, а не к плашке */
+        top: 35% !important;        /* Опускаем вниз к ладони (настройте под свой экран) */
+        left: 30% !important;       /* Сдвигаем влево к руке */
+        right: auto !important;
         bottom: auto !important;
         transform: none !important;
     }
 
+    /* Размеры самой кнопки-стрелки на телефоне */
     tw-sidebar tw-icon,
     tw-sidebar tw-icon[alt="Undo"] {
         font-size: 30px !important;
