@@ -353,97 +353,94 @@ tw-sidebar tw-icon:hover {
         height: 45px !important;
     }
 }
-
 /* ============================================================ */
-/* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА ПОД НОУТБУКОМ */
+/* 8. ПЕРВЫЙ ЭКРАН (L1) — УНИВЕРСАЛЬНЫЙ (ПК, ПЛАНШЕТ, ТЕЛЕФОН) */
 /* ============================================================ */
-@media screen and (min-width: 821px) {
-    /* 1. Сама плашка в виде мыслей */
-    tw-passage[tags~="l1"] {
-        position: fixed !important;
-        top: 15vh !important; 
-        right: 3% !important; 
-        left: auto !important;
-        transform: none !important; 
-        width: 400px !important; 
-        margin: 0 !important;
-        padding: 35px 40px !important;
-        background-color: rgba(255, 255, 255, 0.95) !important; 
-        backdrop-filter: blur(10px) !important; 
-        border: none !important;
-        border-radius: 50px !important;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-        color: #2c3e50 !important; 
-        text-shadow: none !important;
-        font-size: 17px !important; 
-        font-weight: bold !important;
-        line-height: 1.4 !important;
-        text-align: center !important; 
-        z-index: 10 !important;
-    }
+tw-passage[tags~="l1"] {
+    position: fixed !important;
+    top: 8vh !important;       /* Отступ сверху */
+    right: 5vw !important;     /* Отступ справа */
+    left: auto !important;
+    transform: none !important; 
+    width: 85vw !important;    /* Занимает 85% ширины экрана */
+    max-width: 400px !important; /* Но не больше 400px на ПК */
+    margin: 0 !important;
+    padding: 25px 30px !important;
+    background-color: rgba(255, 255, 255, 0.95) !important; 
+    backdrop-filter: blur(10px) !important; 
+    border: none !important;
+    border-radius: 50px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    color: #2c3e50 !important; 
+    text-shadow: none !important;
+    font-size: 16px !important; 
+    font-weight: bold !important;
+    line-height: 1.4 !important;
+    text-align: center !important; 
+    z-index: 10 !important;
+}
 
-    /* 2. Кружочки (хвостик мыслей) */
-    tw-passage[tags~="l1"]::before,
-    tw-passage[tags~="l1"]::after {
-        content: "" !important;
-        position: absolute !important;
-        background-color: rgba(255, 255, 255, 0.95) !important;
-        border-radius: 50% !important;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
-    }
-    tw-passage[tags~="l1"]::before {
-        bottom: -20px !important;
-        left: 30px !important;
-        width: 25px !important;
-        height: 25px !important;
-    }
-    tw-passage[tags~="l1"]::after {
-        bottom: -40px !important;
-        left: 10px !important;
-        width: 12px !important;
-        height: 12px !important;
-    }
+/* Кружочки (хвостик мыслей) */
+tw-passage[tags~="l1"]::before,
+tw-passage[tags~="l1"]::after {
+    content: "" !important;
+    position: absolute !important;
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
+}
+tw-passage[tags~="l1"]::before {
+    bottom: -20px !important;
+    left: 30px !important;
+    width: 25px !important;
+    height: 25px !important;
+}
+tw-passage[tags~="l1"]::after {
+    bottom: -40px !important;
+    left: 10px !important;
+    width: 12px !important;
+    height: 12px !important;
+}
 
-    /* 3. Кнопка "Начать обучение" (На столе) */
-    tw-passage[tags~="l1"] tw-link,
-    tw-passage[tags~="l1"] tw-link.visited {
-        position: fixed !important;
-        
-        /* ЧЕТКИЕ КООРДИНАТЫ ДЛЯ СТОЛА */
-        top: 82% !important;  
-        left: 65% !important;    
-        
-        bottom: auto !important;
-        right: auto !important;
-        margin: 0 !important;
-        transform: translate(-50%, -50%) !important; 
-        
-        display: block !important;
-        width: max-content !important;
-        padding: 15px 30px !important;
-        background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
-        color: #FFFFFF !important;
-        border-radius: 8px !important;
-        border: 2px solid #FFFFFF !important; 
-        text-decoration: none !important;
-        font-size: 18px !important;
-        font-weight: bold !important;
-        white-space: nowrap !important; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
-        transition: all 0.3s ease !important;
-        z-index: 999999 !important; 
-        pointer-events: auto !important;
-    }
+/* Кнопка "Начать обучение" (Всегда на столе) */
+tw-passage[tags~="l1"] tw-link,
+tw-passage[tags~="l1"] tw-link.visited {
+    position: fixed !important;
+    
+    /* Координаты для стола: снизу и справа */
+    bottom: 20vh !important;  
+    right: 10vw !important;    
+    
+    top: auto !important;
+    left: auto !important;
+    margin: 0 !important;
+    transform: none !important; 
+    
+    display: block !important;
+    width: max-content !important;
+    padding: 12px 25px !important;
+    background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    border: 2px solid #FFFFFF !important; 
+    text-decoration: none !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    white-space: nowrap !important; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
+    transition: all 0.3s ease !important;
+    z-index: 999999 !important; 
+    pointer-events: auto !important;
+}
 
-    tw-passage[tags~="l1"] tw-link:hover {
-        transform: translate(-50%, -50%) scale(1.05) !important; 
-        background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
-    }
+tw-passage[tags~="l1"] tw-link:hover {
+    transform: scale(1.05) !important; 
+    background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
 
 /* ============================================================ */
-/* 9. МОБИЛЬНАЯ АДАПТАЦИЯ */
+/* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (только для остальных экранов) */
 /* ============================================================ */
 @media screen and (max-width: 820px) {
   html, body { height: auto !important; overflow-x: hidden !important; overflow-y: auto !important; background-color: #000000 !important; }
@@ -491,44 +488,6 @@ tw-sidebar tw-icon:hover {
   /* Кнопки на телефоне */
   tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link, tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
         width: 95% !important; font-size: 16px !important; padding: 10px 10px !important; margin: 8px auto !important; text-shadow: none !important; 
-  }
-
-  /* Первый экран (L1) на телефоне (облако) */
-  tw-story tw-passage[tags~="l1"] { 
-      position: fixed !important; 
-      bottom: 15px !important; 
-      left: 50% !important; 
-      top: auto !important; 
-      transform: translateX(-50%) !important; 
-      width: 92% !important; 
-      padding: 20px 15px !important; 
-      background-color: rgba(255, 255, 255, 0.95) !important; 
-      backdrop-filter: blur(10px) !important; 
-      border-radius: 15px !important; 
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; 
-      color: #2c3e50 !important; 
-      text-shadow: none !important; 
-      font-size: 16px !important; 
-      line-height: 1.4 !important; 
-      text-align: center !important; 
-  }
-  
-  /* Кнопка на телефоне (ВЫРЫВАЕМ ИЗ ТЕКСТА И СТАВИМ НА СТОЛ) */
-  tw-passage[tags~="l1"] tw-link { 
-      position: fixed !important; 
-      bottom: 30vh !important;  /* Поднимаем над облаком на уровень стола */
-      right: 10vw !important;   /* Сдвигаем вправо, к ноутбуку */
-      left: auto !important;
-      top: auto !important;
-      transform: none !important;
-      display: inline-block !important; 
-      padding: 10px 20px !important; 
-      background: linear-gradient(135deg, #4A90E2, #357ABD) !important; 
-      color: #FFFFFF !important; 
-      border-radius: 25px !important; 
-      font-size: 16px !important; 
-      box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4) !important; 
-      z-index: 999999 !important;
   }
 }
 </tw-storydata>
