@@ -300,7 +300,7 @@ tw-sidebar tw-icon:hover {
     background-color: #FFFFFF !important;
 }
 
-/* --- ПК: Позиционируем в правом верхнем углу (только для указанных блоков) --- */
+/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -315,11 +315,11 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
-        top: 20px !important;
-        right: 20px !important;
-        left: auto !important;
+        left: 39% !important;
+        top: 36% !important;
+        transform: translate(-50%, -50%) !important;
+        right: auto !important;
         bottom: auto !important;
-        transform: none !important;
         flex-direction: row !important;
     }
 }
@@ -355,22 +355,26 @@ tw-sidebar tw-icon:hover {
 }
 
 /* ============================================================ */
-/* 8. ПЕРВЫЙ ЭКРАН (L1) — ТЕКСТ СПРАВА, КНОПКА НА НОУТБУКЕ */
+/* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА В НОУТБУКЕ */
 /* ============================================================ */
 @media screen and (min-width: 821px) {
+    /* 1. Сама плашка в виде мыслей */
     tw-passage[tags~="l1"] {
         position: fixed !important;
-        top: 12vh !important; 
-        right: 5% !important; 
+        top: 8vh !important; 
+        right: 10% !important; 
         left: auto !important;
         transform: none !important; 
-        width: 400px !important; 
+        width: 450px !important; 
         margin: 0 !important;
-        padding: 25px 30px !important;
-        background-color: rgba(255, 255, 255, 0.92) !important; 
+        padding: 40px 45px !important;
+        background-color: rgba(255, 255, 255, 0.95) !important; 
         backdrop-filter: blur(10px) !important; 
-        border: 1px solid rgba(255, 255, 255, 0.8) !important;
-        border-radius: 20px !important;
+        border: none !important;
+        
+        /* Форма облака/мыслей */
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40% !important;
+        
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
         color: #2c3e50 !important; 
         text-shadow: none !important;
@@ -381,10 +385,39 @@ tw-sidebar tw-icon:hover {
         z-index: 10 !important;
     }
 
-    tw-passage[tags~="l1"] tw-link {
+    /* 2. Кружочки (хвостик мыслей), ведущие к голове Софии */
+    tw-passage[tags~="l1"]::before,
+    tw-passage[tags~="l1"]::after {
+        content: "" !important;
         position: absolute !important;
-        bottom: -130px !important; 
-        left: -40px !important;    
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Средний кружок */
+    tw-passage[tags~="l1"]::before {
+        bottom: -25px !important;
+        left: 50px !important;
+        width: 25px !important;
+        height: 25px !important;
+    }
+
+    /* Маленький кружок */
+    tw-passage[tags~="l1"]::after {
+        bottom: -45px !important;
+        left: 30px !important;
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    /* 3. Кнопка "Начать обучение" внутри экрана ноутбука */
+    tw-passage[tags~="l1"] tw-link {
+        position: fixed !important;
+        /* Координаты на экране ноутбука */
+        top: 68% !important; 
+        left: 62% !important; 
+        
         display: inline-block !important;
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
@@ -395,14 +428,14 @@ tw-sidebar tw-icon:hover {
         font-size: 18px !important;
         font-weight: bold !important;
         white-space: nowrap !important; 
-        transform: rotate(-8deg) !important; 
+        transform: translate(-50%, -50%) rotate(-5deg) !important;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.2) !important;
         transition: all 0.3s ease !important;
         z-index: 20 !important; 
     }
 
     tw-passage[tags~="l1"] tw-link:hover {
-        transform: rotate(-8deg) scale(1.05) !important; 
+        transform: translate(-50%, -50%) rotate(-5deg) scale(1.05) !important; 
         background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5) !important;
     }
@@ -467,6 +500,8 @@ tw-sidebar tw-icon:hover {
       position: static !important; display: inline-block !important; margin-top: 15px !important; padding: 10px 20px !important; background: linear-gradient(135deg, #4A90E2, #357ABD) !important; color: #FFFFFF !important; border-radius: 25px !important; font-size: 16px !important; transform: none !important; box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4) !important; 
   }
 }
+</tw-storydata>
+</body>
  </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100"> Здравствуйте. Меня зовут София, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.
 
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="2" name="Начать обучение" tags="l2" position="800,250" size="100,100">Укажите функцию, которая поможет вывести информацию на экран 🖥️
