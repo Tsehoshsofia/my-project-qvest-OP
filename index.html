@@ -12,11 +12,6 @@
 <tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ========================================= */
 /* 1. БАЗОВЫЕ НАСТРОЙКИ, ШРИФТ И ПЕРЕНОСЫ */
 /* ============================================================ */
-<body>
-<tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Основы программирования.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ========================================= */
-/* 1. БАЗОВЫЕ НАСТРОЙКИ, ШРИФТ И ПЕРЕНОСЫ */
-/* ============================================================ */
 body {
     background-color: #FFFFFF !important;
 }
@@ -409,22 +404,22 @@ tw-sidebar tw-icon:hover {
         height: 12px !important;
     }
 
-    /* 3. Кнопка "Начать обучение" на столе под ноутбуком */
+    /* 3. Кнопка "Начать обучение" (На столе) */
     tw-passage[tags~="l1"] tw-link,
     tw-passage[tags~="l1"] tw-link.visited {
         position: fixed !important;
         
-        /* ПРИВЯЗКА К НИЗУ ЭКРАНА */
-        bottom: 15vh !important;  
-        left: 60vw !important;    
+        /* ЧЕТКИЕ КООРДИНАТЫ ДЛЯ СТОЛА */
+        top: 82% !important;  
+        left: 65% !important;    
         
-        /* Сбрасываем все остальные отступы */
-        top: auto !important;
+        bottom: auto !important;
         right: auto !important;
         margin: 0 !important;
-        transform: translateX(-50%) !important; /* Центрируем по горизонтали */
+        transform: translate(-50%, -50%) !important; 
         
-        display: inline-block !important;
+        display: block !important;
+        width: max-content !important;
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
         color: #FFFFFF !important;
@@ -441,7 +436,7 @@ tw-sidebar tw-icon:hover {
     }
 
     tw-passage[tags~="l1"] tw-link:hover {
-        transform: translateX(-50%) scale(1.05) !important; 
+        transform: translate(-50%, -50%) scale(1.05) !important; 
         background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
     }
@@ -503,19 +498,17 @@ tw-sidebar tw-icon:hover {
       position: fixed !important; bottom: 15px !important; left: 50% !important; top: auto !important; transform: translateX(-50%) !important; width: 92% !important; padding: 20px 15px !important; background-color: rgba(255, 255, 255, 0.95) !important; backdrop-filter: blur(10px) !important; border-radius: 15px !important; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2) !important; color: #2c3e50 !important; text-shadow: none !important; font-size: 16px !important; line-height: 1.4 !important; text-align: center !important; 
   }
   
-  /* Кнопка на телефоне (оставляем плавающей снизу) */
+  /* Кнопка на телефоне (ВОЗВРАЩАЕМ ВНУТРЬ ОБЛАКА) */
   tw-passage[tags~="l1"] tw-link { 
-      position: fixed !important; 
-      bottom: 5vh !important; /* Сдвигаем ниже */
-      left: 50% !important;
-      top: auto !important;
-      transform: translateX(-50%) !important;
+      position: static !important; 
       display: inline-block !important; 
+      margin-top: 15px !important; 
       padding: 10px 20px !important; 
       background: linear-gradient(135deg, #4A90E2, #357ABD) !important; 
       color: #FFFFFF !important; 
       border-radius: 25px !important; 
       font-size: 16px !important; 
+      transform: none !important;
       box-shadow: 0 4px 10px rgba(74, 144, 226, 0.4) !important; 
   }
 }
