@@ -790,7 +790,6 @@ tw-sidebar tw-icon {
     color: #000000 !important;
     opacity: 1 !important;
 }
-
 /* ============================================================ */
 /* 1. ГЛОБАЛЬНЫЙ ШРИФТ, ИНТЕРВАЛ И ВЫРАВНИВАНИЕ ПО ШИРИНЕ */
 /* ============================================================ */
@@ -841,7 +840,7 @@ tw-story .enchantment-link {
     margin-top: 4px !important;
 }
 
-/* Вопросы (где выбор вариантов) оставляем по центру */
+/* Вопросы (где выбор вариантов) ВЫРАВНИВАЕМ ПО ШИРИНЕ */
 tw-story tw-passage[tags~="l8"],
 tw-story tw-passage[tags~="l16"],
 tw-story tw-passage[tags~="l22"],
@@ -851,9 +850,9 @@ tw-story tw-passage[tags~="l40"],
 tw-story tw-passage[tags~="l47"],
 tw-story tw-passage[tags~="l58"],
 tw-story tw-passage[tags~="l63"],
-tw-story tw-passage[tags~="l1"],
 tw-story tw-passage[tags~="l2"] {
-    text-align: center !important;
+    text-align: justify !important;
+    text-justify: inter-word !important;
 }
 
 /* ============================================================ */
@@ -901,7 +900,7 @@ tw-sidebar tw-icon {
 }
 
 /* Возвращаем красивые отступы (padding) для карточек пояснений, 
-   чтобы текст не прилипал к краям, как на вашем скриншоте */
+   чтобы текст не прилипал к краям */
 tw-passage[tags~="l6"],
 tw-passage[tags~="l9"],
 tw-passage[tags~="l10"],
