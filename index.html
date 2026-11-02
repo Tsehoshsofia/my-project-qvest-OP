@@ -402,21 +402,23 @@ tw-passage[tags~="l1"]::after {
     width: 12px !important;
     height: 12px !important;
 }
-
-/* Кнопка "Начать обучение" (Внизу на столе) */
+/* Кнопка "Начать обучение" (По центру внизу) */
 tw-passage[tags~="l1"] tw-link,
 tw-passage[tags~="l1"] tw-link.visited {
     position: fixed !important;
     
-    /* ЖЕСТКАЯ ПРИВЯЗКА К НИЗУ ЭКРАНА (СТОЛУ) */
-    bottom: 15vh !important;    /* Опускаем на 15% от нижнего края (на стол) */
-    right: 20vw !important;     /* Сдвигаем вправо, под ноутбук */
+    /* Привязка к низу экрана */
+    bottom: 10vh !important;    
     
-    top: auto !important;       /* Отключаем верхнюю привязку */
-    left: auto !important;
+    /* Идеальное центрирование по горизонтали */
+    left: 50% !important;
+    transform: translateX(-50%) !important; 
+    
+    /* Отключаем остальные привязки */
+    top: auto !important;
+    right: auto !important;
     
     margin: 0 !important;
-    transform: none !important; 
     
     display: block !important;
     width: max-content !important;
@@ -436,11 +438,11 @@ tw-passage[tags~="l1"] tw-link.visited {
 }
 
 tw-passage[tags~="l1"] tw-link:hover {
-    transform: scale(1.05) !important; 
+    /* Важно сохранить translateX(-50%) при наведении, чтобы кнопка не прыгала */
+    transform: translateX(-50%) scale(1.05) !important; 
     background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
 }
-
 /* ============================================================ */
 /* 9. МОБИЛЬНАЯ АДАПТАЦИЯ (Карточки поверх изображения) */
 /* ============================================================ */
