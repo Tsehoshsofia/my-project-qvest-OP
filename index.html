@@ -358,7 +358,7 @@ tw-sidebar tw-icon:hover {
 /* 8. ПЕРВЫЙ ЭКРАН (L1) — ОБЛАКО МЫСЛЕЙ И КНОПКА ПОД НОУТБУКОМ */
 /* ============================================================ */
 @media screen and (min-width: 821px) {
-    /* 1. Сама плашка в виде мыслей (оставляем как есть) */
+    /* 1. Сама плашка в виде мыслей */
     tw-passage[tags~="l1"] {
         position: fixed !important;
         top: 15vh !important; 
@@ -408,33 +408,39 @@ tw-sidebar tw-icon:hover {
         height: 12px !important;
     }
 
-    /* 3. Кнопка "Начать обучение" ПОД НОУТБУКОМ (левее и ниже) */
+    /* 3. Кнопка "Начать обучение" ПОД НОУТБУКОМ */
     tw-passage[tags~="l1"] tw-link {
         position: fixed !important;
-        /* Новые координаты: спускаем ниже (92%) и сдвигаем левее (58%) */
-        top: 92% !important;  
-        left: 58% !important; 
+        
+        /* ПРИВЯЗКА К НИЗУ ЭКРАНА */
+        bottom: 12vh !important;  /* Опускает кнопку вниз к столу */
+        left: 62vw !important;    /* Сдвигает вправо к ноутбуку */
+        
+        /* Сбрасываем старые параметры, чтобы не мешали */
+        top: auto !important;     
+        right: auto !important;
+        margin: 0 !important;
         
         display: inline-block !important;
         padding: 15px 30px !important;
         background: linear-gradient(135deg, #4A90E2, #357ABD) !important;
         color: #FFFFFF !important;
         border-radius: 8px !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        border: 2px solid #FFFFFF !important; /* Белая рамка выделит на фоне стола */
         text-decoration: none !important;
         font-size: 18px !important;
         font-weight: bold !important;
         white-space: nowrap !important; 
-        transform: translate(-50%, -50%) !important; 
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+        transform: translate(-50%, 0) !important; /* Убрал наклон */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6) !important;
         transition: all 0.3s ease !important;
-        z-index: 20 !important; 
+        z-index: 9999 !important; /* Максимальный приоритет */
     }
 
     tw-passage[tags~="l1"] tw-link:hover {
-        transform: translate(-50%, -50%) scale(1.05) !important; 
+        transform: translate(-50%, 0) scale(1.05) !important; 
         background: linear-gradient(135deg, #5ba1f0, #4184cc) !important;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7) !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8) !important;
     }
 }
 /* ============================================================ */
