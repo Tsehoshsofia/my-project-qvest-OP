@@ -10,9 +10,6 @@
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Основы программирования.</tw-noscript></noscript></tw-story>
 <tw-storydata name="Основы программирования" startnode="1" creator="Twine" creator-version="2.11.1" format="Harlowe" format-version="3.3.9" ifid="AE45C9B0-B1F9-4CD9-A712-6B9581B3534B" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ========================================= */
-/* ============================================================ */
-/* 1. БАЗОВЫЕ НАСТРОЙКИ, ШРИФТ И ПЕРЕНОСЫ */
-/* ============================================================ */
 /* 1. БАЗОВЫЕ НАСТРОЙКИ, ШРИФТ И ПЕРЕНОСЫ */
 /* ============================================================ */
 body {
@@ -237,7 +234,7 @@ tw-passage[tags~="l71"] {
 tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l9"], tw-passage[tags~="l10"], tw-passage[tags~="l14"], tw-passage[tags~="l17"], tw-passage[tags~="l18"], tw-passage[tags~="l24"], tw-passage[tags~="l25"], tw-passage[tags~="l30"], tw-passage[tags~="l31"], tw-passage[tags~="l32"], tw-passage[tags~="l38"], tw-passage[tags~="l39"], tw-passage[tags~="l44"], tw-passage[tags~="l45"], tw-passage[tags~="l46"], tw-passage[tags~="l51"], tw-passage[tags~="l52"], tw-passage[tags~="l53"], tw-passage[tags~="l59"], tw-passage[tags~="l61"], tw-passage[tags~="l65"], tw-passage[tags~="l67"], tw-passage[tags~="l68"] { color: #CC0000 !important; } 
 
 /* ============================================================ */
-/* 7. СТРЕЛКА «НАЗАД» (ТОЛЬКО НА СТРАНИЦАХ "ВЕРНО") */
+/* 7. СТРЕЛКА «НАЗАД» (ТОЛЬКО ДЛЯ УКАЗАННЫХ БЛОКОВ) */
 /* ============================================================ */
 tw-link, tw-link:link, tw-link:visited, tw-link:hover, tw-link:active,
 tw-link.visited, tw-link.visited:hover, tw-link.visited:active {
@@ -246,18 +243,24 @@ tw-link.visited, tw-link.visited:hover, tw-link.visited:active {
     -webkit-tap-highlight-color: transparent !important;
 }
 
-/* По умолчанию все сайдбары скрыты (включая страницы "Неверно") */
+/* По умолчанию сайдбары скрыты везде */
 tw-sidebar {
     display: none !important;
 }
 
-/* Показываем сайдбар ТОЛЬКО на страницах с правильными ответами (Верно) */
-tw-passage[tags~="l3"] tw-sidebar, tw-passage[tags~="l13"] tw-sidebar,
-tw-passage[tags~="l20"] tw-sidebar, tw-passage[tags~="l23"] tw-sidebar,
-tw-passage[tags~="l29"] tw-sidebar, tw-passage[tags~="l37"] tw-sidebar,
-tw-passage[tags~="l43"] tw-sidebar, tw-passage[tags~="l54"] tw-sidebar,
-tw-passage[tags~="l60"] tw-sidebar, tw-passage[tags~="l66"] tw-sidebar,
-tw-passage[tags~="l72"] tw-sidebar {
+/* Показываем сайдбар ТОЛЬКО на указанных вами блоках */
+tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
+tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
+tw-passage[tags~="l19"] tw-sidebar, tw-passage[tags~="l21"] tw-sidebar,
+tw-passage[tags~="l26"] tw-sidebar, tw-passage[tags~="l27"] tw-sidebar,
+tw-passage[tags~="l33"] tw-sidebar, tw-passage[tags~="l34"] tw-sidebar,
+tw-passage[tags~="l35"] tw-sidebar, tw-passage[tags~="l41"] tw-sidebar,
+tw-passage[tags~="l42"] tw-sidebar, tw-passage[tags~="l48"] tw-sidebar,
+tw-passage[tags~="l49"] tw-sidebar, tw-passage[tags~="l50"] tw-sidebar,
+tw-passage[tags~="l55"] tw-sidebar, tw-passage[tags~="l56"] tw-sidebar,
+tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
+tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
+tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -271,7 +274,7 @@ tw-sidebar tw-icon[alt="Redo"] {
     visibility: hidden !important;
 }
 
-/* Принудительно делаем стрелку видимой (перебиваем inline-стили Harlowe) */
+/* Оформление кнопки-стрелки */
 tw-sidebar tw-icon,
 tw-sidebar tw-icon[alt="Undo"] {
     display: flex !important;
@@ -297,35 +300,44 @@ tw-sidebar tw-icon:hover {
     background-color: #FFFFFF !important;
 }
 
-/* --- ПК: стрелка парит над ладонью (только на страницах "Верно") --- */
+/* --- ПК: Позиционируем в правом верхнем углу (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
-    tw-passage[tags~="l3"] tw-sidebar, tw-passage[tags~="l13"] tw-sidebar,
-    tw-passage[tags~="l20"] tw-sidebar, tw-passage[tags~="l23"] tw-sidebar,
-    tw-passage[tags~="l29"] tw-sidebar, tw-passage[tags~="l37"] tw-sidebar,
-    tw-passage[tags~="l43"] tw-sidebar, tw-passage[tags~="l54"] tw-sidebar,
-    tw-passage[tags~="l60"] tw-sidebar, tw-passage[tags~="l66"] tw-sidebar,
-    tw-passage[tags~="l72"] tw-sidebar {
+    tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
+    tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
+    tw-passage[tags~="l19"] tw-sidebar, tw-passage[tags~="l21"] tw-sidebar,
+    tw-passage[tags~="l26"] tw-sidebar, tw-passage[tags~="l27"] tw-sidebar,
+    tw-passage[tags~="l33"] tw-sidebar, tw-passage[tags~="l34"] tw-sidebar,
+    tw-passage[tags~="l35"] tw-sidebar, tw-passage[tags~="l41"] tw-sidebar,
+    tw-passage[tags~="l42"] tw-sidebar, tw-passage[tags~="l48"] tw-sidebar,
+    tw-passage[tags~="l49"] tw-sidebar, tw-passage[tags~="l50"] tw-sidebar,
+    tw-passage[tags~="l55"] tw-sidebar, tw-passage[tags~="l56"] tw-sidebar,
+    tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
+    tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
+    tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
-
-        /* Координаты над ладонью (центрирование через translate) */
-        left: 39% !important;
-        top: 36% !important;
-        transform: translate(-50%, -50%) !important;
-
-        right: auto !important;
+        top: 20px !important;
+        right: 20px !important;
+        left: auto !important;
         bottom: auto !important;
+        transform: none !important;
         flex-direction: row !important;
     }
 }
 
-/* --- Телефон: стрелка в правом верхнем углу карточки (только на страницах "Верно") --- */
+/* --- Телефон: Позиционируем в правом верхнем углу карточки (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
-    tw-passage[tags~="l3"] tw-sidebar, tw-passage[tags~="l13"] tw-sidebar,
-    tw-passage[tags~="l20"] tw-sidebar, tw-passage[tags~="l23"] tw-sidebar,
-    tw-passage[tags~="l29"] tw-sidebar, tw-passage[tags~="l37"] tw-sidebar,
-    tw-passage[tags~="l43"] tw-sidebar, tw-passage[tags~="l54"] tw-sidebar,
-    tw-passage[tags~="l60"] tw-sidebar, tw-passage[tags~="l66"] tw-sidebar,
-    tw-passage[tags~="l72"] tw-sidebar {
+    tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
+    tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
+    tw-passage[tags~="l19"] tw-sidebar, tw-passage[tags~="l21"] tw-sidebar,
+    tw-passage[tags~="l26"] tw-sidebar, tw-passage[tags~="l27"] tw-sidebar,
+    tw-passage[tags~="l33"] tw-sidebar, tw-passage[tags~="l34"] tw-sidebar,
+    tw-passage[tags~="l35"] tw-sidebar, tw-passage[tags~="l41"] tw-sidebar,
+    tw-passage[tags~="l42"] tw-sidebar, tw-passage[tags~="l48"] tw-sidebar,
+    tw-passage[tags~="l49"] tw-sidebar, tw-passage[tags~="l50"] tw-sidebar,
+    tw-passage[tags~="l55"] tw-sidebar, tw-passage[tags~="l56"] tw-sidebar,
+    tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
+    tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
+    tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: absolute !important;
         top: 10px !important;
         right: 15px !important;
