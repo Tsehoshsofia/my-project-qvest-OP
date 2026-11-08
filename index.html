@@ -186,7 +186,7 @@ tw-passage[tags~="l72"] br {
     display: none !important; 
 }
 
-/* Ссылки в блоках "Верно" */
+/* Ссылки в блоках "Верно" (ИСПРАВЛЕНО: block, отступы и стили кнопки) */
 tw-passage[tags~="l3"] tw-link, tw-passage[tags~="l13"] tw-link,
 tw-passage[tags~="l20"] tw-link, tw-passage[tags~="l23"] tw-link,
 tw-passage[tags~="l29"] tw-link, tw-passage[tags~="l37"] tw-link,
@@ -194,9 +194,34 @@ tw-passage[tags~="l43"] tw-link, tw-passage[tags~="l54"] tw-link,
 tw-passage[tags~="l60"] tw-link, tw-passage[tags~="l66"] tw-link,
 tw-passage[tags~="l72"] tw-link {
     text-align: center !important;
-    display: inline-block !important;
+    display: block !important;    /* Делаем блочным, чтобы всегда быть на новой строке */
     width: 100% !important;
-    margin-top: 5px !important; 
+    margin-top: 15px !important;  /* Отступ от текста */
+    padding: 12px 15px !important;
+    
+    /* Оформление кнопки */
+    background-color: #F4F9FF !important; 
+    border: 2px solid #4169E1 !important; 
+    border-radius: 10px !important; 
+    color: #4169E1 !important; 
+    font-size: 20px !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
+    transition: all 0.2s ease-in-out !important; 
+}
+
+/* Эффект при наведении для ссылок в блоках "Верно" */
+tw-passage[tags~="l3"] tw-link:hover, tw-passage[tags~="l13"] tw-link:hover,
+tw-passage[tags~="l20"] tw-link:hover, tw-passage[tags~="l23"] tw-link:hover,
+tw-passage[tags~="l29"] tw-link:hover, tw-passage[tags~="l37"] tw-link:hover,
+tw-passage[tags~="l43"] tw-link:hover, tw-passage[tags~="l54"] tw-link:hover,
+tw-passage[tags~="l60"] tw-link:hover, tw-passage[tags~="l66"] tw-link:hover,
+tw-passage[tags~="l72"] tw-link:hover {
+    background-color: #4169E1 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important; 
+    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
 }
 
 /* Спец. правки для l66 */
