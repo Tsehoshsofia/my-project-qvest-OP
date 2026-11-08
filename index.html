@@ -1,5 +1,5 @@
 <!DOCTYPE html> 
-<html>
+<html>  
 <head> 
 <meta charset="utf-8"> 
 <meta content="width=device-width, initial-scale=1" name="viewport"> 
@@ -526,135 +526,13 @@ tw-passage[tags~="l1"] tw-link:hover {
       font-size: 13px !important;   /* Чуть уменьшаем шрифт */
   }
 
-/* Кнопка "Начать обучение" на телефоне */
+  /* Кнопка "Начать обучение" на телефоне */
   tw-passage[tags~="l1"] tw-link,
   tw-passage[tags~="l1"] tw-link.visited {
       top: 68vh !important; /* Поднимаем кнопку над панелью браузера */
   }
 }
-</style>
-<script role="script" id="twine-user-script" type="text/twine-javascript">
-// ============================================
-// 1. АДРЕС GOOGLE-ТАБЛИЦЫ (можно оставить пустым)
-// ============================================
-
-window.SCRIPT_URL = "";
-
-
-// ============================================
-// 2. ОТПРАВКА СТАТИСТИКИ (если URL задан)
-// ============================================
-
-window.saveAnswer = function (question, answer, result) {
-  if (!window.SCRIPT_URL) return;
-
-  var player = localStorage.getItem("quest_player_id");
-  if (!player) {
-    player = "Игрок-" + Math.random().toString(36).slice(2, 10);
-    localStorage.setItem("quest_player_id", player);
-  }
-
-  var data = { player: player, question: question, answer: answer, result: result };
-
-  try {
-    fetch(window.SCRIPT_URL, {
-      method: "POST",
-      mode: "no-cors",
-      headers: { "Content-Type": "text/plain;charset=utf-8" },
-      body: JSON.stringify(data)
-    }).catch(function () {});
-  } catch (e) {}
-};
-
-
-// ============================================
-// 3. СЧЁТЧИК ПРАВИЛЬНЫХ ОТВЕТОВ
-// ============================================
-
-window.QUEST_TOTAL = 10;
-
-window.resetScore = function () {
-  localStorage.setItem("quest_score", "0");
-  localStorage.setItem("quest_answered", "0");
-  localStorage.removeItem("quest_start_time");
-  localStorage.removeItem("quest_end_time");
-};
-
-window.countAnswer = function (correct) {
-  var score = parseInt(localStorage.getItem("quest_score") || "0", 10);
-  var answered = parseInt(localStorage.getItem("quest_answered") || "0", 10);
-  if (correct) score += 1;
-  answered += 1;
-  localStorage.setItem("quest_score", String(score));
-  localStorage.setItem("quest_answered", String(answered));
-};
-
-window.getScore = function () {
-  return parseInt(localStorage.getItem("quest_score") || "0", 10);
-};
-
-
-// ============================================
-// 4. ДАТА И ВРЕМЯ ПРОХОЖДЕНИЯ
-// ============================================
-
-window.saveQuestStart = function () {
-  if (!localStorage.getItem("quest_start_time")) {
-    localStorage.setItem("quest_start_time", new Date().toISOString());
-  }
-};
-
-window.finishQuest = function () {
-  var end = new Date();
-  localStorage.setItem("quest_end_time", end.toISOString());
-
-  var startIso = localStorage.getItem("quest_start_time");
-  var start = startIso ? new Date(startIso) : end;
-
-  var diffMs = end - start;
-  var totalSec = Math.floor(diffMs / 1000);
-  var hours = Math.floor(totalSec / 3600);
-  var minutes = Math.floor((totalSec % 3600) / 60);
-  var seconds = totalSec % 60;
-
-  var durationStr =
-    (hours > 0 ? hours + " ч " : "") +
-    (minutes > 0 ? minutes + " мин " : "") +
-    seconds + " сек";
-
-  var dateStr = end.toLocaleDateString("ru-RU", {
-    day: "2-digit", month: "2-digit", year: "numeric"
-  });
-
-  var timeStr = end.toLocaleTimeString("ru-RU", {
-    hour: "2-digit", minute: "2-digit", second: "2-digit"
-  });
-
-  var score = getScore();
-  var total = window.QUEST_TOTAL;
-  var percent = Math.round((score / total) * 100);
-
-  var grade;
-  if (score === total) grade = "🏆 Отлично! Все ответы верные.";
-  else if (percent >= 80) grade = "🌟 Хорошо! Почти всё верно.";
-  else if (percent >= 60) grade = "👍 Неплохо, но есть что повторить.";
-  else if (percent >= 40) grade = "📚 Стоит повторить материал.";
-  else grade = "🔁 Рекомендую пройти квест ещё раз.";
-
-  var result =
-    "<b>📊 Результат: " + score + " из " + total + " (" + percent + "%)</b><br>" +
-    grade + "<br><br>" +
-    "📅 Дата завершения: " + dateStr + "<br>" +
-    "🕐 Время завершения: " + timeStr + "<br>" +
-    "⏱ Продолжительность: " + durationStr;
-
-  var el = document.getElementById("quest-result");
-  if (el) el.innerHTML = result;
-
-  return result;
-};
-</script>
-<tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100"> Здравствуйте. Меня зовут София, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.
+ </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="l1" color="green"></tw-tag><tw-tag name="l2" color="purple"></tw-tag><tw-tag name="l3" color="green"></tw-tag><tw-tag name="l4" color="green"></tw-tag><tw-tag name="l5" color="green"></tw-tag><tw-tag name="l6" color="green"></tw-tag><tw-tag name="l7" color="green"></tw-tag><tw-tag name="l8" color="purple"></tw-tag><tw-tag name="l9" color="purple"></tw-tag><tw-tag name="l10" color="purple"></tw-tag><tw-tag name="l11" color="purple"></tw-tag><tw-tag name="l13" color="purple"></tw-tag><tw-tag name="l14" color="purple"></tw-tag><tw-tag name="l15" color="purple"></tw-tag><tw-tag name="l16" color="orange"></tw-tag><tw-tag name="l17" color="orange"></tw-tag><tw-tag name="l18" color="orange"></tw-tag><tw-tag name="l19" color="orange"></tw-tag><tw-tag name="l20" color="orange"></tw-tag><tw-tag name="l21" color="orange"></tw-tag><tw-tag name="l22" color="blue"></tw-tag><tw-tag name="l23" color="blue"></tw-tag><tw-tag name="l24" color="blue"></tw-tag><tw-tag name="l25" color="blue"></tw-tag><tw-tag name="l26" color="blue"></tw-tag><tw-tag name="l27" color="blue"></tw-tag><tw-tag name="l28" color="blue"></tw-tag><tw-tag name="l29" color="blue"></tw-tag><tw-tag name="l30" color="blue"></tw-tag><tw-tag name="l31" color="blue"></tw-tag><tw-tag name="l32" color="blue"></tw-tag><tw-tag name="l33" color="blue"></tw-tag><tw-tag name="l34" color="blue"></tw-tag><tw-tag name="l35" color="blue"></tw-tag><tw-tag name="l36" color="blue"></tw-tag><tw-tag name="l37" color="blue"></tw-tag><tw-tag name="l38" color="blue"></tw-tag><tw-tag name="l39" color="blue"></tw-tag><tw-tag name="l40" color="blue"></tw-tag><tw-tag name="l42" color="blue"></tw-tag><tw-tag name="l41" color="blue"></tw-tag><tw-tag name="l43" color="blue"></tw-tag><tw-tag name="l44" color="blue"></tw-tag><tw-tag name="l45" color="blue"></tw-tag><tw-tag name="l46" color="blue"></tw-tag><tw-tag name="l47" color="blue"></tw-tag><tw-tag name="l48" color="blue"></tw-tag><tw-tag name="l49" color="blue"></tw-tag><tw-tag name="l50" color="blue"></tw-tag><tw-tag name="l51" color="red"></tw-tag><tw-tag name="l52" color="red"></tw-tag><tw-tag name="l53" color="red"></tw-tag><tw-tag name="l54" color="red"></tw-tag><tw-tag name="l55" color="red"></tw-tag><tw-tag name="l56" color="red"></tw-tag><tw-tag name="l57" color="red"></tw-tag><tw-tag name="l58" color="yellow"></tw-tag><tw-tag name="l59" color="yellow"></tw-tag><tw-tag name="l60" color="yellow"></tw-tag><tw-tag name="l61" color="yellow"></tw-tag><tw-tag name="l62" color="yellow"></tw-tag><tw-tag name="l63" color="yellow"></tw-tag><tw-tag name="l64" color="yellow"></tw-tag><tw-tag name="l65" color="yellow"></tw-tag><tw-tag name="l66" color="yellow"></tw-tag><tw-tag name="l67" color="yellow"></tw-tag><tw-tag name="l68" color="yellow"></tw-tag><tw-tag name="l69" color="yellow"></tw-tag><tw-tag name="l70" color="yellow"></tw-tag><tw-tag name="l71" color="yellow"></tw-tag><tw-tag name="l72" color="yellow"></tw-tag><tw-tag name="l73" color="yellow"></tw-tag><tw-passagedata pid="1" name="Пользователь" tags="l1" position="800,100" size="100,100"> Здравствуйте. Меня зовут София, я преподаватель дисциплины "Основы программирования". Я помогу тебе разобраться с типами данных в Python.
 
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="2" name="Начать обучение" tags="l2" position="800,250" size="100,100">Укажите функцию, которая поможет вывести информацию на экран 🖥️
 [[Print()]]
@@ -801,7 +679,7 @@ window.finishQuest = function () {
 [[Пояснение не верного ответа 8_1]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="45" name="age = float(age)" tags="l45" position="325,2300" size="100,100">Не верно
 [[Пояснение не верного ответа 8_2]]
-<tw-passagedata pid="46" name="age = bool(age)" tags="l46" ...>Не верно
+[[Начать обучение]]</tw-passagedata><tw-passagedata pid="46" name="age = bool(age)" tags="l46" position="450,2250" size="100,100">Не верно
 [[Пояснение не верного ответа 8_3]]
 [[Начать обучение]}</tw-passagedata><tw-passagedata pid="47" name="Пояснение не верного ответа 8_1" tags="l48" position="200,2400" size="100,100">str() не меняет тип на целое число. Она наоборот превращает значение в строку. Так как age уже строка &#39;22&#39;, то после str(age) она останется той же строкой &#39;22&#39;. 
 
