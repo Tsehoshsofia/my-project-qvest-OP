@@ -165,16 +165,15 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     max-height: none !important; 
     overflow-y: visible !important; 
     
-    /* Уменьшили отступы: сверху 15px, снизу 0.5см, по бокам 25px */
-    padding: 15px 25px 0.5cm 25px !important; 
+    padding: 20px 25px 0.5cm 25px !important; 
     
-    font-size: 18px !important; /* Уменьшили шрифт с 22px до 18px */
+    font-size: 18px !important; 
     line-height: 1.3 !important; 
     
     width: 90vw !important; 
     max-width: 850px !important; 
     
-    bottom: 1vh !important; /* Прижали карточку ближе к нижнему краю (было 2vh) */
+    bottom: 0.5vh !important; /* Опустили карточку еще ниже (было 1vh) */
 }
 
 /* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
@@ -841,22 +840,22 @@ input() принимает не более одного аргумента.
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
 Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))
-<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 10px; width: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; margin-bottom: 5px; width: 100%;">
     <div style="flex: 1; text-align: left;">
-        👩🏻‍💻📈 Квест завершён!<br><br>
+        <div style="margin-bottom: 5px;">👩🏻‍💻📈 Квест завершён!</div>
         Правильных ответов: $correct<br>
         Ошибок: $wrong<br>
         Всего вопросов: (print: $correct + $wrong)<br>
         Попытка: $attempts
     </div>
     <div style="flex: 1; text-align: right; white-space: nowrap;">
-        ⏱️ Затраченное время: <span id="ekb_duration"></span><br><br>
+        <div style="margin-bottom: 5px;">⏱️ Затраченное время: <span id="ekb_duration"></span></div>
         📅 Дата: <span id="ekb_date"></span><br>
         🕐 Время: <span id="ekb_time"></span>
     </div>
 </div>
 (if: $attemptHistory's length > 1)[<div style="text-align: left; margin-bottom: 10px; width: 100%; font-size: 16px !important;">📜 История попыток:<div style="margin-bottom: 5px;">(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
-<div style="text-align: center; width: 100%; margin-top: 0px;">
+<div style="text-align: center; width: 100%; margin-top: 10px;">
     Спасибо за игру!
     [[Пройти заново->Начать обучение]]
 </div>
