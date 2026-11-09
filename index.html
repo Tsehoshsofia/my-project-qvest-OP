@@ -559,7 +559,7 @@ tw-passage[tags~="l1"] tw-link:hover {
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="2" name="Начать обучение" tags="l2" position="800,250" size="100,100">(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $correct to 0, $wrong to 0, $perfect to true, $attempts to (cond: $attempts is a number, $attempts + 1, 1))Укажите функцию, которая поможет вывести информацию на экран 🖥️
 [[Print()]]
 [[input()]]
-[[print()]]</tw-passagedata><tw-passagedata pid="3" name="print()" tags="l3" position="900,450" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span> 
+[[print()]]<script>sessionStorage.setItem('questStartTime', Date.now());</script></tw-passagedata><tw-passagedata pid="3" name="print()" tags="l3" position="900,450" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span> 
 [[Переходим к следующему вопросу_2]]</tw-passagedata><tw-passagedata pid="4" name="input()" tags="l4" position="1025,325" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="5" name="Print()" tags="l5" position="1225,300" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
@@ -828,20 +828,34 @@ input() принимает не более одного аргумента.
 Попытка _item's attempt: Правильных - _item's correct, Ошибок - _item's wrong<br>
 ]
 ]
-<br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
+<br>⏱️ Затраченное время: <span id="ekb_duration"></span><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
 <script>
 (function() {
     function updateTime() {
         var eDate = document.getElementById('ekb_date');
         var eTime = document.getElementById('ekb_time');
-        if (eDate && eTime) {
+        var eDuration = document.getElementById('ekb_duration');
+        
+        if (eDate && eTime && eDuration) {
             var d = new Date();
             var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
             var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
+            
             eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
             eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
+
+            // Расчет затраченного времени
+            var startTime = sessionStorage.getItem('questStartTime');
+            if (startTime) {
+                var diff = Date.now() - parseInt(startTime, 10);
+                var minutes = Math.floor(diff / 60000);
+                var seconds = Math.floor((diff % 60000) / 1000);
+                eDuration.innerText = (minutes > 0 ? minutes + " мин " : "") + seconds + " сек";
+            } else {
+                eDuration.innerText = "неизвестно";
+            }
+            
         } else {
-            // Если Harlowe еще не отрисовал элементы, проверяем снова через 50 мс
             setTimeout(updateTime, 50);
         }
     }
