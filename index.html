@@ -155,23 +155,25 @@ tw-passage[tags~="l58"] tw-link:hover, tw-passage[tags~="l63"] tw-link:hover {
 /* ============================================================ */
 /* 5. БЛОКИ "ВЕРНО" (ИСПРАВЛЕН ПРОБЕЛ) */
 /* ============================================================ */
-tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"], 
-tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"], 
-tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"], 
-tw-passage[tags~="l66"],/* Исправленный блок для ИТОГА (l72) - добавлен [tags] для приоритета */
-tw-passage[tags~="l72"][tags] {
+/* ============================================================ */
+/* 5. БЛОКИ "ВЕРНО" (ИСПРАВЛЕН ПРОБЕЛ) */
+/* ============================================================ */
+tw-passage[tags~="l3"][tags], tw-passage[tags~="l13"][tags], tw-passage[tags~="l20"][tags], 
+tw-passage[tags~="l23"][tags], tw-passage[tags~="l29"][tags], tw-passage[tags~="l37"][tags], 
+tw-passage[tags~="l43"][tags], tw-passage[tags~="l54"][tags], tw-passage[tags~="l60"][tags], 
+tw-passage[tags~="l66"][tags], tw-passage[tags~="l72"][tags] {
     text-align: justify !important; 
     text-justify: inter-word !important;
     color: #000000 !important;
     max-height: none !important; 
     overflow-y: visible !important; 
     
-    /* Прозрачность 85% (0.85) */
+    /* Прозрачность 85% для всех правильных ответов и итога */
     background-color: rgba(255, 255, 255, 0.85) !important; 
     
     padding: 10px 25px 0px 25px !important; 
     font-size: 18px !important; 
-    line-height: 1.1 !important; 
+    line-height: 1.3 !important; /* Немного увеличили межстрочный интервал для читаемости */
     width: 90vw !important; 
     max-width: 850px !important; 
     bottom: 0px !important; 
@@ -813,22 +815,17 @@ input() - это встроенная функция Python для получе�
 [[Пояснение не верного ответа 11_1]]
 [[Начать обучение]]</tw-passagedata>
 <tw-passagedata pid="66" name="Только один" tags="l66" position="550,3025" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
-
-Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом.
-Например:
-name = input(&#39;Введите имя: &#39;)
-Здесь &#39;Введите имя: &#39; - это тот самый единственный аргумент.
-Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. Больше одного аргумента передать нельзя - это вызовет ошибку.
-
-input() принимает не более одного аргумента.
-
-Аргумент необязателен: можно вызвать input() без него.
-
-Аргумент - это строка-приглашение, которая выводится перед вводом.
-
-Всё, что введёт пользователь, возвращается как строка (str).
-
-
+<br><br>
+Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом. 
+Например:<br>
+name = input(&#39;Введите имя: &#39;)<br>
+Здесь &#39;Введите имя: &#39; - это тот самый единственный аргумент. 
+Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. 
+Больше одного аргумента передать нельзя - это вызовет ошибку.<br><br>
+input() принимает не более одного аргумента.<br><br>
+Аргумент необязателен: можно вызвать input() без него.<br><br>
+Аргумент - это строка-приглашение, которая выводится перед вводом.<br><br>
+Всё, что введёт пользователь, возвращается как строка (str).<br><br>
 [[ИТОГ]]</tw-passagedata>
 <tw-passagedata pid="67" name="Ни одного" tags="l67" position="687.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_2]]
