@@ -169,14 +169,14 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     padding: 10px 25px 10px 25px !important; 
     
     font-size: 18px !important; 
-    line-height: 1.1 !important; /* Уменьшили межстрочный интервал */
+    line-height: 1.1 !important; /* Межстрочный интервал */
     
     width: 90vw !important; 
     max-width: 850px !important; 
     
-    bottom: 1% !important; /* Прижали карточку еще ниже */
+    /* Прижали карточку еще ниже (было 1%, ставим 0.5%) */
+    bottom: 0.5% !important; 
 }
-
 /* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
 /* Размер шрифта для текста внутри итогов */
 tw-passage[tags~="l72"] div {
@@ -856,8 +856,7 @@ input() принимает не более одного аргумента.
     </div>
 </div>
 (if: $attemptHistory's length > 1)[<div style="text-align: left; margin-top: 5px; width: 100%; font-size: 16px !important;">📜 История попыток:<div>(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
-<div style="text-align: center; width: 100%; margin-top: 10px;">
-    Спасибо за игру!
+<div style="text-align: center; width: 100%; margin-top: 5px;">
     [[Пройти заново->Начать обучение]]
 </div>
 <script>
