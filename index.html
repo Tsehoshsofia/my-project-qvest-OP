@@ -820,24 +820,33 @@ input() принимает не более одного аргумента.
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
 Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))]
-(set: $attemptHistory to it + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br><br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br><br>(if: $perfect)[🏆 Отлично! Вы прошли квест без единой ошибки!<br>](else-if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>]
+(set: $attemptHistory to it + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br><br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br><br>
+(if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>]
 (if: $attemptHistory's length > 1)[
 <br>📜 История попыток:<br>
 (for: each _item, ...$attemptHistory)[
 Попытка _item's attempt: Правильных - _item's correct, Ошибок - _item's wrong<br>
 ]
 ]
-<br>📅 Дата: (current-date:)<br>🕐 Время: (current-time:)<br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]</tw-passagedata>
+<br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
 <script>
-setTimeout(function(){
-    var d = new Date();
-    var eDate = document.getElementById('ekb_date');
-    var eTime = document.getElementById('ekb_time');
-    if (eDate && eTime) {
-        eDate.innerText = d.toLocaleDateString('ru-RU', {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'});
-        eTime.innerText = d.toLocaleTimeString('ru-RU', {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit'});
+(function() {
+    function updateTime() {
+        var eDate = document.getElementById('ekb_date');
+        var eTime = document.getElementById('ekb_time');
+        if (eDate && eTime) {
+            var d = new Date();
+            var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
+            var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
+            eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
+            eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
+        } else {
+            // Если Harlowe еще не отрисовал элементы, проверяем снова через 50 мс
+            setTimeout(updateTime, 50);
+        }
     }
-}, 500);
+    updateTime();
+})();
 </script></tw-passagedata>
 </tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
