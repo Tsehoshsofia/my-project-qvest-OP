@@ -158,23 +158,25 @@ tw-passage[tags~="l58"] tw-link:hover, tw-passage[tags~="l63"] tw-link:hover {
 tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"], 
 tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"], 
 tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"], 
-tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
+tw-passage[tags~="l66"],ttw-passage[tags~="l72"] {
     text-align: justify !important; 
     text-justify: inter-word !important;
     color: #000000 !important;
-    max-height: 52vh !important; /* Карточка занимает только нижнюю половину экрана */
-    overflow-y: auto !important; /* Включаем прокрутку, если текст не влезет */
+    max-height: 50vh !important; /* Ровно половина экрана */
+    overflow-y: auto !important; /* Включаем прокрутку внутри карточки */
     padding: 15px 20px !important;
-    font-size: 20px !important; /* Чуть уменьшаем шрифт, чтобы влезло больше текста */
+    font-size: 20px !important; 
+    bottom: 0 !important; /* Прижимаем к самому низу */
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 
-/* Сдвигаем фон с девушкой так, чтобы лицо было по центру верхней половины */
+/* Сдвигаем фон еще выше, чтобы лицо точно было видно */
 tw-story[tags~="l72"] { 
     background-image: url("25.jpeg") !important; 
-    background-position: center 25% !important; /* Поднимаем картинку вверх */
-    background-size: cover !important; /* Растягиваем на весь экран */
+    background-position: center 15% !important; 
+    background-size: cover !important; 
 }
-
 /* Слово "Верно" */
 .success-word { 
     color: #008000 !important; 
@@ -831,19 +833,7 @@ input() принимает не более одного аргумента.
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)
-(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))]
-(set: $attemptHistory to it + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br>
-(if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>]
-(if: $attemptHistory's length > 1)[
-<br>📜 История попыток:<br>
-<div style="line-height: 1.2; font-size: 16px; margin-bottom: 10px;">
-(for: each _item, ...$attemptHistory)[
-Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>
-]
-</div>
-]
-<br>⏱️ Затраченное время: <span id="ekb_duration"></span><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to it + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br>(if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>](if: $attemptHistory's length > 1)[<br>📜 История попыток:<div style="line-height: 1.2; font-size: 16px; margin-bottom: 10px;">(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div>]<br>⏱️ Затраченное время: <span id="ekb_duration"></span><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
 <script>
 (function() {
     function updateTime() {
@@ -859,7 +849,6 @@ input() принимает не более одного аргумента.
             eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
             eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
 
-            // Расчет затраченного времени
             var startTime = window.questStartTime;
             if (startTime) {
                 var diff = Date.now() - startTime;
