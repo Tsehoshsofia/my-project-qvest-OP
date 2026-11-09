@@ -37,8 +37,8 @@ p, span, div {
 
 /* Убираем лишние пустые строки */
 tw-story tw-consecutive-br { display: none !important; }
-tw-story br { display: block !important; content: "" !important; margin-bottom: 6px !important; }
-
+tw-story br { display: block !important; content: "" !important; margin-bottom: 0px !important; }
+    
 /* ============================================================ */
 /* 2. ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ ВСЕХ БЛОКОВ */
 /* ============================================================ */
@@ -820,14 +820,7 @@ input() принимает не более одного аргумента.
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">👩🏻‍💻📈 Квест завершён!<br><br>
-Правильных ответов: $correct<br>
-Ошибок: $wrong<br>
-Всего вопросов: (print: $correct + $wrong)<br><br>
-(if: $perfect)[🏆 Отлично! Вы прошли квест без единой ошибки!<br>]
-(else-if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>]
-(else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>]
-<br>Спасибо за игру!</tw-passagedata></tw-storydata>
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">👩🏻‍💻📈 Квест завершён!<br><br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br><br>(if: $perfect)[🏆 Отлично! Вы прошли квест без единой ошибки!<br>](else-if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>]<br>Спасибо за игру!</tw-passagedata></tw-storydata>
     
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
