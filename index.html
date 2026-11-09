@@ -785,15 +785,11 @@ input() - это встроенная функция Python для получе�
 
 [[Переходим к следующему вопросу 11]]</tw-passagedata><tw-passagedata pid="61" name="get_name(&quot;Введите имя: &quot;)" tags="l61" position="750,2725" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 10_2]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">Сколько аргументов может принимать функция input()?
-Варианты:
-
-[[Сколько угодно]]
-
-[[Только один]]
-
-[[Ни одного]]
-
+[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">Сколько аргументов может принимать функция input()?<br><br>
+Варианты:<br><br>
+[[Сколько угодно]]<br><br>
+[[Только один]]<br><br>
+[[Ни одного]]<br><br>
 [[Только два]]</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
 
 Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь, пока пользователь что-то введёт. 
@@ -808,15 +804,23 @@ input() - это встроенная функция Python для получе�
 <div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
     <span class="success-word">Верно</span>
 </div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important;">
-    <ul style="list-style-type: none; padding-left: 0; margin: 0;">
-        <li style="margin-bottom: 15px;">Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом. Например: name = input('Введите имя: ')</li>
-        <li style="margin-bottom: 15px;">Здесь 'Введите имя: ' - это тот самый единственный аргумент. Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. Больше одного аргумента передать нельзя - это вызовет ошибку.</li>
-        <li style="margin-bottom: 15px;">input() принимает не более одного аргумента.</li>
-        <li style="margin-bottom: 15px;">Аргумент необязателен: можно вызвать input() без него.</li>
-        <li style="margin-bottom: 15px;">Аргумент - это строка-приглашение, которая выводится перед вводом.</li>
-        <li style="margin-bottom: 0;">Всё, что введёт пользователь, возвращается как строка (str).</li>
-    </ul>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
+    Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом. Например: name = input('Введите имя: ')
+</div>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
+    Здесь 'Введите имя: ' - это тот самый единственный аргумент. Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. Больше одного аргумента передать нельзя - это вызовет ошибку.
+</div>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
+    input() принимает не более одного аргумента.
+</div>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
+    Аргумент необязателен: можно вызвать input() без него.
+</div>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
+    Аргумент - это строка-приглашение, которая выводится перед вводом.
+</div>
+<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 0;">
+    Всё, что введёт пользователь, возвращается как строка (str).
 </div>
 <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
     [[ИТОГ]]
@@ -833,7 +837,7 @@ input() - это встроенная функция Python для получе�
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))<br><br>
 <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; width: 100%; margin-bottom: 0px;">
     <div style="flex: 1; text-align: left; line-height: 1.2;">
         <div style="margin-bottom: 2px;">👩🏻‍💻📈 Квест завершён!</div>
