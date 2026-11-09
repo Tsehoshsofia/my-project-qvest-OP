@@ -158,25 +158,22 @@ tw-passage[tags~="l58"] tw-link:hover, tw-passage[tags~="l63"] tw-link:hover {
 tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"], 
 tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"], 
 tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"], 
-tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
+tw-passage[tags~="l66"],/* Исправленный блок для ИТОГА (l72) - добавлен [tags] для приоритета */
+tw-passage[tags~="l72"][tags] {
     text-align: justify !important; 
     text-justify: inter-word !important;
     color: #000000 !important;
     max-height: none !important; 
     overflow-y: visible !important; 
     
-    /* Добавили прозрачность 85% (0.85) */
+    /* Прозрачность 85% (0.85) */
     background-color: rgba(255, 255, 255, 0.85) !important; 
     
-    /* Отступы карточки: сверху 10px, по бокам 25px, снизу 0 */
     padding: 10px 25px 0px 25px !important; 
-    
     font-size: 18px !important; 
     line-height: 1.1 !important; 
-    
     width: 90vw !important; 
     max-width: 850px !important; 
-    
     bottom: 0px !important; 
 }
 /* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
