@@ -165,17 +165,17 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     max-height: none !important; 
     overflow-y: visible !important; 
     
-    /* Уменьшили отступы: сверху 10px, по бокам 25px, снизу 10px */
-    padding: 10px 25px 10px 25px !important; 
+    /* Отступы: сверху 10px, по бокам 25px, снизу 0 */
+    padding: 10px 25px 0px 25px !important; 
     
     font-size: 18px !important; 
-    line-height: 1.1 !important; /* Межстрочный интервал */
+    line-height: 1.1 !important; 
     
     width: 90vw !important; 
     max-width: 850px !important; 
     
-    /* Прижали карточку еще ниже (было 1%, ставим 0.5%) */
-    bottom: 0.5% !important; 
+    /* Опускаем карточку в самый низ */
+    bottom: 0px !important; 
 }
 /* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
 /* Размер шрифта для текста внутри итогов */
@@ -210,7 +210,7 @@ tw-passage[tags~="l72"] tw-link {
     text-align: center !important;
     display: block !important;    /* Делаем блочным, чтобы всегда быть на новой строке */
     width: 100% !important;
-    margin-top: 15px !important;  /* Отступ от текста */
+    margin-top: 0px !important;  /* Отступ от текста */
     padding: 12px 15px !important;
     
     /* Оформление кнопки */
@@ -841,7 +841,7 @@ input() принимает не более одного аргумента.
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
 Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))
-<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; width: 100%;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; width: 100%; margin-bottom: 0.3cm;">
     <div style="flex: 1; text-align: left;">
         <div style="margin-bottom: 2px;">👩🏻‍💻📈 Квест завершён!</div>
         Правильных ответов: $correct<br>
@@ -855,8 +855,8 @@ input() принимает не более одного аргумента.
         🕐 Время: <span id="ekb_time"></span>
     </div>
 </div>
-(if: $attemptHistory's length > 1)[<div style="text-align: left; margin-top: 5px; width: 100%; font-size: 16px !important;">📜 История попыток:<div>(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
-<div style="text-align: center; width: 100%; margin-top: 5px;">
+(if: $attemptHistory's length > 1)[<div style="text-align: left; margin-bottom: 0.3cm; width: 100%; font-size: 16px !important;">📜 История попыток:<div>(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
+<div style="text-align: center; width: 100%; padding-bottom: 0.3cm;">
     [[Пройти заново->Начать обучение]]
 </div>
 <script>
