@@ -181,8 +181,7 @@ tw-passage[tags~="l3"] br, tw-passage[tags~="l13"] br,
 tw-passage[tags~="l20"] br, tw-passage[tags~="l23"] br, 
 tw-passage[tags~="l29"] br, tw-passage[tags~="l37"] br, 
 tw-passage[tags~="l43"] br, tw-passage[tags~="l54"] br, 
-tw-passage[tags~="l60"] br, tw-passage[tags~="l66"] br, 
-tw-passage[tags~="l72"] br {
+tw-passage[tags~="l60"] br, tw-passage[tags~="l66"] br {
     display: none !important; 
 }
 
@@ -821,15 +820,15 @@ input() принимает не более одного аргумента.
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">👩🏻‍💻📈 Квест завершён!
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">👩🏻‍💻📈 Квест завершён!<br><br>
 
 Правильных ответов: $correct<br>
 Ошибок: $wrong<br>
-Всего вопросов: (print: $correct + $wrong)
+Всего вопросов: (print: $correct + $wrong)<br><br>
 
-(if: $perfect)[🏆 Отлично! Вы прошли квест без единой ошибки!]
-(else-if: $wrong <= 3)[👍 Хороший результат — ошибок: $wrong.]
-(else:)[📚 Стоит повторить материал. Ошибок: $wrong.]
+(if: $perfect)[🏆 Отлично! Вы прошли квест без единой ошибки!]<br>
+(else-if: $wrong <= 3)[👍 Хороший результат — ошибок: $wrong.]<br>
+(else:)[📚 Стоит повторить материал. Ошибок: $wrong.]<br><br>
 
 Спасибо за игру!</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
