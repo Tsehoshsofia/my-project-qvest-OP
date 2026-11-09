@@ -238,6 +238,9 @@ tw-passage[tags~="l72"] tw-link:hover {
 
 /* Спец. правки для l66 */
 tw-passage[tags~="l66"] { font-size: 22px !important; padding-top: 20px !important; padding-bottom: 15px !important; line-height: 1.0 !important; }
+/* ============================================================ */
+/* 6. ПОЯСНЕНИЯ (С ПРОКРУТКОЙ, ПО ШИРИНЕ) */
+/* ============================================================ */
 tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l6"], 
 tw-passage[tags~="l7"], tw-passage[tags~="l9"], tw-passage[tags~="l10"], 
 tw-passage[tags~="l11"], tw-passage[tags~="l14"], tw-passage[tags~="l15"], 
@@ -261,7 +264,8 @@ tw-passage[tags~="l71"] {
     overflow-y: auto !important;
     padding-top: 60px !important;
 }
-/* Спец. правки для l66 (поставлены ПОСЛЕ общего списка, чтобы сработали) */
+
+/* Спец. правки для l66 (ДОЛЖНЫ БЫТЬ ПОСЛЕ ОБЩЕГО СПИСКА) */
 tw-passage[tags~="l66"],
 tw-passage[tags~="l66"] div,
 tw-passage[tags~="l66"] span,
@@ -272,7 +276,6 @@ tw-passage[tags~="l66"] p {
     padding-bottom: 15px !important;
 }
 
-/* Убираем лишнюю высоту у переносов строк именно для этого блока */
 tw-passage[tags~="l66"] br {
     display: block !important;
     content: "" !important;
@@ -789,7 +792,7 @@ input() - это встроенная функция Python для получе�
 
 Программа не получит имя, потому что print() не умеет читать данные с клавиатуры. Для ввода нужна функция input().
 </tw-passagedata>
-<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Данной функции в Python не существует. get_name() - это выдуманное имя, его нет среди встроенных функций. Если попробовать выполнить этот код, Python выдаст ошибку NameError: name &#39;get_name&#39; is not defined. Для получения ввода с клавиатуры в Python есть только одна стандартная функция - input().</tw-passagedata>
+<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Функция print() выводит информацию на экран, но не умеет читать данные с клавиатуры. Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь ввода пользователя. Для получения данных от пользователя используется функция input().</tw-passagedata>
 <tw-passagedata pid="65" name="Сколько угодно" tags="l65" position="437.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_1]]
 [[Начать обучение]]</tw-passagedata>
