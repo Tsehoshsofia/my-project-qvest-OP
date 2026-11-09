@@ -165,8 +165,11 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     max-height: none !important; 
     overflow-y: visible !important; 
     
-    /* Отступы: сверху 10px, по бокам 25px, снизу 0 */
-    padding: 10px 25px 0px 25px !important; /* снизу поставили 0px */
+    /* Добавили прозрачность 85% (0.85) */
+    background-color: rgba(255, 255, 255, 0.85) !important; 
+    
+    /* Отступы карточки: сверху 10px, по бокам 25px, снизу 0 */
+    padding: 10px 25px 0px 25px !important; 
     
     font-size: 18px !important; 
     line-height: 1.1 !important; 
@@ -174,7 +177,6 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     width: 90vw !important; 
     max-width: 850px !important; 
     
-    /* Опускаем карточку в самый низ */
     bottom: 0px !important; 
 }
 /* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
@@ -207,15 +209,15 @@ tw-passage[tags~="l29"] tw-link, tw-passage[tags~="l37"] tw-link,
 tw-passage[tags~="l43"] tw-link, tw-passage[tags~="l54"] tw-link,
 tw-passage[tags~="l60"] tw-link, tw-passage[tags~="l66"] tw-link,
 tw-passage[tags~="l72"] tw-link {
-    text-align: center !important;
     display: block !important;    
-    width: 100% !important;
-    max-width: 100% !important; /* Убрали ограничение, чтобы кнопка стала широкой */
+    width: max-content !important; /* Кнопка сжимается ровно по длине текста */
+    max-width: 95% !important;
     
-    margin-top: 10px !important;  /* Отступ от текста до кнопки */
-    margin-bottom: 0.5cm !important; /* Ровно 0.5 см от кнопки до низа подложки */
+    /* Центрируем кнопку (auto) и задаем отступы: сверху 10px, снизу 0.5 см */
+    margin: 10px auto 0.5cm auto !important;  
     
-    padding: 8px 15px !important; /* Уменьшили верхний и нижний отступ, чтобы кнопка стала короче */
+    /* Внутренние отступы: сверху/снизу 8px, слева/справа ровно 0.4 см */
+    padding: 8px 0.4cm !important; 
     
     background-color: #F4F9FF !important; 
     border: 2px solid #4169E1 !important; 
@@ -223,6 +225,7 @@ tw-passage[tags~="l72"] tw-link {
     color: #4169E1 !important; 
     font-size: 20px !important;
     font-weight: bold !important;
+    text-align: center !important;
     text-decoration: none !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
     transition: all 0.2s ease-in-out !important; 
