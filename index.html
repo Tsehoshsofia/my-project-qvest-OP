@@ -166,7 +166,7 @@ tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     overflow-y: visible !important; 
     
     /* Отступы: сверху 10px, по бокам 25px, снизу 0 */
-    padding: 10px 25px 0px 25px !important; 
+    padding: 10px 25px 0px 25px !important; /* снизу поставили 0px */
     
     font-size: 18px !important; 
     line-height: 1.1 !important; 
@@ -208,12 +208,15 @@ tw-passage[tags~="l43"] tw-link, tw-passage[tags~="l54"] tw-link,
 tw-passage[tags~="l60"] tw-link, tw-passage[tags~="l66"] tw-link,
 tw-passage[tags~="l72"] tw-link {
     text-align: center !important;
-    display: block !important;    /* Делаем блочным, чтобы всегда быть на новой строке */
+    display: block !important;    
     width: 100% !important;
-   margin-top: 0px !important; 
-    margin-bottom: 10px !important;
+    max-width: 100% !important; /* Убрали ограничение, чтобы кнопка стала широкой */
     
-    /* Оформление кнопки */
+    margin-top: 10px !important;  /* Отступ от текста до кнопки */
+    margin-bottom: 0.5cm !important; /* Ровно 0.5 см от кнопки до низа подложки */
+    
+    padding: 8px 15px !important; /* Уменьшили верхний и нижний отступ, чтобы кнопка стала короче */
+    
     background-color: #F4F9FF !important; 
     border: 2px solid #4169E1 !important; 
     border-radius: 10px !important; 
@@ -224,7 +227,6 @@ tw-passage[tags~="l72"] tw-link {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
     transition: all 0.2s ease-in-out !important; 
 }
-
 /* Эффект при наведении для ссылок в блоках "Верно" */
 tw-passage[tags~="l3"] tw-link:hover, tw-passage[tags~="l13"] tw-link:hover,
 tw-passage[tags~="l20"] tw-link:hover, tw-passage[tags~="l23"] tw-link:hover,
@@ -856,9 +858,7 @@ input() принимает не более одного аргумента.
     </div>
 </div>
 (if: $attemptHistory's length > 1)[<div style="text-align: left; margin-top: 5px; width: 100%; font-size: 16px !important;">📜 История попыток:<div>(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
-<div style="text-align: center; width: 100%; margin-top: 0px;">
-    [[Пройти заново->Начать обучение]]
-</div>
+[[Пройти заново->Начать обучение]]
 <script>
 (function() {
     function updateTime() {
