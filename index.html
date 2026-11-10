@@ -388,8 +388,6 @@ tw-sidebar tw-icon:hover {
     background-color: #FFFFFF !important;
 }
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
-/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
-/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -405,13 +403,12 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* 👇 НОВЫЕ ФИКСИРОВАННЫЕ КООРДИНАТЫ 👇 */
-        /* Отвязываем от процентов и ставим точные пиксели от верхнего левого угла */
-        top: 380px !important;   /* Высота от верха экрана */
-        left: 550px !important;  /* Отступ от левого края экрана */
-        /* 👆 ================================= 👆 */
+        /* 👇 ПРИВЯЗКА К ЦЕНТРУ ЭКРАНА 👇 */
+        top: 40% !important;    /* Высота: 40% от верха экрана (как раз уровень ладони) */
+        left: 46% !important;   /* Ширина: чуть левее центра, к руке */
+        /* 👆 ======================= 👆 */
         
-        transform: translate(-50%, -50%) !important; /* Центрируем саму кнопку относительно этой точки */
+        transform: translate(-50%, -50%) !important; 
         right: auto !important;
         bottom: auto !important;
         flex-direction: row !important;
