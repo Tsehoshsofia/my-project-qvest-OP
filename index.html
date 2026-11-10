@@ -397,13 +397,15 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* Новые координаты для ПК */
-        left: 55% !important;   
-        top: 52% !important;    
+        /* 👇 ПРИВЯЗКА К ПРАВОМУ НИЖНЕМУ УГЛУ 👇 */
+        right: 45% !important;   /* Отступ от правого края (увеличьте, чтобы сдвинуть влево) */
+        bottom: 30% !important;  /* Отступ от низа (увеличьте, чтобы поднять выше) */
         
-        transform: translate(-50%, -50%) !important;
-        right: auto !important;
-        bottom: auto !important;
+        /* Отключаем остальные привязки */
+        left: auto !important;
+        top: auto !important;
+        
+        transform: translate(50%, 50%) !important;
         flex-direction: row !important;
     }
 }
