@@ -283,10 +283,39 @@ tw-passage[tags~="l71"] {
     padding-top: 60px !important;
 }
 
-/* Цвета для неправильных ответов (красный) */
-tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l9"], tw-passage[tags~="l10"], tw-passage[tags~="l14"], tw-passage[tags~="l17"], tw-passage[tags~="l18"], tw-passage[tags~="l24"], tw-passage[tags~="l25"], tw-passage[tags~="l30"], tw-passage[tags~="l31"], tw-passage[tags~="l32"], tw-passage[tags~="l38"], tw-passage[tags~="l39"], tw-passage[tags~="l44"], tw-passage[tags~="l45"], tw-passage[tags~="l46"], tw-passage[tags~="l51"], tw-passage[tags~="l52"], tw-passage[tags~="l53"], tw-passage[tags~="l59"], tw-passage[tags~="l61"], tw-passage[tags~="l65"], tw-passage[tags~="l67"], tw-passage[tags~="l68"] { color: #CC0000 !important; } 
-
 /* ============================================================ */
+/* Цвета для неправильных ответов (Красная только первая строка) */
+/* ============================================================ */
+tw-passage[tags~="l4"]::first-line, 
+tw-passage[tags~="l5"]::first-line, 
+tw-passage[tags~="l9"]::first-line, 
+tw-passage[tags~="l10"]::first-line, 
+tw-passage[tags~="l14"]::first-line, 
+tw-passage[tags~="l17"]::first-line, 
+tw-passage[tags~="l18"]::first-line, 
+tw-passage[tags~="l24"]::first-line, 
+tw-passage[tags~="l25"]::first-line, 
+tw-passage[tags~="l30"]::first-line, 
+tw-passage[tags~="l31"]::first-line, 
+tw-passage[tags~="l32"]::first-line, 
+tw-passage[tags~="l38"]::first-line, 
+tw-passage[tags~="l39"]::first-line, 
+tw-passage[tags~="l44"]::first-line, 
+tw-passage[tags~="l45"]::first-line, 
+tw-passage[tags~="l46"]::first-line, 
+tw-passage[tags~="l51"]::first-line, 
+tw-passage[tags~="l52"]::first-line, 
+tw-passage[tags~="l53"]::first-line, 
+tw-passage[tags~="l59"]::first-line, 
+tw-passage[tags~="l61"]::first-line, 
+tw-passage[tags~="l65"]::first-line, 
+tw-passage[tags~="l67"]::first-line, 
+tw-passage[tags~="l68"]::first-line { 
+    color: #CC0000 !important; 
+    font-weight: bold !important;
+    /* Легкая белая обводка, чтобы красный текст не сливался с картинкой */
+    text-shadow: 0px 0px 4px rgba(255, 255, 255, 1) !important; 
+}
 /* 7. СТРЕЛКА «НАЗАД» (ТОЛЬКО ДЛЯ УКАЗАННЫХ БЛОКОВ) */
 /* ============================================================ */
 tw-link, tw-link:link, tw-link:visited, tw-link:hover, tw-link:active,
@@ -368,15 +397,18 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
-        left: 39% !important;
-        top: 36% !important;
+        
+        /* 👇 ВОТ ЗДЕСЬ МЕНЯЕМ 👇 */
+        left: 43% !important; 
+        top: 50% !important;  
+        /* 👆 ================= 👆 */
+        
         transform: translate(-50%, -50%) !important;
         right: auto !important;
         bottom: auto !important;
         flex-direction: row !important;
     }
 }
-
 /* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
