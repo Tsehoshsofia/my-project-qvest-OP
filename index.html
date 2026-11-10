@@ -132,33 +132,27 @@ tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link,
 tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, 
 tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, 
 tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, 
-tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
+tw-passage[tags~="l58"] tw-link, /* Стили для ссылок, созданных через макрос (link-goto:) в l63 */
+tw-passage[tags~="l63"] tw-expression[type="macro"] tw-link {
     display: block !important;
     width: 100% !important;
     max-width: 450px !important;
-    margin: 8px auto !important; 
+    margin: 8px auto !important;
     padding: 12px 15px !important;
-    background-color: #F4F9FF !important; 
-    border: 2px solid #4169E1 !important; 
-    border-radius: 10px !important; 
-    color: #4169E1 !important; 
+    background-color: #F4F9FF !important;
+    border: 2px solid #4169E1 !important;
+    border-radius: 10px !important;
+    color: #4169E1 !important;
     font-size: 20px !important;
     font-weight: bold !important;
-    text-align: center !important; 
+    text-align: center !important;
     text-decoration: none !important;
-    transition: all 0.2s ease-in-out !important; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
 }
 
-tw-passage[tags~="l2"] tw-link:hover, tw-passage[tags~="l8"] tw-link:hover, 
-tw-passage[tags~="l16"] tw-link:hover, tw-passage[tags~="l22"] tw-link:hover, 
-tw-passage[tags~="l28"] tw-link:hover, tw-passage[tags~="l36"] tw-link:hover, 
-tw-passage[tags~="l40"] tw-link:hover, tw-passage[tags~="l47"] tw-link:hover, 
-tw-passage[tags~="l58"] tw-link:hover, tw-passage[tags~="l63"] tw-link:hover {
+tw-passage[tags~="l63"] tw-expression[type="macro"] tw-link:hover {
     background-color: #4169E1 !important;
     color: #FFFFFF !important;
-    transform: translateY(-2px) !important; 
-    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
 }
 /* ============================================================ */
 /* 5. БЛОКИ "ВЕРНО" (ИСПРАВЛЕН ПРОБЕЛ) */
@@ -794,7 +788,8 @@ input() - это встроенная функция Python для получе�
 
 (link-goto: "Ни одного", "Ни одного")
 
-(link-goto: "Только два", "Только два")</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
+(link-goto: "Только два", "Только два")
+</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
 
 Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь, пока пользователь что-то введёт. 
 
