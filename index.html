@@ -861,6 +861,25 @@ input() принимает не более одного аргумента.
     function updateTime() {
         var eDate = document.getElementById('ekb_date');
         var eTime = document.getElementById('ekb_time');
+        
+        if (eDate && eTime) {
+            var d = new Date();
+            var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
+            var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
+            
+            eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
+            eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
+        } else {
+            setTimeout(updateTime, 50);
+        }
+    }
+    updateTime();
+})();
+</script>
+(function() {
+    function updateTime() {
+        var eDate = document.getElementById('ekb_date');
+        var eTime = document.getElementById('ekb_time');
         var eDuration = document.getElementById('ekb_duration');
         
         if (eDate && eTime && eDuration) {
