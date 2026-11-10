@@ -390,6 +390,7 @@ tw-sidebar tw-icon:hover {
 }
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
+/* --- ПК: стрелка ПОВЕРХ полупрозрачной подложки, приподнята на ~2 см --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -403,18 +404,23 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
+
         position: fixed !important;
-        
-        /* 👇 НОВЫЕ ТОЧНЫЕ КООРДИНАТЫ ДЛЯ ВАШЕГО ЭКРАНА 👇 */
-        top: 46% !important;    /* Поднимаем на уровень ладони (над текстом) */
-        left: 48% !important;   /* Сдвигаем вправо, ровно к руке */
-        /* 👆 ========================================= 👆 */
-        
-        transform: translate(-50%, -50%) !important; /* Центрируем саму кнопку в этой точке */
+
+        /* Координаты: центр стрелки над верхним краем карточки.
+           top = 5vh (низ карточки) ... но проще привязать к карточке:
+           карточка bottom: 5vh, высота ~auto, поэтому поднимаем
+           стрелку от низа экрана вверх примерно на 2 см (≈ 8vh) + высота карточки.
+           Ниже — настройка «на глаз»: */
+        bottom: calc(5vh + 2cm) !important;   /* приподняли на 2 см над карточкой */
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;  /* центрируем по горизонтали */
+
         right: auto !important;
-        bottom: auto !important;
         flex-direction: row !important;
-        z-index: 999999 !important;
+        z-index: 1000000 !important;  /* выше карточки (у неё 10) */
+        pointer-events: auto !important;
     }
 }
 /* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
