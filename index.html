@@ -806,6 +806,8 @@ input() - это встроенная функция Python для получе�
 <tw-passagedata pid="65" name="Сколько угодно" tags="l65" position="437.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_1]]
 [[Начать обучение]]</tw-passagedata>
+
+    
 <tw-passagedata pid="66" name="Только один" tags="l66" position="550,3025" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
 
 Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом.
@@ -826,17 +828,24 @@ input() принимает не более одного аргумента.
 [[ИТОГ]]</tw-passagedata>
 <tw-passagedata pid="67" name="Ни одного" tags="l67" position="687.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_2]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="68" name="Только два" tags="l68" position="812.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
+[[Начать обучение]]</tw-passagedata>
+<tw-passagedata pid="68" name="Только два" tags="l68" position="812.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_3]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="69" name="Пояснение не верного ответа 11_1" tags="l69" position="437.5,3100" size="100,100">input() не может принимать произвольное количество аргументов. У неё есть только один параметр - строка-приглашение. 
+[[Начать обучение]]</tw-passagedata>
+<tw-passagedata pid="69" name="Пояснение не верного ответа 11_1" tags="l69" position="437.5,3100" size="100,100">input() не может принимать произвольное количество аргументов. У неё есть только один параметр - строка-приглашение. 
 
-Если попытаться передать два или более аргументов, например input(&#39;a&#39;, &#39;b&#39;), Python выдаст ошибку TypeError. Так что «сколько угодно» - неверно.</tw-passagedata><tw-passagedata pid="70" name="Пояснение не верного ответа 11_2" tags="l70" position="687.5,3100" size="100,100">Это не совсем точно. input() может работать без аргументов - тогда она просто ждёт ввода, не выводя подсказку. Но вопрос спрашивает, сколько аргументов она может принимать. 
+Если попытаться передать два или более аргументов, например input(&#39;a&#39;, &#39;b&#39;), Python выдаст ошибку TypeError. Так что «сколько угодно» - неверно.</tw-passagedata>
+<tw-passagedata pid="70" name="Пояснение не верного ответа 11_2" tags="l70" position="687.5,3100" size="100,100">Это не совсем точно. input() может работать без аргументов - тогда она просто ждёт ввода, не выводя подсказку. Но вопрос спрашивает, сколько аргументов она может принимать. 
 
 Поскольку она способна принять один (и это её максимальная возможность), ответ &quot;ни одного&quot; неверен.
 
-Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
+Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata>
+<tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Попытка: $attempts<br><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>[[Пройти заново->Начать обучение]]
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata>
+<tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata>
+<tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata>
+<tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Попытка: $attempts<br><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>[[Пройти заново->Начать обучение]]
 \<script>
 (function() {
     function updateTime() {
@@ -856,80 +865,7 @@ input() принимает не более одного аргумента.
     }
     updateTime();
 })();
-\</script>
-(function() {
-    function updateTime() {
-        var eDate = document.getElementById('ekb_date');
-        var eTime = document.getElementById('ekb_time');
-        
-        if (eDate && eTime) {
-            var d = new Date();
-            var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
-            var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
-            
-            eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
-            eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
-        } else {
-            setTimeout(updateTime, 50);
-        }
-    }
-    updateTime();
-})();
-</script>
-(function() {
-    function updateTime() {
-        var eDate = document.getElementById('ekb_date');
-        var eTime = document.getElementById('ekb_time');
-        
-        if (eDate && eTime) {
-            var d = new Date();
-            var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
-            var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
-            
-            eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
-            eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
-        } else {
-            setTimeout(updateTime, 50);
-        }
-    }
-    updateTime();
-})();
-</script>
-(function() {
-    function updateTime() {
-        var eDate = document.getElementById('ekb_date');
-        var eTime = document.getElementById('ekb_time');
-        var eDuration = document.getElementById('ekb_duration');
-        
-        if (eDate && eTime && eDuration) {
-            var d = new Date();
-            var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
-            var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
-            
-            eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
-            eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
-
-            var startTime = window.questStartTime;
-            if (startTime) {
-                var diff = Date.now() - startTime;
-                var minutes = Math.floor(diff / 60000);
-                var seconds = Math.floor((diff % 60000) / 1000);
-                if (diff < 1000) {
-                    eDuration.innerText = diff + " мс"; 
-                } else {
-                    eDuration.innerText = (minutes > 0 ? minutes + " мин " : "") + seconds + " сек";
-                }
-            } else {
-                eDuration.innerText = "неизвестно";
-            }
-            
-        } else {
-            setTimeout(updateTime, 50);
-        }
-    }
-    updateTime();
-})();
-</script></tw-passagedata>
+\</script></tw-passagedata>
 </tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
