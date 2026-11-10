@@ -202,23 +202,32 @@ tw-passage[tags~="l20"] tw-link, tw-passage[tags~="l23"] tw-link,
 tw-passage[tags~="l29"] tw-link, tw-passage[tags~="l37"] tw-link,
 tw-passage[tags~="l43"] tw-link, tw-passage[tags~="l54"] tw-link,
 tw-passage[tags~="l60"] tw-link, tw-passage[tags~="l66"] tw-link,
+/* --- Стили для кнопки в блоке ИТОГ (l72) --- */
 tw-passage[tags~="l72"] tw-link {
-    text-align: center !important;
-    display: block !important;    /* Делаем блочным, чтобы всегда быть на новой строке */
-    width: 100% !important;
-    margin-top: 15px !important;  /* Отступ от текста */
-    padding: 12px 15px !important;
+    display: block !important;
+    width: max-content !important;      /* Ширина по размеру текста */
+    min-width: 250px !important;        /* Минимальная ширина, чтобы было красиво */
+    max-width: 80% !important;          /* Не шире экрана */
+    margin: 20px auto 0 auto !important; /* 20px сверху, auto по бокам (центрирование), 0 снизу (так как снизу есть padding карточки) */
+    padding: 10px 20px !important;      /* Уменьшили внутренние отступы, чтобы кнопка была аккуратнее */
+    font-size: 18px !important;         /* Чуть уменьшили шрифт */
     
-    /* Оформление кнопки */
+    /* Сохраняем ваши цвета и рамки */
     background-color: #F4F9FF !important; 
     border: 2px solid #4169E1 !important; 
     border-radius: 10px !important; 
-    color: #4169E1 !important; 
-    font-size: 20px !important;
-    font-weight: bold !important;
+    color: #4169E1 !important;
+    text-align: center !important;
     text-decoration: none !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
     transition: all 0.2s ease-in-out !important; 
+}
+
+tw-passage[tags~="l72"] tw-link:hover {
+    background-color: #4169E1 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important; 
+    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
 }
 
 /* Эффект при наведении для ссылок в блоках "Верно" */
