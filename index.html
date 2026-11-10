@@ -836,37 +836,27 @@ input() принимает не более одного аргумента.
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br>(if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>](if: $attemptHistory's length > 1)[<br>📜 История попыток:<div style="margin-bottom: 10px;">(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div>]<br>⏱️ Затраченное время: <span id="ekb-duration"></span><br>📅 Дата: <span id="ekb-date"></span><br>🕐 Время: <span id="ekb-time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)
+👩🏻‍💻📈 Квест завершён!<br><br>
+Попытка: $attempts<br>
+📅 Дата: <span id="ekb-date"></span><br>
+🕐 Время: <span id="ekb-time"></span><br><br>
+Спасибо за игру!<br><br>
+[[Пройти заново->Начать обучение]]
+
 <script>
 (function() {
     function updateTime() {
-        // Заменили подчеркивания на дефисы
         var eDate = document.getElementById('ekb-date');
         var eTime = document.getElementById('ekb-time');
-        var eDuration = document.getElementById('ekb-duration');
         
-        if (eDate && eTime && eDuration) {
+        if (eDate && eTime) {
             var d = new Date();
             var optDate = {timeZone:'Asia/Yekaterinburg', day:'2-digit', month:'2-digit', year:'numeric'};
             var optTime = {timeZone:'Asia/Yekaterinburg', hour:'2-digit', minute:'2-digit', hour12: false};
             
             eDate.innerText = d.toLocaleDateString('ru-RU', optDate);
             eTime.innerText = d.toLocaleTimeString('ru-RU', optTime);
-
-            var startTime = window.questStartTime;
-            if (startTime) {
-                var diff = Date.now() - startTime;
-                var minutes = Math.floor(diff / 60000);
-                var seconds = Math.floor((diff % 60000) / 1000);
-                if (diff < 1000) {
-                    eDuration.innerText = diff + " мс"; 
-                } else {
-                    eDuration.innerText = (minutes > 0 ? minutes + " мин " : "") + seconds + " сек";
-                }
-            } else {
-                eDuration.innerText = "неизвестно";
-            }
-            
         } else {
             setTimeout(updateTime, 50);
         }
