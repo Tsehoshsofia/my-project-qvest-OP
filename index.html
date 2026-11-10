@@ -385,6 +385,7 @@ tw-sidebar tw-icon:hover {
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
+/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -400,18 +401,19 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* 👇 ПОДНИМАЕМ СТРЕЛКУ ВЫШЕ 👇 */
-        left: 43% !important;   
-        top: 38% !important;    
-        /* 👆 ========================= 👆 */
+        /* 👇 ЖЕСТКАЯ ПРИВЯЗКА К ЦЕНТРУ ЭКРАНА 👇 */
+        left: 50vw !important;   
+        top: 50vh !important;    
+        /* 👆 ================================= 👆 */
         
-        transform: translate(-50%, -50%) !important;
+        /* Сдвигаем стрелку от центра: вправо (60px) и вверх (-120px) */
+        transform: translate(60px, -120px) !important; 
+        
         right: auto !important;
         bottom: auto !important;
         flex-direction: row !important;
     }
 }
-
 /* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
