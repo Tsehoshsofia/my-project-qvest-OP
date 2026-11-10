@@ -381,7 +381,6 @@ tw-sidebar tw-icon:hover {
     transform: scale(1.1) !important;
     background-color: #FFFFFF !important;
 }
-
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
@@ -398,10 +397,9 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* 👇 ВОТ ЗДЕСЬ МЕНЯЕМ 👇 */
-        left: 43% !important; 
-        top: 50% !important;  
-        /* 👆 ================= 👆 */
+        /* Новые координаты для ПК */
+        left: 55% !important;   
+        top: 52% !important;    
         
         transform: translate(-50%, -50%) !important;
         right: auto !important;
@@ -409,6 +407,7 @@ tw-sidebar tw-icon:hover {
         flex-direction: row !important;
     }
 }
+
 /* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
@@ -439,7 +438,6 @@ tw-sidebar tw-icon:hover {
         height: 45px !important;
     }
 }
-
 /* ============================================================ */
 /* 8. ПЕРВЫЙ ЭКРАН (L1) — УНИВЕРСАЛЬНЫЙ (ПК, ПЛАНШЕТ, ТЕЛЕФОН) */
 /* ============================================================ */
