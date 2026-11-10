@@ -38,14 +38,6 @@ p, span, div {
 /* Убираем лишние пустые строки */
 tw-story tw-consecutive-br { display: none !important; }
 tw-story br { display: block !important; content: "" !important; margin-bottom: 0px !important; }    
-    /* Спец. правки для l66 */
-tw-passage[tags~="l66"] div,
-tw-passage[tags~="l66"] span,
-tw-passage[tags~="l66"] p {
-    padding-top: 20px !important; 
-    padding-bottom: 15px !important;
-    line-height: 1.1 !important; 
-}
 /* ============================================================ */
 /* 2. ФОНОВЫЕ ИЗОБРАЖЕНИЯ ДЛЯ ВСЕХ БЛОКОВ */
 /* ============================================================ */
@@ -128,89 +120,81 @@ tw-passage[tags~="l63"] {
 }
 
 /* Кнопки внутри вопросов */
-/* Кнопки внутри вопросов */
-tw-passage[tags~="l2"] tw-link,
-tw-passage[tags~="l8"] tw-link,
-tw-passage[tags~="l16"] tw-link,
-tw-passage[tags~="l22"] tw-link,
-tw-passage[tags~="l28"] tw-link,
-tw-passage[tags~="l36"] tw-link,
-tw-passage[tags~="l40"] tw-link,
-tw-passage[tags~="l47"] tw-link,
-tw-passage[tags~="l58"] tw-link,
-tw-passage[tags~="l63"] tw-link {
+tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link, 
+tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, 
+tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, 
+tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, 
+tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
     display: block !important;
     width: 100% !important;
     max-width: 450px !important;
-    margin: 10px auto !important;
+    margin: 8px auto !important; 
     padding: 12px 15px !important;
-    background-color: #F4F9FF !important;
-    border: 2px solid #4169E1 !important;
-    border-radius: 10px !important;
-    color: #4169E1 !important; /* Принудительно синий цвет текста */
+    background-color: #F4F9FF !important; 
+    border: 2px solid #4169E1 !important; 
+    border-radius: 10px !important; 
+    color: #4169E1 !important; 
     font-size: 20px !important;
     font-weight: bold !important;
-    text-align: center !important;
+    text-align: center !important; 
     text-decoration: none !important;
+    transition: all 0.2s ease-in-out !important; 
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
 }
 
-/* Эффект при наведении для кнопок */
-tw-passage[tags~="l2"] tw-link:hover,
-tw-passage[tags~="l8"] tw-link:hover,
-tw-passage[tags~="l16"] tw-link:hover,
-tw-passage[tags~="l22"] tw-link:hover,
-tw-passage[tags~="l28"] tw-link:hover,
-tw-passage[tags~="l36"] tw-link:hover,
-tw-passage[tags~="l40"] tw-link:hover,
-tw-passage[tags~="l47"] tw-link:hover,
-tw-passage[tags~="l58"] tw-link:hover,
-tw-passage[tags~="l63"] tw-link:hover {
+tw-passage[tags~="l2"] tw-link:hover, tw-passage[tags~="l8"] tw-link:hover, 
+tw-passage[tags~="l16"] tw-link:hover, tw-passage[tags~="l22"] tw-link:hover, 
+tw-passage[tags~="l28"] tw-link:hover, tw-passage[tags~="l36"] tw-link:hover, 
+tw-passage[tags~="l40"] tw-link:hover, tw-passage[tags~="l47"] tw-link:hover, 
+tw-passage[tags~="l58"] tw-link:hover, tw-passage[tags~="l63"] tw-link:hover {
     background-color: #4169E1 !important;
     color: #FFFFFF !important;
+    transform: translateY(-2px) !important; 
+    box-shadow: 0 5px 12px rgba(65, 105, 225, 0.3) !important;
 }
 /* ============================================================ */
 /* 5. БЛОКИ "ВЕРНО" (ИСПРАВЛЕН ПРОБЕЛ) */
 /* ============================================================ */
-tw-passage[tags~="l3"][tags], tw-passage[tags~="l13"][tags], tw-passage[tags~="l20"][tags], 
-tw-passage[tags~="l23"][tags], tw-passage[tags~="l29"][tags], tw-passage[tags~="l37"][tags], 
-tw-passage[tags~="l43"][tags], tw-passage[tags~="l54"][tags], tw-passage[tags~="l60"][tags], 
-tw-passage[tags~="l66"][tags], tw-passage[tags~="l72"][tags] {
+tw-passage[tags~="l3"], tw-passage[tags~="l13"], tw-passage[tags~="l20"], 
+tw-passage[tags~="l23"], tw-passage[tags~="l29"], tw-passage[tags~="l37"], 
+tw-passage[tags~="l43"], tw-passage[tags~="l54"], tw-passage[tags~="l60"], 
+tw-passage[tags~="l66"],tw-passage[tags~="l72"] {
     text-align: justify !important; 
     text-justify: inter-word !important;
     color: #000000 !important;
-    max-height: none !important; 
-    overflow-y: visible !important; 
+    max-height: none !important; /* УБРАЛИ ОГРАНИЧЕНИЕ ВЫСОТЫ */
+    overflow-y: visible !important; /* УБРАЛИ ПРОКРУТКУ */
+    padding: 20px 25px !important;
+    font-size: 16px !important; /* Уменьшили шрифт */
+    line-height: 1.25 !important; 
     
-    /* Прозрачность 85% для всех правильных ответов и итога */
-    background-color: rgba(255, 255, 255, 0.85) !important; 
-    
-    padding: 20px 25px 0px 25px !important; 
-    font-size: 26px !important; /* Увеличили шрифт */
-    line-height: 1.4 !important; /* Сделали интервал между строками */
+    /* Делаем карточку шире */
     width: 90vw !important; 
     max-width: 850px !important; 
-    bottom: 0px !important; 
-}
-/* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
-/* Размер шрифта для текста внутри итогов */
-tw-passage[tags~="l72"] div {
-    font-size: 18px !important;
-    line-height: 1.1 !important; /* Уменьшили межстрочный интервал */
+    bottom: 2vh !important; /* Опускаем чуть ниже */
 }
 
+/* Дополнительно уменьшаем шрифт для истории, чтобы она влезла в ширину */
+tw-passage[tags~="l72"] div {
+    font-size: 15px !important;
+    line-height: 1.2 !important;
+}
 /* Слово "Верно" */
 .success-word { 
     color: #008000 !important; 
     text-align: center !important; 
     display: block !important; 
-    font-size: 72px !important; /* Увеличили в 4 раза */
-    font-weight: bold !important; 
-    line-height: 1.1 !important; /* Чтобы слово не разъезжалось по высоте */
-    margin-top: 10px !important;
-    margin-bottom: 20px !important; 
+    margin-bottom: 10px !important; 
 }
 
+/* Убираем лишние пустые строки (br) внутри блоков "Верно", чтобы не было дыр */
+tw-passage[tags~="l3"] br, tw-passage[tags~="l13"] br, 
+tw-passage[tags~="l20"] br, tw-passage[tags~="l23"] br, 
+tw-passage[tags~="l29"] br, tw-passage[tags~="l37"] br, 
+tw-passage[tags~="l43"] br, tw-passage[tags~="l54"] br, 
+tw-passage[tags~="l60"] br, tw-passage[tags~="l66"] br {
+    display: none !important; 
+}
 
 /* Ссылки в блоках "Верно" (ИСПРАВЛЕНО: block, отступы и стили кнопки) */
 tw-passage[tags~="l3"] tw-link, tw-passage[tags~="l13"] tw-link,
@@ -219,27 +203,24 @@ tw-passage[tags~="l29"] tw-link, tw-passage[tags~="l37"] tw-link,
 tw-passage[tags~="l43"] tw-link, tw-passage[tags~="l54"] tw-link,
 tw-passage[tags~="l60"] tw-link, tw-passage[tags~="l66"] tw-link,
 tw-passage[tags~="l72"] tw-link {
-    display: block !important;    
-    width: max-content !important; /* Кнопка сжимается ровно по длине текста */
-    max-width: 95% !important;
+    text-align: center !important;
+    display: block !important;    /* Делаем блочным, чтобы всегда быть на новой строке */
+    width: 100% !important;
+    margin-top: 15px !important;  /* Отступ от текста */
+    padding: 12px 15px !important;
     
-    /* Центрируем кнопку (auto) и задаем отступы: сверху 10px, снизу 0.5 см */
-    margin: 10px auto 0.5cm auto !important;  
-    
-    /* Внутренние отступы: сверху/снизу 8px, слева/справа ровно 0.4 см */
-    padding: 8px 0.4cm !important; 
-    
+    /* Оформление кнопки */
     background-color: #F4F9FF !important; 
     border: 2px solid #4169E1 !important; 
     border-radius: 10px !important; 
     color: #4169E1 !important; 
     font-size: 20px !important;
     font-weight: bold !important;
-    text-align: center !important;
     text-decoration: none !important;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05) !important;
     transition: all 0.2s ease-in-out !important; 
 }
+
 /* Эффект при наведении для ссылок в блоках "Верно" */
 tw-passage[tags~="l3"] tw-link:hover, tw-passage[tags~="l13"] tw-link:hover,
 tw-passage[tags~="l20"] tw-link:hover, tw-passage[tags~="l23"] tw-link:hover,
@@ -254,7 +235,8 @@ tw-passage[tags~="l72"] tw-link:hover {
 }
 
 /* Спец. правки для l66 */
-tw-passage[tags~="l66"] { font-size: 22px !important; padding-top: 20px !important; padding-bottom: 15px !important; line-height: 1.0 !important; }
+tw-passage[tags~="l66"] { font-size: 19px !important; padding-top: 20px !important; padding-bottom: 15px !important; line-height: 1.2 !important; }
+
 /* ============================================================ */
 /* 6. ПОЯСНЕНИЯ (С ПРОКРУТКОЙ, ПО ШИРИНЕ) */
 /* ============================================================ */
@@ -282,34 +264,15 @@ tw-passage[tags~="l71"] {
     padding-top: 60px !important;
 }
 
-/* Спец. правки для l66 (ДОЛЖНЫ БЫТЬ ПОСЛЕ ОБЩЕГО СПИСКА) */
-tw-passage[tags~="l66"],
-tw-passage[tags~="l66"] div,
-tw-passage[tags~="l66"] span,
-tw-passage[tags~="l66"] p {
-    font-size: 20px !important; 
-    line-height: 1.1 !important; 
-    padding-top: 20px !important; 
-    padding-bottom: 15px !important;
-}
-
-tw-passage[tags~="l66"] br {
-    display: block !important;
-    content: "" !important;
-    margin: 0 !important;
-    line-height: 0 !important;
-    height: 0 !important;
-}
-
 /* Цвета для неправильных ответов (красный) */
 tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l9"], tw-passage[tags~="l10"], tw-passage[tags~="l14"], tw-passage[tags~="l17"], tw-passage[tags~="l18"], tw-passage[tags~="l24"], tw-passage[tags~="l25"], tw-passage[tags~="l30"], tw-passage[tags~="l31"], tw-passage[tags~="l32"], tw-passage[tags~="l38"], tw-passage[tags~="l39"], tw-passage[tags~="l44"], tw-passage[tags~="l45"], tw-passage[tags~="l46"], tw-passage[tags~="l51"], tw-passage[tags~="l52"], tw-passage[tags~="l53"], tw-passage[tags~="l59"], tw-passage[tags~="l61"], tw-passage[tags~="l65"], tw-passage[tags~="l67"], tw-passage[tags~="l68"] { color: #CC0000 !important; } 
 
 /* ============================================================ */
 /* 7. СТРЕЛКА «НАЗАД» (ТОЛЬКО ДЛЯ УКАЗАННЫХ БЛОКОВ) */
 /* ============================================================ */
-
 tw-link, tw-link:link, tw-link:visited, tw-link:hover, tw-link:active,
 tw-link.visited, tw-link.visited:hover, tw-link.visited:active {
+    color: #0000FF !important;
     transition: none !important;
     -webkit-tap-highlight-color: transparent !important;
 }
@@ -552,8 +515,8 @@ tw-passage[tags~="l1"] tw-link:hover {
       left: 5vw !important; 
       right: 5vw !important; 
       width: 90vw !important;
-      max-height: 70vh !important; /* Это может обрезать нижние ссылки */
-      overflow-y: auto !important
+      max-height: 65vh !important;   
+      overflow-y: auto !important;
       padding: 20px !important; 
       font-size: 16px !important; 
       line-height: 1.35 !important; 
@@ -656,9 +619,20 @@ tw-passage[tags~="l1"] tw-link:hover {
 [[Пояснение не верного ответа 3_1]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="17" name="age = float(age); print(age + 10)" tags="l18" position="500,950" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 3_2]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="18" name="Пояснение не верного ответа 3_1" tags="l19" position="175,975" size="100,100">Ошибка: TypeError, нельзя сложить строку и число</tw-passagedata><tw-passagedata pid="19" name="Пояснение не верного ответа 3_2" tags="l21" position="500,1075" size="100,100">Правильно, но даст 32.0, а не 32</tw-passagedata><tw-passagedata pid="20" name="client_name = &quot;Иванов&quot;" tags="l13" position="625,800" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span><br><br>
-Только английские буквы. Слова разделены подчёркиванием. Понятно, что хранится: имя клиента. Начинается с маленькой буквы (переменные принято писать с маленькой).<br><br>
-[[Переходим к следующему вопросу_3]]</tw-passagedata><tw-passagedata pid="21" name="age = int(age); print(age + 10)" tags="l20" position="350,1025" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span><br><br>⌨️ input() всегда возвращает строку, и ее нужно приводить к нужному типу. int(input()) - целое число.<br><br>[[Переходим к следующему вопросу_4]]</tw-passagedata><tw-passagedata pid="22" name="Переходим к следующему вопросу_4" tags="l22" position="350,1150" size="100,100">Вопрос: Укажите однострочный комментарий в коде.
+[[Начать обучение]]</tw-passagedata><tw-passagedata pid="18" name="Пояснение не верного ответа 3_1" tags="l19" position="175,975" size="100,100">Ошибка: TypeError, нельзя сложить строку и число</tw-passagedata><tw-passagedata pid="19" name="Пояснение не верного ответа 3_2" tags="l21" position="500,1075" size="100,100">Правильно, но даст 32.0, а не 32</tw-passagedata><tw-passagedata pid="20" name="client_name = &quot;Иванов&quot;" tags="l13" position="625,800" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+
+Только английские буквы.
+
+Слова разделены подчёркиванием.
+
+Понятно, что хранится: имя клиента.
+
+Начинается с маленькой буквы (переменные принято писать с маленькой).
+
+[[Переходим к следующему вопросу_3]]</tw-passagedata><tw-passagedata pid="21" name="age = int(age); print(age + 10)" tags="l20" position="350,1025" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+⌨️input() всегда возвращает строку, и ее нужно приводить к нужному типу int(input())- целое число
+
+[[Переходим к следующему вопросу_4]]</tw-passagedata><tw-passagedata pid="22" name="Переходим к следующему вопросу_4" tags="l22" position="350,1150" size="100,100">Вопрос: Укажите однострочный комментарий в коде.
 
 Варианты:
 
@@ -666,7 +640,11 @@ tw-passage[tags~="l1"] tw-link:hover {
 
 [[&#39;&#39;&#39; Это комментарий &#39;&#39;&#39;]] 
 
-[[// Это комментарий]] </tw-passagedata><tw-passagedata pid="23" name="# Это комментарий" tags="l23" position="225,1275" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span><br><br>В Python однострочный комментарий начинается с символа #. Всё, что стоит после # в этой же строке, интерпретатор игнорирует. Комментарий можно писать как отдельной строкой, так и после кода:<br><br>[[Переходим к следующему вопросу_5]]</tw-passagedata><tw-passagedata pid="24" name="&#39;&#39;&#39; Это комментарий &#39;&#39;&#39;" tags="l24" position="350,1275" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
+[[// Это комментарий]] </tw-passagedata><tw-passagedata pid="23" name="# Это комментарий" tags="l23" position="225,1275" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+
+ В Python однострочный комментарий начинается с символа #. Всё, что стоит после # в этой же строке, интерпретатор игнорирует. Комментарий можно писать как отдельной строкой, так и после кода:
+
+[[Переходим к следующему вопросу_5]]</tw-passagedata><tw-passagedata pid="24" name="&#39;&#39;&#39; Это комментарий &#39;&#39;&#39;" tags="l24" position="350,1275" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 4_1]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="25" name="// Это комментарий" tags="l25" position="475,1275" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 4_2]]
@@ -680,7 +658,13 @@ tw-passage[tags~="l1"] tw-link:hover {
 
 [[contract number = 123]]
 
-[[2024_contract = 123]] </tw-passagedata><tw-passagedata pid="27" name="Пояснение не верного ответа 4_1" tags="l27" position="350,1400" size="100,100">Тройные кавычки в Python - это строковый литерал (строка), а не комментарий. Технически это не однострочный комментарий, а строка, которая создаётся и сразу никуда не присваивается.<br><br>Да, иногда тройные кавычки используют для многострочных комментариев, но для однострочного комментария это неверный способ.</tw-passagedata><tw-passagedata pid="28" name="Пояснение не верного ответа 4_2" tags="l26" position="600,1400" size="100,100">В Python такого синтаксиса комментариев нет. // - это оператор целочисленного деления (floor division).<br><br>Если поставить // в начале строки, Python выдаст ошибку SyntaxError, потому что оператору не хватает левого операнда.</tw-passagedata><tw-passagedata pid="29" name="contract_number = 123" tags="l29" position="37.5,1525" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+[[2024_contract = 123]] </tw-passagedata><tw-passagedata pid="27" name="Пояснение не верного ответа 4_1" tags="l27" position="350,1400" size="100,100">Тройные кавычки в Python - это строковые литералы. Используют для многострочных комментариев
+
+Тройные кавычки в Python - это строковый литерал (строка), а не комментарий. Технически это не однострочный комментарий, а строка, которая создаётся и сразу никуда не присваивается. 
+
+Да, иногда тройные кавычки используют для многострочных комментариев, но для однострочного комментария это неверный способ.</tw-passagedata><tw-passagedata pid="28" name="Пояснение не верного ответа 4_2" tags="l26" position="600,1400" size="100,100"> В Python такого синтаксиса комментариев нет. // -  это оператор целочисленного деления (floor division). 
+ 
+Если поставить // в начале строки, Python выдаст ошибку SyntaxError, потому что оператору не хватает левого операнда.</tw-passagedata><tw-passagedata pid="29" name="contract_number = 123" tags="l29" position="37.5,1525" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
 
 Английский язык, нижний регистр, начинается с буквы.
 
@@ -699,7 +683,15 @@ tw-passage[tags~="l1"] tw-link:hover {
 
 [[text = &quot;Он сказал: &quot;Привет!&quot;&quot;]]  
 
-[[text = # Он сказал: &quot;Привет!&quot;]] </tw-passagedata><tw-passagedata pid="37" name="text = &#39;Он сказал: &quot;Привет!&quot;&#39;" tags="l37" position="100,1925" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span><br><br>В Python строку можно заключать как в одинарные, так и в двойные кавычки. Если внутри строки нужны двойные кавычки, удобно использовать снаружи одинарные - тогда конфликта не возникает. Python видит: строка начинается с &#39;, внутри спокойно воспринимает &quot; как обычный символ, а заканчивается строка на &#39;. Всё работает корректно.<br><br>[[Переходим к следующему вопросу_8]]</tw-passagedata><tw-passagedata pid="38" name="text = &quot;Он сказал: &quot;Привет!&quot;&quot;" tags="l38" position="225,1925" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
+[[text = # Он сказал: &quot;Привет!&quot;]] </tw-passagedata><tw-passagedata pid="37" name="text = &#39;Он сказал: &quot;Привет!&quot;&#39;" tags="l37" position="100,1925" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+    
+
+В Python строку можно заключать как в одинарные, так и в двойные кавычки. Если внутри строки нужны двойные кавычки, удобно использовать снаружи одинарные - тогда конфликта не возникает. Python видит: строка начинается с &#39;, внутри спокойно воспринимает &quot; как обычный символ, а заканчивается строка на &#39;. Всё работает корректно.
+
+
+[[Переходим к следующему вопросу_8]]
+
+</tw-passagedata><tw-passagedata pid="38" name="text = &quot;Он сказал: &quot;Привет!&quot;&quot;" tags="l38" position="225,1925" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 7_1]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="39" name="text = # Он сказал: &quot;Привет!&quot;" tags="l39" position="350,1925" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 7_2]]
@@ -794,52 +786,44 @@ input() - это встроенная функция Python для получе�
 
 [[Переходим к следующему вопросу 11]]</tw-passagedata><tw-passagedata pid="61" name="get_name(&quot;Введите имя: &quot;)" tags="l61" position="750,2725" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 10_2]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">
-Сколько аргументов может принимать функция input()?
+[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">Сколько аргументов может принимать функция input()?
 Варианты:
 
-[[Сколько угодно->Сколько угодно]]
+[[Сколько угодно]]
 
-[[Только один->Только один]]
+[[Только один]]
 
-[[Ни одного->Ни одного]]
+[[Ни одного]]
 
-[[Только два->Только два]]
-</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
+[[Только два]]</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
 
 Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь, пока пользователь что-то введёт. 
 
 Программа не получит имя, потому что print() не умеет читать данные с клавиатуры. Для ввода нужна функция input().
 </tw-passagedata>
-<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Функция print() выводит информацию на экран, но не умеет читать данные с клавиатуры. Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь ввода пользователя. Для получения данных от пользователя используется функция input().</tw-passagedata>
+<tw-passagedata pid="64" name="Пояснение не верного ответа 10_2" tags="l64" position="750,2850" size="100,100">Данной функции в Python не существует. (print: "get_name()") - это выдуманное имя, его нет среди встроенных функций. Если попробовать выполнить этот код, Python выдаст ошибку NameError: name (print: "'get_name'") is not defined. Для получения ввода с клавиатуры в Python есть только одна стандартная функция - input().
+</tw-passagedata>
 <tw-passagedata pid="65" name="Сколько угодно" tags="l65" position="437.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_1]]
 [[Начать обучение]]</tw-passagedata>
-<tw-passagedata pid="66" name="Только один" tags="l66" position="550,3025" size="100,100">(set: $correct to $correct + 1)
-<div style="text-align: center; margin-top: 20px; margin-bottom: 20px;">
-    <span class="success-word">Верно</span>
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
-    Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом. Например: name = input('Введите имя: ')
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
-    Здесь 'Введите имя: ' - это тот самый единственный аргумент. Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. Больше одного аргумента передать нельзя - это вызовет ошибку.
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
-    input() принимает не более одного аргумента.
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
-    Аргумент необязателен: можно вызвать input() без него.
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 15px;">
-    Аргумент - это строка-приглашение, которая выводится перед вводом.
-</div>
-<div style="font-size: 18px !important; line-height: 1.4 !important; color: #000000 !important; text-align: justify !important; margin-bottom: 0;">
-    Всё, что введёт пользователь, возвращается как строка (str).
-</div>
-<div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-    [[ИТОГ]]
-</div>
+<tw-passagedata pid="66" name="Только один" tags="l66" position="550,3025" size="100,100">(set: $correct to $correct + 1)<span class="success-word">Верно</span>
+
+Функция input() может принимать один необязательный аргумент - строку-приглашение, которая выводится на экран перед вводом.
+Например:
+name = input(&#39;Введите имя: &#39;)
+Здесь &#39;Введите имя: &#39; - это тот самый единственный аргумент.
+Если аргумент не указать (input()), функция просто ждёт ввода без подсказки. Больше одного аргумента передать нельзя - это вызовет ошибку.
+
+input() принимает не более одного аргумента.
+
+Аргумент необязателен: можно вызвать input() без него.
+
+Аргумент - это строка-приглашение, которая выводится перед вводом.
+
+Всё, что введёт пользователь, возвращается как строка (str).
+
+
+[[ИТОГ]]</tw-passagedata>
 <tw-passagedata pid="67" name="Ни одного" tags="l67" position="687.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 11_2]]
 [[Начать обучение]]</tw-passagedata><tw-passagedata pid="68" name="Только два" tags="l68" position="812.5,2975" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
@@ -852,23 +836,7 @@ input() - это встроенная функция Python для получе�
 
 Она может принимать ноль (не указывать аргумент) или один, но не больше.</tw-passagedata><tw-passagedata pid="71" name="Пояснение не верного ответа 11_3" tags="l71" position="812.5,3100" size="100,100">input() не принимает два аргумента. У неё только один параметр - приглашение. 
 
-Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))<br><br>
-<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 15px; width: 100%; margin-bottom: 0px;">
-    <div style="flex: 1; text-align: left; line-height: 1.2;">
-        <div style="margin-bottom: 2px;">👩🏻‍💻📈 Квест завершён!</div>
-        Правильных ответов: $correct<br>
-        Ошибок: $wrong<br>
-        Всего вопросов: (print: $correct + $wrong)<br>
-        Попытка: $attempts
-    </div>
-    <div style="flex: 1; text-align: right; white-space: nowrap; line-height: 1.2;">
-        <div style="margin-bottom: 2px;">⏱️ Затраченное время: <span id="ekb_duration"></span></div>
-        📅 Дата: <span id="ekb_date"></span><br>
-        🕐 Время: <span id="ekb_time"></span>
-    </div>
-</div>
-(if: $attemptHistory's length > 1)[<div style="text-align: left; margin-top: 5px; width: 100%; font-size: 16px !important;">📜 История попыток:<div>(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div></div>]
-[[Пройти заново->Начать обучение]]
+Если написать input(&#39;Введите имя: &#39;, &#39;Ещё что-то&#39;), возникнет ошибка TypeError: input expected at most 1 argument, got 2. Поэтому &quot;только два&quot; - неверно.</tw-passagedata><tw-passagedata pid="72" name="1" tags="" position="1050,3275" size="100,100"></tw-passagedata><tw-passagedata pid="73" name="122" tags="" position="1275,3300" size="100,100"></tw-passagedata><tw-passagedata pid="74" name="ИТОГ" tags="l72" position="675,3275" size="100,100">(set: $resetFlag to true)(if: $attemptHistory is not an array)[(set: $attemptHistory to (a:))](set: $attemptHistory to $attemptHistory + (a: (dm: "attempt", $attempts, "correct", $correct, "wrong", $wrong)))👩🏻‍💻📈 Квест завершён!<br>Правильных ответов: $correct<br>Ошибок: $wrong<br>Всего вопросов: (print: $correct + $wrong)<br>Попытка: $attempts<br>(if: $wrong <= 3)[👍 Хороший результат. Ошибок: $wrong.<br>](else:)[📚 Стоит повторить материал. Ошибок: $wrong.<br>](if: $attemptHistory's length > 1)[<br>📜 История попыток:<div style="margin-bottom: 10px;">(for: each _item, ...$attemptHistory)[Попытка (print: _item's attempt): Правильных - (print: _item's correct), Ошибок - (print: _item's wrong)<br>]</div>]<br>⏱️ Затраченное время: <span id="ekb_duration"></span><br>📅 Дата: <span id="ekb_date"></span><br>🕐 Время: <span id="ekb_time"></span><br><br>Спасибо за игру!<br><br>[[Пройти заново->Начать обучение]]
 <script>
 (function() {
     function updateTime() {
