@@ -419,6 +419,7 @@ tw-sidebar tw-icon:hover {
     }
 }
 /* --- Телефон: стрелка над карточкой (только для указанных блоков) --- */
+/* --- Телефон: стрелка над карточкой (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -432,13 +433,16 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
-        position: absolute !important;   /* Привязка к карточке, а не к экрану */
-        top: -2em !important;            /* Поднимаем стрелку над верхним краем карточки */
-        left: 50% !important;            /* Центрируем по горизонтали */
+        position: absolute !important; 
+        top: -2em !important;            
+        
+        /* Сдвигаем влево на ~1 см (10px) от центра */
+        left: calc(50% - 10px) !important; 
+        
         transform: translateX(-50%) !important;
         right: auto !important;
         bottom: auto !important;
-        z-index: 1000000 !important;     /* Поверх подложки */
+        z-index: 1000000 !important;     
         pointer-events: auto !important;
     }
 
