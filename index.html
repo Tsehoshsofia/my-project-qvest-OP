@@ -93,17 +93,24 @@ tw-passage[tags]:not([tags~="l1"]) {
     width: 700px !important;
     max-width: calc(100% - 40px) !important;
     
-    /* ИЗМЕНЕНИЯ ЗДЕСЬ */
-    background-color: rgba(255, 255, 255, 0.8) !important; /* Полупрозрачный белый */
-    backdrop-filter: blur(10px) !important; /* Размытие фона под карточкой */
+    /* === ИЗМЕНЕНИЯ ЗДЕСЬ === */
+    background-color: rgba(255, 255, 255, 0.45) !important; /* 0.45 - сильная прозрачность */
+    backdrop-filter: blur(8px) !important; /* Уменьшили размытие, чтобы фон лучше угадывался */
     
     padding: 25px !important;         
     border-radius: 15px !important;   
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3) !important; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2) !important; /* Сделали тень чуть мягче */
     
     font-size: 25px !important;       
     font-weight: bold !important;     
-    text-shadow: none !important;
+    
+    /* ТЕКСТ: Убираем обычную тень и добавляем светящуюся обводку */
+    text-shadow: 
+        0px 0px 5px rgba(255, 255, 255, 0.9), 
+        0px 0px 10px rgba(255, 255, 255, 0.8),
+        0px 1px 2px rgba(255, 255, 255, 1) !important;
+        
+    color: #000000 !important; 
     z-index: 10 !important;
 }
 
