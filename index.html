@@ -543,8 +543,8 @@ tw-passage[tags~="l1"] tw-link:hover {
       left: 5vw !important; 
       right: 5vw !important; 
       width: 90vw !important;
-      max-height: 65vh !important;   
-      overflow-y: auto !important;
+      max-height: 70vh !important; /* Это может обрезать нижние ссылки */
+      overflow-y: auto !important
       padding: 20px !important; 
       font-size: 16px !important; 
       line-height: 1.35 !important; 
@@ -785,11 +785,12 @@ input() - это встроенная функция Python для получе�
 
 [[Переходим к следующему вопросу 11]]</tw-passagedata><tw-passagedata pid="61" name="get_name(&quot;Введите имя: &quot;)" tags="l61" position="750,2725" size="100,100">(set: $wrong to $wrong + 1, $perfect to false)Не верно
 [[Пояснение не верного ответа 10_2]]
-[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">Сколько аргументов может принимать функция input()?<br><br>
-Варианты:<br><br>
-[[Сколько угодно]]<br><br>
-[[Только один]]<br><br>
-[[Ни одного]]<br><br>
+[[Начать обучение]]</tw-passagedata><tw-passagedata pid="62" name="Переходим к следующему вопросу 11" tags="l63" position="625,2850" size="100,100">Сколько аргументов может принимать функция input()?
+Варианты:
+    
+[[Сколько угодно]]
+[[Только один]]
+[[Ни одного]]
 [[Только два]]</tw-passagedata><tw-passagedata pid="63" name="Пояснение не верного ответа 10_1" tags="l62" position="500,2850" size="100,100">print() - это функция вывода информации на экран, а не ввода. 
 
 Она просто покажет текст &quot;Введите имя: &quot; и сразу завершится, не дожидаясь, пока пользователь что-то введёт. 
