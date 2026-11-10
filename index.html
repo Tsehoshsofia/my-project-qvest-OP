@@ -260,6 +260,9 @@ tw-passage[tags~="l66"] { font-size: 19px !important; padding-top: 20px !importa
 /* ============================================================ */
 /* 6. ПОЯСНЕНИЯ (С ПРОКРУТКОЙ, ПО ШИРИНЕ) */
 /* ============================================================ */
+/* ============================================================ */
+/* 6. ПОЯСНЕНИЯ (БЕЗ ПРОКРУТКИ, ПО ШИРИНЕ) */
+/* ============================================================ */
 tw-passage[tags~="l4"], tw-passage[tags~="l5"], tw-passage[tags~="l6"], 
 tw-passage[tags~="l7"], tw-passage[tags~="l9"], tw-passage[tags~="l10"], 
 tw-passage[tags~="l11"], tw-passage[tags~="l14"], tw-passage[tags~="l15"], 
@@ -279,11 +282,13 @@ tw-passage[tags~="l68"], tw-passage[tags~="l69"], tw-passage[tags~="l70"],
 tw-passage[tags~="l71"] { 
     text-align: justify !important; 
     color: #000000 !important;
-    max-height: 55vh !important; 
-    overflow-y: auto !important;
-    padding-top: 60px !important;
+    
+    /* УБИРАЕМ ОГРАНИЧЕНИЕ ВЫСОТЫ И ПРОКРУТКУ */
+    max-height: none !important; 
+    overflow-y: visible !important;
+    
+    padding-top: 20px !important; /* Уменьшили верхний отступ, так как ползунка больше нет */
 }
-
 /* ============================================================ */
 /* Цвета для неправильных ответов (Красная только первая строка) */
 /* ============================================================ */
@@ -393,6 +398,7 @@ tw-sidebar tw-icon:hover {
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
+/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -408,14 +414,14 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* 👇 ПРИВЯЗКА К ЦЕНТРУ ЭКРАНА И СМЕЩЕНИЕ ВВЕРХ 👇 */
-        left: 50vw !important;   
-        top: 50vh !important;    
+        /* 👇 НОВЫЕ КООРДИНАТЫ ДЛЯ ЛАДОНИ 👇 */
+        /* Так как картинка у вас центрируется по ширине и прижата к верху (contain), 
+           эти проценты будут указывать точно на руку */
+        left: 46% !important;   /* Сдвигаем влево от центра к руке */
+        top: 60% !important;    /* Опускаем вниз к ладони */
+        /* 👆 ================================= 👆 */
         
-        /* Смещаем на 70px вправо и на 120px вверх от центра экрана */
-        transform: translate(70px, -120px) !important; 
-        /* 👆 ========================================= 👆 */
-        
+        transform: translate(-50%, -50%) !important; /* Центрируем саму кнопку относительно этой точки */
         right: auto !important;
         bottom: auto !important;
         flex-direction: row !important;
