@@ -391,6 +391,7 @@ tw-sidebar tw-icon:hover {
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
+/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -406,14 +407,12 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
         position: fixed !important;
         
-        /* 👇 ПРИВЯЗКА К ЦЕНТРУ ЭКРАНА И ПОДЪЕМ ВВЕРХ 👇 */
-        left: 50vw !important;   
-        top: 50vh !important;    
+        /* 👇 НОВЫЕ КООРДИНАТЫ (БЕЗ ПРОЦЕНТОВ, ТОЛЬКО ПИКСЕЛИ ОТ УГЛА) 👇 */
+        left: 42% !important;   
+        top: 38% !important;    
+        /* 👆 ================================================= 👆 */
         
-        /* Смещаем на 100px вправо и на 150px вверх от центра */
-        transform: translate(100px, -150px) !important; 
-        /* 👆 ========================================= 👆 */
-        
+        transform: translate(-50%, -50%) !important;
         right: auto !important;
         bottom: auto !important;
         flex-direction: row !important;
