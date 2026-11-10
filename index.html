@@ -95,7 +95,7 @@ tw-passage[tags]:not([tags~="l1"]) {
     max-width: calc(100% - 40px) !important;
     
     /* === ИЗМЕНЕНИЯ ЗДЕСЬ === */
-    background-color: rgba(255, 255, 255, 0.45) !important; /* 0.45 - сильная прозрачность */
+    background-color: rgba(255, 255, 255, 0.75) !important; /* 0.45 - сильная прозрачность */
     backdrop-filter: blur(8px) !important; /* Уменьшили размытие, чтобы фон лучше угадывался */
     
     padding: 25px !important;         
@@ -389,8 +389,7 @@ tw-sidebar tw-icon:hover {
     background-color: #FFFFFF !important;
 }
 /* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
-/* --- ПК: Позиционируем над ладонью (только для указанных блоков) --- */
-/* --- ПК: стрелка ПОВЕРХ полупрозрачной подложки, приподнята на ~2 см --- */
+
 @media screen and (min-width: 821px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -406,24 +405,20 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
 
         position: fixed !important;
-
-        /* Координаты: центр стрелки над верхним краем карточки.
-           top = 5vh (низ карточки) ... но проще привязать к карточке:
-           карточка bottom: 5vh, высота ~auto, поэтому поднимаем
-           стрелку от низа экрана вверх примерно на 2 см (≈ 8vh) + высота карточки.
-           Ниже — настройка «на глаз»: */
-        bottom: calc(5vh + 2cm) !important;   /* приподняли на 2 см над карточкой */
-        top: auto !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;  /* центрируем по горизонтали */
+        transform: translateX(-50%) !important;
 
+        /* Стрелка висит над карточкой: bottom = 5vh (низ карточки) + примерная высота карточки + 2 см */
+        bottom: calc(5vh + 300px + 2cm) !important;
+        top: auto !important;
         right: auto !important;
+
         flex-direction: row !important;
-        z-index: 1000000 !important;  /* выше карточки (у неё 10) */
+        z-index: 1000000 !important;
         pointer-events: auto !important;
     }
 }
-/* --- Телефон: Позиционируем над ладонью на экране (только для указанных блоков) --- */
+/* --- Телефон: стрелка над карточкой (только для указанных блоков) --- */
 @media screen and (max-width: 820px) {
     tw-passage[tags~="l6"] tw-sidebar, tw-passage[tags~="l7"] tw-sidebar,
     tw-passage[tags~="l11"] tw-sidebar, tw-passage[tags~="l15"] tw-sidebar,
@@ -437,12 +432,14 @@ tw-sidebar tw-icon:hover {
     tw-passage[tags~="l57"] tw-sidebar, tw-passage[tags~="l62"] tw-sidebar,
     tw-passage[tags~="l64"] tw-sidebar, tw-passage[tags~="l69"] tw-sidebar,
     tw-passage[tags~="l70"] tw-sidebar, tw-passage[tags~="l71"] tw-sidebar {
-        position: fixed !important; /* Привязка к экрану телефона, а не к плашке */
-        top: 35% !important;        /* Опускаем вниз к ладони (настройте под свой экран) */
-        left: 30% !important;       /* Сдвигаем влево к руке */
+        position: absolute !important;   /* Привязка к карточке, а не к экрану */
+        top: -2em !important;            /* Поднимаем стрелку над верхним краем карточки */
+        left: 50% !important;            /* Центрируем по горизонтали */
+        transform: translateX(-50%) !important;
         right: auto !important;
         bottom: auto !important;
-        transform: none !important;
+        z-index: 1000000 !important;     /* Поверх подложки */
+        pointer-events: auto !important;
     }
 
     /* Размеры самой кнопки-стрелки на телефоне */
@@ -572,28 +569,32 @@ tw-passage[tags~="l1"] tw-link:hover {
   tw-story tw-sidebar { position: fixed !important; top: 10px !important; left: 10px !important; right: 10px !important; width: auto !important; z-index: 99 !important; flex-direction: row !important; justify-content: space-between !important; pointer-events: none !important; }
   tw-story tw-sidebar tw-icon { pointer-events: auto !important; }
 
-  /* Общие карточки на телефоне (ИСКЛЮЧАЯ ПЕРВЫЙ ЭКРАН L1) */
-  tw-story tw-passage[tags]:not([tags~="l1"]) { 
-      position: absolute !important; 
-      bottom: 5vh !important;        
-      left: 5vw !important; 
-      right: 5vw !important; 
-      width: 90vw !important;
-      max-height: 65vh !important;   
-      overflow-y: auto !important;
-      padding: 20px !important; 
-      font-size: 16px !important; 
-      line-height: 1.35 !important; 
-      background-color: rgba(255, 255, 255, 0.81) !important; 
-      border-radius: 15px !important; 
-      box-shadow: 0 5px 20px rgba(0,0,0,0.5) !important; 
-      
-      /* Текст по ширине */
-      text-align: justify !important; 
-      
-      z-index: 10 !important;
-  }
-
+ /* Общие карточки на телефоне (ИСКЛЮЧАЯ ПЕРВЫЙ ЭКРАН L1) */
+tw-story tw-passage[tags]:not([tags~="l1"]) { 
+    position: absolute !important; 
+    bottom: 5vh !important;        
+    left: 5vw !important; 
+    right: 5vw !important; 
+    width: 90vw !important;
+    
+    /* Убрали ограничение высоты и прокрутку, чтобы стрелка не обрезалась */
+    /* max-height: 65vh !important; */   
+    /* overflow-y: auto !important; */
+    
+    padding: 20px !important; 
+    padding-top: 55px !important; /* Освобождаем место сверху для кнопки */
+    
+    font-size: 16px !important; 
+    line-height: 1.35 !important; 
+    background-color: rgba(255, 255, 255, 0.85) !important; /* Сделали чуть плотнее для читаемости */
+    border-radius: 15px !important; 
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5) !important; 
+    
+    /* Текст по ширине */
+    text-align: justify !important; 
+    
+    z-index: 10 !important;
+}
   /* Кнопки внутри вопросов на телефоне */
   tw-passage[tags~="l2"] tw-link, tw-passage[tags~="l8"] tw-link, tw-passage[tags~="l16"] tw-link, tw-passage[tags~="l22"] tw-link, tw-passage[tags~="l28"] tw-link, tw-passage[tags~="l36"] tw-link, tw-passage[tags~="l40"] tw-link, tw-passage[tags~="l47"] tw-link, tw-passage[tags~="l58"] tw-link, tw-passage[tags~="l63"] tw-link {
         width: 100% !important; 
